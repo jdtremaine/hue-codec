@@ -1,0 +1,10 @@
+{
+	"name": "hue-codec",
+	"version-string": "1.0.0",
+	"dependencies":
+	[
+		"doctest",
+		"fmt",
+		"opencv"
+	]
+}
