@@ -7,6 +7,9 @@ sudo apt -y install build-essential cmake git
 # OpenCV prerequisites
 sudo apt -y install bison
 
+# Realsense / libusb:
+sudo apt -y install dh-autoreconf libudev-dev
+
 if [ ! -d "/opt/vcpkg/" ]; then
 	echo "Installing vcpkg..."
 	git clone https://github.com/Microsoft/vcpkg.git

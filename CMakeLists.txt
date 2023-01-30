@@ -20,10 +20,18 @@ include_directories(./include)
 find_package(fmt CONFIG REQUIRED)
 find_package(doctest CONFIG REQUIRED)
 find_package(OpenCV CONFIG REQUIRED)
+find_package(realsense2 CONFIG REQUIRED)
 
 # Tests
 add_executable(tests test/tests.cpp)
 target_link_libraries(tests PRIVATE fmt::fmt)
 target_link_libraries(tests PRIVATE doctest::doctest)
 target_link_libraries(tests PRIVATE ${OpenCV_LIBS})
+
+# Validation against RealSense encoder and reference decoder
+add_executable(validation test/validation.cpp)
+target_link_libraries(validation PRIVATE fmt::fmt)
+target_link_libraries(validation PRIVATE doctest::doctest)
+target_link_libraries(validation PRIVATE opencv_core opencv_imgproc opencv_highgui)
+target_link_libraries(validation PRIVATE realsense2::realsense2)
 

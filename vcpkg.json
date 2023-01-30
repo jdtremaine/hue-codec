@@ -5,6 +5,7 @@
 	[
 		"doctest",
 		"fmt",
-		"opencv"
+		"opencv",
+		"realsense2"
 	]
 }
