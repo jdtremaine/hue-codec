@@ -35,3 +35,9 @@ target_link_libraries(comparison PRIVATE doctest::doctest)
 target_link_libraries(comparison PRIVATE opencv_core opencv_imgproc opencv_highgui)
 target_link_libraries(comparison PRIVATE realsense2::realsense2)
 
+# Benchmarks
+add_executable(benchmarks test/benchmarks.cpp)
+target_link_libraries(benchmarks PRIVATE fmt::fmt)
+target_link_libraries(benchmarks PRIVATE doctest::doctest)
+target_link_libraries(benchmarks PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
+

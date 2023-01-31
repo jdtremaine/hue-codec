@@ -4,8 +4,26 @@
 	"dependencies":
 	[
 		"doctest",
+		{
+			"name": "ffmpeg",
+			"features":
+			[
+				"vpx",
+				"x264",
+				"x265"
+			]
+		},
 		"fmt",
-		"opencv",
+		{
+			"name": "opencv",
+			"features":
+			[
+				"ffmpeg",
+				"jpeg",
+				"png",
+				"webp"
+			]
+		},
 		"realsense2"
 	]
 }
