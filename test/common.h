@@ -82,3 +82,15 @@ cv::Mat generate_synthetic_depth(int w, int h, float vmin, float vmax, float inc
 	return data;
 }
 
+void load_reference_sequence(std::vector<cv::Mat>& sequence, std::string seq_path="../data/seq/")
+{
+	// Read the sequence into memory
+	sequence.clear();
+	std::string frame_path_template = seq_path + "frame_{:>05}.png";
+	const int frame_count = 26;
+	for (int i=0; i<frame_count; i++)
+	{
+		std::string path = fmt::format(frame_path_template, i);
+		sequence.push_back( imread(path, cv::IMREAD_ANYDEPTH) );
+	}
+}
