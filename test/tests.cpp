@@ -1,12 +1,33 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>	// This testing framework
-#include <fmt/color.h>	      	// formatted ANSI terminal output
 #include <fmt/core.h>	      	// formatted terminal output
+#include <fmt/color.h>	      	// formatted ANSI terminal output
 #include <hue_codec.h>	      	// The header-only hue codec
 #include <cmath>				// ceil function
 #include "common.h"				// common code
 
-TEST_CASE("test value encoder against value decoder") 
+
+TEST_CASE("test encoder code points")
+{
+	for (auto i(code_points_bgr.begin()); i!=code_points_bgr.end(); ++i)
+	{
+		cv::Vec3b bgr = hue_encode_value(i->first);
+		CHECK(bgr == i->second);
+	}
+}
+
+TEST_CASE("test decoder code points")
+{
+	for (auto i(code_points_bgr.begin()); i!=code_points_bgr.end(); ++i)
+	{
+		uint16_t decoded_value = hue_decode_value(i->second);
+		CHECK(decoded_value == i->first);
+	}
+}
+
+
+
+TEST_CASE("test value encoder against value decoder")
 {
 	for (uint16_t value=0; value<=HUE_ENCODER_MAX; value++)
 	{
@@ -17,7 +38,7 @@ TEST_CASE("test value encoder against value decoder")
 	}
 }
 
-TEST_CASE("test HueCodec encode against decode") 
+TEST_CASE("test HueCodec encode against decode")
 {	// Test encoder against decoder using synthetic depth data.
 
 	const int dmin = 0;
