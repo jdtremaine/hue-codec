@@ -1,6 +1,24 @@
 #include <opencv2/opencv.hpp>   // Include OpenCV API
+#include <fmt/core.h>
 
-void imshow_depth(const std::string& name, const cv::Mat& src, float depth_min_m=0.3f, float depth_max_m=10.0f, float depth_scale=0.001f, bool equalize=true)
+// Used by tests and validation
+// Note that these code points are in OpenCV-standard BGR format
+const std::vector<std::pair<uint16_t, cv::Vec3b>> code_points_bgr {
+	{    0, {   0,   0,   0}},
+	{    1, {   0,   0, 255}},
+	{  256, {   0, 255, 255}},
+	{  511, {   0, 255,   0}},
+	{  766, { 255, 255,   0}},
+	{ 1021, { 255,   0,   0}},
+	{ 1276, { 255,   0, 255}},
+};
+
+float minmax_clamp(float value, float lower, float upper)
+{
+	return std::max(lower, std::min(value, upper));
+}
+
+cv::Mat render_depth(const cv::Mat& src, float depth_min_m=0.3f, float depth_max_m=10.0f, float depth_scale=0.001f, bool equalize=true)
 {
 	// Scale the 16-bit depth range into an 8-bit grayscale image and then display it.
 	float depth_min_u = depth_min_m / depth_scale;
@@ -15,13 +33,21 @@ void imshow_depth(const std::string& name, const cv::Mat& src, float depth_min_m
 			float scaled = (d-depth_min_u) / (depth_max_u - depth_min_u);
 
 			uint16_t v = 0;
-			if (scaled > 0) v = 255 - round(255.0f * clamp(scaled, 0.0f, 1.0f));
+			if (scaled > 0) v = 255 - round(255.0f * minmax_clamp(scaled, 0.0f, 1.0f));
 			dst.at<uint8_t>(i, j) = v;
 		}
 	}
 
 	// Equalize the histogram for better intelligibility
 	if (equalize) equalizeHist(dst, dst);
+
+	return dst;
+}
+
+void imshow_depth(const std::string& name, const cv::Mat& src, float depth_min_m=0.3f, float depth_max_m=10.0f, float depth_scale=0.001f, bool equalize=true)
+{
+	// Scale the 16-bit depth range into an 8-bit grayscale image and then display it.
+	cv::Mat dst = render_depth(src, depth_min_m, depth_max_m, depth_scale, equalize);
 
 	// Display
 	cv::imshow(name, dst);
@@ -30,6 +56,7 @@ void imshow_depth(const std::string& name, const cv::Mat& src, float depth_min_m
 
 float psnr_depth(const cv::Mat& a, const cv::Mat& b, float depth_max_m, float depth_scale)
 {
+	// Calculate the Peak-Signal to Noise Ratio (PSNR) of a depth map
 	if (a.empty() || b.empty() || a.size() != b.size()) return -1.0f;
 	if (a.type() != CV_16U || b.type() != CV_16U) return -1.0f;
 
