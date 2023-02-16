@@ -117,7 +117,62 @@ TEST_CASE("test value encoder against corrected reference decoder")
 	}
 }
 
-TEST_CASE("test RealSense encoder compatibility using synthetic depth data") 
+TEST_CASE("test RealSense encoder code points")
+{
+	// This test uses synthetic frame data to directly test the RealSense encoder.
+	// Unfortunately, there are errors in the output of the RealSense hue encoder.
+	// Therefore this test does not actually test any values.
+	// Instead it shows the depth value, 
+	// and the RealSense ("RS") and code point ("CP") RGB values.
+
+	const float depth_scale = 0.001f;
+	const float depth_min_m = 0.0f;
+	const float depth_max_m = (HUE_ENCODER_MAX + 1) * depth_scale;
+	const int W = 1;
+	const int H = code_points_bgr.size();
+
+	RSEncoder rs(H, W, depth_min_m, depth_max_m, depth_scale);
+
+	// Create a Mat with the scaled depth code point values
+	cv::Mat depth_values(H, W, CV_16U, cv::Scalar(0));
+	for (auto i(code_points_bgr.begin()); i!=code_points_bgr.end(); ++i)
+	{
+		size_t index = i-code_points_bgr.begin();
+		depth_values.at<uint16_t>(index, 0) = i->first;
+	}
+
+	// Encode
+	cv::Mat bgr_values = rs.encode(depth_values);
+
+	fmt::print("\n{:->{}}", "-", 79);
+	fmt::print("\nComparing RealSense (\"RS\") and code point (\"CP\") RGB values...\n");
+	for (auto i(code_points_bgr.begin()); i!=code_points_bgr.end(); ++i)
+	{
+		// Get the code point value and bgr value
+		uint16_t  cpv = i->first;
+		cv::Vec3b cpc = i->second;
+
+		// The the RealSense bgr value
+		size_t index = i-code_points_bgr.begin();
+		cv::Vec3b rsc = bgr_values.at<cv::Vec3b>(index, 0);
+
+		// Output the matches and mismatches
+		if (rsc == cpc) fmt::print(fg(fmt::color::green),  "   match");
+		else            fmt::print(fg(fmt::color::yellow), "mismatch");
+		fmt::print(" for d = {:<4}  |  RS:", cpv);
+		if (rsc[2] != cpc[2]) fmt::print(fg(fmt::color::red), " {:03}", rsc[2]);
+		else fmt::print(" {:03}", rsc[2]);
+		if (rsc[1] != cpc[1]) fmt::print(fg(fmt::color::red), " {:03}", rsc[1]);
+		else fmt::print(" {:03}", rsc[1]);
+		if (rsc[0] != cpc[0]) fmt::print(fg(fmt::color::red), " {:03}", rsc[0]);
+		else fmt::print(" {:03}", rsc[0]);
+		if (rsc == cpc) fmt::print("  ==  ");
+		else fmt::print("  !=  ");
+		fmt::print("CP: {:03} {:03} {:03} \n", cpc[2], cpc[1], cpc[0]);
+	}
+}
+
+TEST_CASE("test RealSense encoder compatibility using synthetic depth data")
 {
 	// This test uses a synthetic RealSense sensor and synthetic frame data.
 	// This allows a direct comparison of the RealSense colorizer and the hue encoder.
@@ -144,6 +199,7 @@ TEST_CASE("test RealSense encoder compatibility using synthetic depth data")
 	cv::Mat hc_color = hc.encode(depth);
 
 	// Compare the two hue-encoded images
+	fmt::print("\n{:->{}}", "-", 79);
 	fmt::print("\nComparing RealSense (\"RS\") and hue codec (\"HC\") RGB values...\n");
 	for (int i=0; i<rs_color.rows; i++)
 	{
@@ -215,6 +271,7 @@ TEST_CASE("compare psnr using the reference sequence")
 	rs_psnr /= (float)sequence.size();
 	hc_psnr /= (float)sequence.size();
 
+	fmt::print("\n{:->{}}", "-", 79);
 	fmt::print("\nEncoder performance comparison on the reference sequence:\n\n");
 	fmt::print("RealSense   hue encoding and decoding mean PSNR:  {:>5.1f}\n", rs_psnr);
 	fmt::print("Hue Encoder hue encoding and decoding mean PSNR:  {:>5.1f}\n", hc_psnr);
