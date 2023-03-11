@@ -1,5 +1,4 @@
 #include <opencv2/opencv.hpp>   // Include OpenCV API
-#include <fmt/core.h>	      	// formatted terminal output
 
 // Encoding Scheme:
 //
@@ -46,7 +45,8 @@ float clamp(float value, float lower, float upper)
 }
 
 void hue_encode_value(uint16_t v, uint8_t& r, uint8_t& g, uint8_t& b)
-{	// Conversion from quantized depth value to RGB color
+{	// Conversion from a 16-bit unsigned integer value in the range of 0 to 1530
+	// to an RGB color
 
 	if      ( v==0   ) { r=0;      g=0;      b=0;      }
 	else if ( v< 256 ) { r=255;    g=v-1;    b=0;      }
@@ -59,14 +59,17 @@ void hue_encode_value(uint16_t v, uint8_t& r, uint8_t& g, uint8_t& b)
 }
 
 cv::Vec3b hue_encode_value(uint16_t v)
-{	// Note that this returns a value in OpenCV-compatible BGR format
+{	// Conversion from a 16-bit unsigned integer in the range of 0 to 1530
+	// and returns an OpenCV Vec3b (OpenCV BGR pixel value)
+	// Note that this Vec3b is in OpenCV-compatible BGR format
 	cv::Vec3b bgr;
 	hue_encode_value(v, bgr[2], bgr[1], bgr[0]);
 	return bgr;
 }
 
 uint16_t hue_decode_value(uint8_t r, uint8_t g, uint8_t b)
-{	// Conversion from RGB color to quantized depth value
+{	// Conversion from RGB color values
+	// to a quantized depth value in the range of 0 to 1530
 
 	if (b + g + r > 128)
 	{
@@ -82,7 +85,8 @@ uint16_t hue_decode_value(uint8_t r, uint8_t g, uint8_t b)
 }
 
 uint16_t hue_decode_value(const cv::Vec3b& bgr)
-{	// Note that this takes an input value in OpenCV-compatible BGR format
+{	// Conversion from an OpenCV Vec3b (OpenCV BGR pixel value)
+	// to a quantized depth value in the range of 0 to 1530
 	return hue_decode_value(bgr[2], bgr[1], bgr[0]);
 }
 
@@ -122,7 +126,15 @@ class HueCodec
 	float depth_scale() const { return m_depth_scale; }
 
 	void encode(const cv::Mat& src, cv::Mat& dst) const
-	{
+	{	// Convert from an OpenCV Mat of unsigned 16-bit integers
+		// to a 3-channel, 8-bit (BGR) hue-encoded OpenCV Mat.
+		// This function handles scaling of the input integer values from their
+		// existing values into the 0-1530 range required for encoding.
+		// Scaling is handled using m_depth_min_m, depth_max_m, and m_depth_scale
+		// values provided on object initialization.
+		//
+		// This function also handles inverse colorization if specified.
+
 		if (src.empty() || src.type() != CV_16U) return;
 
 		cv::Mat tmp; // Create a temporary matrix to hold the output.
@@ -163,7 +175,16 @@ class HueCodec
 
 
 	void decode(const cv::Mat& src, cv::Mat& dst) const
-	{
+	{	// Convert from a 3-channel, 8-bit (BGR) hue-encoded OpenCV Mat.
+		// to an OpenCV Mat of unsigned 16-bit integers
+		//
+		// Scaling is handled using m_depth_min_m, depth_max_m, and m_depth_scale
+		// values provided on object initialization.
+		// So long as these values are the same as were used for hue encoding,
+		// this function will scale the values back to their original.
+		//
+		// This function also handles inverse colorization if specified.
+
 		if (src.empty() || src.type() != CV_8UC3) return;
 
 		cv::Mat tmp; // Create a temporary matrix to hold the output.
@@ -211,3 +232,101 @@ class HueCodec
 	float m_depth_min_u, m_depth_max_u, m_depth_range_u;
 	std::vector<cv::Vec3b> m_enc_table;
 };
+
+uint16_t calc_median(std::vector<uint16_t>& vec)
+{	// Efficient calculation of the median value.
+	// Note that this calculates the median as if it's an odd-sized vector.
+	// A standard median calculation is not used to improve performance.
+	// Note that the input array will be modified as nth_element is used.
+
+	if (vec.size() < 3) return 0;
+
+	// Partial sort of the vector to determine the median value
+	size_t n = vec.size() / 2;
+	std::nth_element(vec.begin(), vec.begin()+n, vec.end());
+	return vec[n];
+}
+
+
+bool get_above_diff_threshold(uint16_t val, uint16_t median, float diff_threshold)
+{	// Check to see that the maximum value from the vector is higher than
+	// the diff_threshold (percentage difference)
+	float percent_difference = ((float)val - (float)median) / (float)median;
+
+	return percent_difference > diff_threshold;
+}
+
+
+void median_filter(cv::Mat& src, cv::Mat& dst, int kernel_size=2, float diff_threshold=0.0f)
+{
+	// Apply a median filter to the depth image
+	// This can be done as a postprocessing step to eliminate compression artefacts
+
+	// diff_threshold is a percentage in terms of (maximum value in kernel - median)/median
+	// This filter replaces values above the threshold with local median
+	// Note that a diff_treshold of 0 will filter all data.
+
+	// kernel_size is given in pixels
+	// The local median is the median value within a square surrounding the pixel.
+	// The square (aka kernel) has length 2*kernel_size+1
+
+	// If possible this filter will fill in zero areas with the local median value
+
+	if (src.empty() || src.type() != CV_16U) return;
+
+	if (kernel_size == 0)
+	{
+		dst = src;
+		return;
+	}
+
+	cv::Mat tmp; // Create a temporary matrix to hold the output.
+	if (dst.data != src.data) tmp = dst; // Use dst as tmp if it's not the same as src.
+	if (tmp.size() != src.size() || tmp.type() != CV_8UC3)
+	{	// Initialize tmp if necessary
+		tmp = cv::Mat(src.size(), CV_16U, cv::Scalar(0));
+	}
+
+	std::vector<unsigned short> target_kernel;
+	for (int i=kernel_size; i<src.rows-kernel_size; i++)
+	{
+		for (int j=kernel_size; j<src.cols-kernel_size; j++)
+		{
+			target_kernel.clear();
+			target_kernel.reserve(pow(2*kernel_size+1, 2));
+
+			for (int y=-kernel_size; y<kernel_size+1; y++)
+			{
+				for (int x=-kernel_size; x<kernel_size+1; x++)
+				{
+					uint16_t val = src.at<uint16_t>(i+y, j+x);
+					if (val != 0)
+					{
+						target_kernel.push_back(src.at<uint16_t>(i+y, j+x));
+					}
+				}
+			}
+
+			uint16_t median = calc_median(target_kernel);
+			uint16_t val = src.at<uint16_t>(i, j);
+
+			if (val == 0) tmp.at<uint16_t>(i, j) = median;
+			else
+			{
+				bool above_threshold = get_above_diff_threshold(val, median, diff_threshold);
+				if (above_threshold) tmp.at<uint16_t>(i, j) = median;
+				else tmp.at<uint16_t>(i, j) = val;
+			}
+		}
+	}
+
+	dst = tmp;
+}
+
+cv::Mat median_filter(cv::Mat& src, int kernel_size=1, float diff_threshold=0.02f)
+{	// Overloaded convenience function to return a Mat
+
+	cv::Mat dst;
+	median_filter(src, dst, kernel_size, diff_threshold);
+	return dst;
+}
