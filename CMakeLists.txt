@@ -41,3 +41,8 @@ target_link_libraries(benchmarks PRIVATE fmt::fmt)
 target_link_libraries(benchmarks PRIVATE doctest::doctest)
 target_link_libraries(benchmarks PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
 
+# Interactive Visualizers
+add_executable(interactive test/interactive.cpp)
+target_link_libraries(interactive PRIVATE fmt::fmt)
+target_link_libraries(interactive PRIVATE doctest::doctest)
+target_link_libraries(interactive PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
