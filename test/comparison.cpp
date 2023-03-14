@@ -9,6 +9,9 @@
 #include <fmt/color.h>							// formatted ANSI terminal output
 #include "../src/common.h"						// common code
 
+using namespace cv;
+using namespace std;
+
 class RSEncoder
 {	// A wrapper around the RealSense encoder using a software-only device
 	public:
@@ -26,7 +29,7 @@ class RSEncoder
 		m_color_map.set_option(RS2_OPTION_MIN_DISTANCE, depth_min_m);
 
 		auto depth_sensor = m_dev.add_sensor("Depth"); // Define a single depth sensor
-		mp_depth_sensor = std::make_unique<rs2::software_sensor>(depth_sensor);
+		mp_depth_sensor = make_unique<rs2::software_sensor>(depth_sensor);
 
 		rs2_intrinsics depth_intrinsics = {
 			m_width, m_height,
@@ -48,7 +51,7 @@ class RSEncoder
 	}
 
 
-	void encode(const cv::Mat& src, cv::Mat& dst)
+	void encode(const Mat& src, Mat& dst)
 	{
 		rs2_time_t timestamp = (rs2_time_t)m_frame_number * 16;
 		auto domain = RS2_TIMESTAMP_DOMAIN_HARDWARE_CLOCK;
@@ -71,18 +74,18 @@ class RSEncoder
 		rs2::frame m_frame_color = m_frame_depth.apply_filter(m_color_map);
 
 		// Create OpenCV matrix from the colorized depth data
-		dst = cv::Mat(m_height, m_width, CV_8UC3, (void*)m_frame_color.get_data());
+		dst = Mat(m_height, m_width, CV_8UC3, (void*)m_frame_color.get_data());
 
 		// Convert RealSense RGB colorized depth to OpenCV-standard BGR.
-		cv::cvtColor(dst, dst, cv::COLOR_RGB2BGR);
+		cvtColor(dst, dst, COLOR_RGB2BGR);
 
 		// Increment the frame number
 		m_frame_number++;
 	}
 
-	cv::Mat encode(const cv::Mat& src)
+	Mat encode(const Mat& src)
 	{
-		cv::Mat dst;
+		Mat dst;
 		encode(src, dst);
 		return dst;
 	}
@@ -91,17 +94,14 @@ class RSEncoder
 	private:
 	rs2::colorizer m_color_map;
 	rs2::software_device m_dev;				// software-only device
-	std::unique_ptr<rs2::software_sensor> mp_depth_sensor;	// software-only sensor
+	unique_ptr<rs2::software_sensor> mp_depth_sensor;	// software-only sensor
 	rs2::frame m_frame_depth, m_frame_color;
 	rs2::syncer m_sync;
 	rs2::stream_profile m_depth_stream;
 	int m_height, m_width;
 	float m_depth_scale;
-	bool m_inverted;
 	int m_frame_number;
 };
-
-
 
 
 TEST_CASE("test value encoder against corrected reference decoder")
@@ -110,7 +110,7 @@ TEST_CASE("test value encoder against corrected reference decoder")
 
 	for (uint16_t value=0; value<HUE_ENCODER_MAX; value++)
 	{
-		cv::Vec3b bgr = hue_encode_value(value);
+		Vec3b bgr = hue_encode_value(value);
 		uint16_t ref_decoded_value = RGBtoD(bgr[2], bgr[1], bgr[0]);
 
 		CHECK(value == ref_decoded_value);
@@ -134,7 +134,7 @@ TEST_CASE("test RealSense encoder code points")
 	RSEncoder rs(H, W, depth_min_m, depth_max_m, depth_scale);
 
 	// Create a Mat with the scaled depth code point values
-	cv::Mat depth_values(H, W, CV_16U, cv::Scalar(0));
+	Mat depth_values(H, W, CV_16U, Scalar(0));
 	for (auto i(code_points_bgr.begin()); i!=code_points_bgr.end(); ++i)
 	{
 		size_t index = i-code_points_bgr.begin();
@@ -142,7 +142,7 @@ TEST_CASE("test RealSense encoder code points")
 	}
 
 	// Encode
-	cv::Mat bgr_values = rs.encode(depth_values);
+	Mat bgr_values = rs.encode(depth_values);
 
 	fmt::print("\n{:->{}}", "-", 79);
 	fmt::print("\nComparing RealSense (\"RS\") and code point (\"CP\") RGB values...\n");
@@ -150,11 +150,11 @@ TEST_CASE("test RealSense encoder code points")
 	{
 		// Get the code point value and bgr value
 		uint16_t  cpv = i->first;
-		cv::Vec3b cpc = i->second;
+		Vec3b cpc = i->second;
 
 		// The the RealSense bgr value
 		size_t index = i-code_points_bgr.begin();
-		cv::Vec3b rsc = bgr_values.at<cv::Vec3b>(index, 0);
+		Vec3b rsc = bgr_values.at<Vec3b>(index, 0);
 
 		// Output the matches and mismatches
 		if (rsc == cpc) fmt::print(fg(fmt::color::green),  "   match");
@@ -188,15 +188,15 @@ TEST_CASE("test RealSense encoder compatibility using synthetic depth data")
 	int H = 40;	// (y)
 
 	// Create Mat with values from 0 to 1600 (max encoding value is 1530)
-	cv::Mat depth = generate_synthetic_depth(W, H, 0, W*H, 1.0f);
+	Mat depth = generate_synthetic_depth(W, H, 0, W*H, 1.0f);
 
 	// Use the RealSense SDK encoder to hue-encode the depth data
 	RSEncoder rs(H, W, depth_min_m, depth_max_m, depth_scale);
-	cv::Mat rs_color = rs.encode(depth);
+	Mat rs_color = rs.encode(depth);
 
 	// Use hue encoder to hue-encode the depth data
 	HueCodec hc(depth_min_m, depth_max_m, depth_scale, false); // Initialize the hue codec
-	cv::Mat hc_color = hc.encode(depth);
+	Mat hc_color = hc.encode(depth);
 
 	// Compare the two hue-encoded images
 	fmt::print("\n{:->{}}", "-", 79);
@@ -209,8 +209,8 @@ TEST_CASE("test RealSense encoder compatibility using synthetic depth data")
 
 			if (d < HUE_ENCODER_MAX + 2)
 			{
-				auto rsc = rs_color.at<cv::Vec3b>(i, j);
-				auto hcc = hc_color.at<cv::Vec3b>(i, j);
+				auto rsc = rs_color.at<Vec3b>(i, j);
+				auto hcc = hc_color.at<Vec3b>(i, j);
 
 				// Output the matches and mismatches
 				if (rsc == hcc) fmt::print(fg(fmt::color::green),  "   match");
@@ -233,12 +233,12 @@ TEST_CASE("test RealSense encoder compatibility using synthetic depth data")
 
 TEST_CASE("compare psnr using the reference sequence")
 {
-	auto depth_min_m =  0.3f;
-	auto depth_max_m = 6.1f;
+	float depth_min_m = 0.8f;
+	float depth_max_m = 5.8f;
 	float depth_scale = 0.001f;
 
 	// Load the reference sequence
-	std::vector<cv::Mat> sequence;
+	vector<Mat> sequence;
 	load_reference_sequence(sequence);
 
 	RSEncoder rs(sequence.back().rows, sequence.back().cols, depth_min_m, depth_max_m, depth_scale);
@@ -249,19 +249,19 @@ TEST_CASE("compare psnr using the reference sequence")
 	for (auto i(sequence.begin()); i!=sequence.end(); ++i)
 	{
 		// Use the RealSense SDK encoder to hue-encode the depth data
-		cv::Mat rs_color = rs.encode(*i);
+		Mat rs_color = rs.encode(*i);
 
 		// Use hue encoder to hue-encode the depth data
-		cv::Mat hc_color = hc.encode(*i);
+		Mat hc_color = hc.encode(*i);
 
 		// Compare the PSNR of each.
-		cv::Mat rs_decoded = hc.decode(rs_color);
-		cv::Mat hc_decoded = hc.decode(hc_color);
+		Mat rs_decoded = hc.decode(rs_color);
+		Mat hc_decoded = hc.decode(hc_color);
 
 		// Uncomment below for frame-by-frame visual comparison
 		// imshow_depth("rs", rs_decoded);
 		// imshow_depth("hc", rs_decoded);
-		// cv::waitKey(0);
+		// waitKey(0);
 
 		rs_psnr += psnr_depth(*i, rs_decoded, depth_max_m, depth_scale);
 		hc_psnr += psnr_depth(*i, hc_decoded, depth_max_m, depth_scale);

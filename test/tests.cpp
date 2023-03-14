@@ -6,12 +6,13 @@
 #include <cmath>				// ceil function
 #include "../src/common.h"		// common code
 
+using namespace cv;
 
 TEST_CASE("test encoder code points")
 {
 	for (auto i(code_points_bgr.begin()); i!=code_points_bgr.end(); ++i)
 	{
-		cv::Vec3b bgr = hue_encode_value(i->first);
+		Vec3b bgr = hue_encode_value(i->first);
 		CHECK(bgr == i->second);
 	}
 }
@@ -31,7 +32,7 @@ TEST_CASE("test value encoder against value decoder")
 {
 	for (uint16_t value=0; value<=HUE_ENCODER_MAX; value++)
 	{
-		cv::Vec3b bgr = hue_encode_value(value);
+		Vec3b bgr = hue_encode_value(value);
 		uint16_t decoded_value = hue_decode_value(bgr);
 
 		CHECK(value == decoded_value);
@@ -47,10 +48,10 @@ TEST_CASE("test HueCodec encode against decode")
 
 	// Create Mat with values from 0 to max encoding value
 	const int dim = ceil(sqrt(dmax));
-	cv::Mat depth = generate_synthetic_depth(dim, dim, 0, HUE_ENCODER_MAX+1);
+	Mat depth = generate_synthetic_depth(dim, dim, 0, HUE_ENCODER_MAX+1);
 
 	// Hue-encode and hue-decode the synthetic depth data
-	cv::Mat decoded = codec.decode(codec.encode(depth));
+	Mat decoded = codec.decode(codec.encode(depth));
 	for (int i=0; i<depth.rows; i++)
 	{
 		for (int j=0; j<depth.cols; j++)

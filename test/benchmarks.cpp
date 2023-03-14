@@ -16,6 +16,9 @@
 // As discussed in the Intel whitepaper, PSNR is not a good measure of fidelity for the inverse colorization method.
 // This is because its depth quantization error increases quadratically with increasing depth.
 
+using namespace cv;
+using namespace std;
+
 struct Performance
 {
 	float psnr;		// peak signal-to-noise ratio
@@ -34,11 +37,11 @@ struct Performance
 
 
 
-Performance image_format_benchmark(const HueCodec& codec, const cv::Mat& depth, const std::string& file_extension, const std::vector<int>& params)
+Performance image_format_benchmark(const HueCodec& codec, const Mat& depth, const string& file_extension, const vector<int>& params)
 {
-	using namespace std::chrono;
-	std::vector<uchar> compressed;
-	cv::Mat encoded, decompressed, decoded;
+	using namespace chrono;
+	vector<uchar> compressed;
+	Mat encoded, decompressed, decoded;
 
 	auto t1 = high_resolution_clock::now();
 
@@ -50,7 +53,7 @@ Performance image_format_benchmark(const HueCodec& codec, const cv::Mat& depth, 
 	// Compress the hue-encoded image to a buffer with an image format
 	if (file_extension != "")
 	{
-		cv::imencode("." + file_extension, encoded, compressed, params);
+		imencode("." + file_extension, encoded, compressed, params);
 	}
 
 	auto t3 = high_resolution_clock::now();
@@ -58,7 +61,7 @@ Performance image_format_benchmark(const HueCodec& codec, const cv::Mat& depth, 
 	// Decompress the hue-encoded image from the buffer
 	if (file_extension != "")
 	{
-		decompressed = cv::imdecode(compressed, cv::IMREAD_COLOR);
+		decompressed = imdecode(compressed, IMREAD_COLOR);
 	}
 
 	auto t4 = high_resolution_clock::now();
@@ -91,11 +94,11 @@ Performance image_format_benchmark(const HueCodec& codec, const cv::Mat& depth, 
 	return Performance{psnr, osize, csize, time_he, time_co, time_de, time_hd};
 }
 
-void output_image_format_benchmark(const HueCodec& codec, const cv::Mat& depth, std::string name, std::string ext, int param_flag, int qmin, int qmax, int qstep)
+void output_image_format_benchmark(const HueCodec& codec, const Mat& depth, string name, string ext, int param_flag, int qmin, int qmax, int qstep)
 {
 	for (int i=qmin; i!=qmax+qstep; i+=qstep)
 	{
-		std::vector<int> params { param_flag, i };
+		vector<int> params { param_flag, i };
 		auto perf = image_format_benchmark(codec, depth, ext, params);
 		fmt::print("Hue-encoded {:5}(Q={:>03}) | PSNR: {:5.1f} | CR: {:5.1f} | save: {:>3}ms | load: {:>2}ms\n", name, i, perf.psnr, perf.cr(), perf.time_save(), perf.time_load());
 	}
@@ -103,35 +106,35 @@ void output_image_format_benchmark(const HueCodec& codec, const cv::Mat& depth, 
 
 TEST_CASE("image psnr test")
 {
-	const float depth_min_m = 0.3f;
-	const float depth_max_m = 6.2f;
+	const float depth_min_m = 2.2f;
+	const float depth_max_m = 7.2f;
 	const float depth_scale = HUE_MM_SCALE;
 	HueCodec codec(depth_min_m, depth_max_m, depth_scale, false);
 
-	cv::Mat depth = imread("../data/ref/room.png", cv::IMREAD_ANYDEPTH);
+	Mat depth = imread("../data/ref/room.png", IMREAD_ANYDEPTH);
 
 	fmt::print("\n{:-<{}}\n", "Image encoding benchmarks on room reference depth map", 80);
 
 	// Test encoding and decoding only
-	Performance perf = image_format_benchmark(codec, depth, "", std::vector<int>());
+	Performance perf = image_format_benchmark(codec, depth, "", vector<int>());
 	fmt::print("Hue encoding only        | PSNR: {:5.1f} | CR: {:5.1f} | save: {:>3}ms | load: {:>2}ms\n", perf.psnr, 1.0f, perf.time_save(), perf.time_load());
 
 	// Test encoding, image format compression, and decoding
-	output_image_format_benchmark(codec, depth, "PNG",  "png",  cv::IMWRITE_PNG_COMPRESSION, 10,   1, -1);
-	output_image_format_benchmark(codec, depth, "JPEG", "jpg",  cv::IMWRITE_JPEG_QUALITY,     0, 100, 10);
-	output_image_format_benchmark(codec, depth, "WebP", "webp", cv::IMWRITE_WEBP_QUALITY,     0, 100, 10);
+	output_image_format_benchmark(codec, depth, "PNG",  "png",  IMWRITE_PNG_COMPRESSION, 10,   1, -1);
+	output_image_format_benchmark(codec, depth, "JPEG", "jpg",  IMWRITE_JPEG_QUALITY,     0, 100, 10);
+	output_image_format_benchmark(codec, depth, "WebP", "webp", IMWRITE_WEBP_QUALITY,     0, 100, 10);
 }
 
-Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::Mat>& sequence, const std::string& ext, const std::string& fourcc, int api_preference=cv::CAP_FFMPEG)
+Performance video_format_benchmark(const HueCodec& codec, const vector<Mat>& sequence, const string& ext, const string& fourcc, int api_preference=CAP_FFMPEG)
 {
-	using namespace std::chrono;
-	cv::VideoWriter vwriter;
-	const std::string video_path = "test_" + fourcc + "." + ext;
+	using namespace chrono;
+	VideoWriter vwriter;
+	const string video_path = "test_" + fourcc + "." + ext;
 
 	// Initialize the video writer and video file
 	if (fourcc != "")
 	{
-		int video_codec = cv::VideoWriter::fourcc(fourcc[0], fourcc[1], fourcc[2], fourcc[3]);
+		int video_codec = VideoWriter::fourcc(fourcc[0], fourcc[1], fourcc[2], fourcc[3]);
 		vwriter.open(video_path, api_preference, video_codec, 30, sequence.back().size());
 		if (!vwriter.isOpened())
 		{
@@ -143,7 +146,7 @@ Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 	auto t1 = high_resolution_clock::now();
 
 	// Hue-encode the data
-	std::vector<cv::Mat> encoded;
+	vector<Mat> encoded;
 	for (size_t i=0; i<sequence.size(); i++)
 	{
 		encoded.push_back(codec.encode(sequence[i]));
@@ -162,7 +165,7 @@ Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 
 	auto t3 = high_resolution_clock::now();
 
-	cv::VideoCapture vreader;
+	VideoCapture vreader;
 	if (fourcc != "")
 	{
 		vwriter.release();
@@ -177,13 +180,13 @@ Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 	auto t4 = high_resolution_clock::now();
 
 	// Decompress the video
-	std::vector<cv::Mat> decompressed;
+	vector<Mat> decompressed;
 	if (fourcc != "")
 	{
 		for (size_t i=0; i<sequence.size(); i++)
 		{
 			// Compare each video frame to the original sequence frame
-			cv::Mat frame;
+			Mat frame;
 			vreader.read(frame);
 			decompressed.push_back(frame);
 		}
@@ -192,9 +195,9 @@ Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 	auto t5 = high_resolution_clock::now();
 
 	// Decode the video and get the cumulative psnr
-	cv::Mat decoded;
+	Mat decoded;
 	float cum_psnr = 0.0f;
-	std::vector<cv::Mat>* p_encoded_data;
+	vector<Mat>* p_encoded_data;
 	if (fourcc != "")
 	{
 		p_encoded_data = &decompressed;
@@ -221,8 +224,8 @@ Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 	int csize = 0;
 	if (fourcc != "")
 	{
-		std::ifstream ifs(video_path, std::ios_base::binary);
-		ifs.seekg(0, std::ios::end);
+		ifstream ifs(video_path, ios_base::binary);
+		ifs.seekg(0, ios::end);
 		csize = ifs.tellg();
 	}
 
@@ -233,12 +236,12 @@ Performance video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 	int time_hd = duration_cast<milliseconds>(t6-t5).count();	// hue decode
 
 	// Delete the video file.
-	std::remove(video_path.c_str());
+	remove(video_path.c_str());
 
 	return Performance{mean_psnr, osize, csize, time_he, time_co, time_de, time_hd};
 }
 
-void output_video_format_benchmark(const HueCodec& codec, const std::vector<cv::Mat>& sequence, const std::string& ext, const std::string& fourcc, int api_preference=cv::CAP_FFMPEG)
+void output_video_format_benchmark(const HueCodec& codec, const vector<Mat>& sequence, const string& ext, const string& fourcc, int api_preference=CAP_FFMPEG)
 {
 	auto perf = video_format_benchmark(codec, sequence, ext, fourcc, api_preference);
 	fmt::print("Hue-encoded {:<4}/{:<3} | mean PSNR: {:4.1f} | CR: {:>5.1f} | save: {:>3}ms | load: {:>2}ms\n", fourcc, ext, perf.psnr, perf.cr(), perf.time_save(), perf.time_load());
@@ -246,13 +249,13 @@ void output_video_format_benchmark(const HueCodec& codec, const std::vector<cv::
 
 TEST_CASE("video psnr test")
 {
-	const float depth_min_m = 0.3f;
-	const float depth_max_m = 6.2f;
+	const float depth_min_m = 0.8f;
+	const float depth_max_m = 5.8f;
 	const float depth_scale = HUE_MM_SCALE;
 	HueCodec codec(depth_min_m, depth_max_m, depth_scale, false);
 
 	// Load the reference sequence
-	std::vector<cv::Mat> sequence;
+	vector<Mat> sequence;
 	load_reference_sequence(sequence);
 
 	fmt::print("\n{:-<{}}\n", "Video encoding benchmarks ", 80);
