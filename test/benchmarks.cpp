@@ -8,7 +8,7 @@
 #include <ios>				  				// for std::ios_base::bin
 #include <opencv2/core/utils/logger.hpp>  	// OpenCV logging controls
 #include <opencv2/videoio.hpp>		  		// OpenCV Video input/output
-#include "common.h"  						// common code
+#include "../src/common.h"  				// common code
 
 // All benchmarks use the Peak Signal-to-Noise Ratio (PSNR) as a measure of fidelity/loss.
 // [https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio]

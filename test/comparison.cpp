@@ -7,7 +7,7 @@
 #include <memory>								// shared_ptr
 #include <fmt/core.h>							// formatted terminal output
 #include <fmt/color.h>							// formatted ANSI terminal output
-#include "common.h"								// common code
+#include "../src/common.h"						// common code
 
 class RSEncoder
 {	// A wrapper around the RealSense encoder using a software-only device

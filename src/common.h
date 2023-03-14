@@ -1,5 +1,4 @@
 #include <opencv2/opencv.hpp>   // Include OpenCV API
-#include <fmt/core.h>
 
 // Used by tests and validation
 // Note that these code points are in OpenCV-standard BGR format
@@ -73,8 +72,6 @@ float psnr_depth(const cv::Mat& a, const cv::Mat& b, float depth_max_m, float de
 			int aval = a.at<uint16_t>(i, j);
 			int bval = b.at<uint16_t>(i, j);
 
-			//fmt::print("{:>5}, {:>5} | a: {:>7}, b: {:>7}\n", i, j, aval, bval);
-
 			if (aval < max_i && bval < max_i)
 			{	// Only consider values below max_i
 				int diff = aval - bval;
@@ -113,11 +110,12 @@ void load_reference_sequence(std::vector<cv::Mat>& sequence, std::string seq_pat
 {
 	// Read the sequence into memory
 	sequence.clear();
-	std::string frame_path_template = seq_path + "frame_{:>05}.png";
 	const int frame_count = 26;
 	for (int i=0; i<frame_count; i++)
 	{
-		std::string path = fmt::format(frame_path_template, i);
+		std::stringstream ss_path;
+		ss_path << "frame_" << std::setfill('0') << std::setw(5) << i << ".png";
+		std::string path = seq_path + ss_path.str();
 		sequence.push_back( imread(path, cv::IMREAD_ANYDEPTH) );
 	}
 }

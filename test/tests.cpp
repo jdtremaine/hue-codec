@@ -4,7 +4,7 @@
 #include <fmt/color.h>	      	// formatted ANSI terminal output
 #include <hue_codec.h>	      	// The header-only hue codec
 #include <cmath>				// ceil function
-#include "common.h"				// common code
+#include "../src/common.h"		// common code
 
 
 TEST_CASE("test encoder code points")
