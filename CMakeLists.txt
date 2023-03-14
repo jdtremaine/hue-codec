@@ -17,6 +17,9 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 project(hue_codec CXX)
 include_directories(./include)
 
+# Build compile_commands.json for clang tools
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 find_package(fmt CONFIG REQUIRED)
 find_package(doctest CONFIG REQUIRED)
 find_package(OpenCV CONFIG REQUIRED)
@@ -46,3 +49,17 @@ add_executable(interactive test/interactive.cpp)
 target_link_libraries(interactive PRIVATE fmt::fmt)
 target_link_libraries(interactive PRIVATE doctest::doctest)
 target_link_libraries(interactive PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
+
+# Example - depth frame
+add_executable(example_frame src/example_frame.cpp)
+target_link_libraries(example_frame PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
+
+# Example - depth sequence
+add_executable(example_sequence src/example_sequence.cpp)
+target_link_libraries(example_sequence PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
+
+# Example - depth sensor
+add_executable(example_sensor src/example_sensor.cpp)
+target_link_libraries(example_sensor PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
+target_link_libraries(example_sensor PRIVATE realsense2::realsense2)
+
