@@ -1,5 +1,5 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-BIN_DIR=$(realpath $SCRIPT_DIR/../bin)
+BIN_DIR=$(realpath $SCRIPT_DIR/../../bin)
 mkdir -p $BIN_DIR
 BUILD_DIR=$(realpath $SCRIPT_DIR/../../build)
 mkdir -p $BUILD_DIR

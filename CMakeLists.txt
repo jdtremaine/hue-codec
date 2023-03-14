@@ -28,10 +28,10 @@ target_link_libraries(tests PRIVATE fmt::fmt)
 target_link_libraries(tests PRIVATE doctest::doctest)
 target_link_libraries(tests PRIVATE ${OpenCV_LIBS})
 
-# Validation against RealSense encoder and reference decoder
-add_executable(validation test/validation.cpp)
-target_link_libraries(validation PRIVATE fmt::fmt)
-target_link_libraries(validation PRIVATE doctest::doctest)
-target_link_libraries(validation PRIVATE opencv_core opencv_imgproc opencv_highgui)
-target_link_libraries(validation PRIVATE realsense2::realsense2)
+# Comparison to RealSense encoder and reference decoder
+add_executable(comparison test/comparison.cpp)
+target_link_libraries(comparison PRIVATE fmt::fmt)
+target_link_libraries(comparison PRIVATE doctest::doctest)
+target_link_libraries(comparison PRIVATE opencv_core opencv_imgproc opencv_highgui)
+target_link_libraries(comparison PRIVATE realsense2::realsense2)
 
