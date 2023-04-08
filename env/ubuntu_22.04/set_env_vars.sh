@@ -29,5 +29,9 @@ else
 	echo "Setting CMake executable output directory to $BIN_DIR..."
 	export CMAKE_RUNTIME_OUTPUT_DIRECTORY=$BIN_DIR
 
+	echo "Setting CUDA paths..."
+	export CUDA_PATH="/usr/local/cuda"
+	export CUDA_BIN_PATH="/usr/local/cuda/bin"
+
 	echo "Environment variables set."
 fi

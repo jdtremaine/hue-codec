@@ -18,23 +18,23 @@
 			[
 				"cuda"
 			]
-		},
+		}
+	],
+	"$disabled_dependencies":
+	[
+		"realsense2",
 		{
 			"name": "ffmpeg",
 			"features":
 			[
 				"vpx",
-				"x265",
-				"nvcodec"
+				"x264",
+				"x265"
 			],
 			"$disabled_features":
 			[
-				"x264"
+				"nvcodec"
 			]
 		}
-	],
-	"$disabled_dependencies":
-	[
-		"realsense2"
 	]
 }

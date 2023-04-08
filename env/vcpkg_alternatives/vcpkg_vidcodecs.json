@@ -5,6 +5,7 @@
 	[
 		"doctest",
 		"fmt",
+		"realsense2",
 		{
 			"name": "opencv",
 			"features":
@@ -13,10 +14,6 @@
 				"png",
 				"webp",
 				"ffmpeg"
-			],
-			"$disabled_features":
-			[
-				"cuda"
 			]
 		},
 		{
@@ -24,17 +21,9 @@
 			"features":
 			[
 				"vpx",
-				"x265",
-				"nvcodec"
-			],
-			"$disabled_features":
-			[
-				"x264"
+				"x264",
+				"x265"
 			]
 		}
-	],
-	"$disabled_dependencies":
-	[
-		"realsense2"
 	]
 }
