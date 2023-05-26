@@ -106,7 +106,7 @@ cv::Mat generate_synthetic_depth(int w, int h, float vmin, float vmax, float inc
 	return data;
 }
 
-void load_reference_sequence(std::vector<cv::Mat>& sequence, std::string seq_path="../data/seq/")
+void load_reference_sequence(std::string seq_path, std::vector<cv::Mat>& sequence)
 {
 	// Read the sequence into memory
 	sequence.clear();

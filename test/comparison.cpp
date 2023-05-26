@@ -239,7 +239,7 @@ TEST_CASE("compare psnr using the reference sequence")
 
 	// Load the reference sequence
 	vector<Mat> sequence;
-	load_reference_sequence(sequence);
+	load_reference_sequence("../data/seq/", sequence);
 
 	RSEncoder rs(sequence.back().rows, sequence.back().cols, depth_min_m, depth_max_m, depth_scale);
 	HueCodec hc(depth_min_m, depth_max_m, depth_scale, false);

@@ -22,7 +22,7 @@ TEST_CASE("reference sequence viewer")
 
 	// Load the reference sequence
 	vector<Mat> sequence;
-	load_reference_sequence(sequence);
+	load_reference_sequence("../data/seq/", sequence);
 
 	fmt::print("This tool provides an interactive visualization of the hue encoding\n"); 
 	fmt::print("by looping over the reference sequence.\n\n"); 
@@ -75,7 +75,7 @@ TEST_CASE("median filter visualizer")
 
 	// Load the reference sequence
 	vector<Mat> sequence;
-	load_reference_sequence(sequence);
+	load_reference_sequence("../data/seq/", sequence);
 
 	// Reference sequence depth parameters
 	float dmin_m =  0.9f;

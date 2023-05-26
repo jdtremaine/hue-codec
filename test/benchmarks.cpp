@@ -256,7 +256,7 @@ TEST_CASE("video psnr test")
 
 	// Load the reference sequence
 	vector<Mat> sequence;
-	load_reference_sequence(sequence);
+	load_reference_sequence("../data/seq/", sequence);
 
 	fmt::print("\n{:-<{}}\n", "Video encoding benchmarks ", 80);
 

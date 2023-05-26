@@ -11,7 +11,7 @@ int main()
 {
 	// Load the reference sequence
 	vector<Mat> sequence;
-	load_reference_sequence(sequence);
+	load_reference_sequence("../data/seq/", sequence);
 
 	// Initialize the hue codec
 	float dmin_m = 0.9f;
