@@ -163,6 +163,8 @@ The hue encoding scheme is as follows:
 |        1276 | 255    | 0      | 255    | blue + red = purple        |
 | 1277 - 1530 | 255    | 0      | 1531-v | red with blue descending   |
 
+A full mapping of values to RGB values is included in [docs/full\_mapping.csv](/docs/full_mapping.csv).
+
 
 # Comparison to the RealSense encoder and decoder
 This implementation's encoding scheme matches the 1531-point encoding scheme described in the Intel whitepaper, adding a zero value mapping to an all-black RGB value as in the RealSense hue encoder.
