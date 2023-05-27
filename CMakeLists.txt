@@ -10,39 +10,33 @@ if (DEFINED ENV{CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY $ENV{CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 endif()
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -std=c++14")
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+project(hue-codec CXX)
 
-project(hue_codec CXX)
+# Linux-specific compiler flags
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+	message(STATUS "Linux flags")
+
+	# Linux compiler flags
+	set(CMAKE_CXX_FLAGS "-Wall -Wextra -std=c++14")
+	set(CMAKE_CXX_FLAGS_DEBUG "-g")
+	set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
+	# Build compile_commands.json for clang tools
+	set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+endif()
+
 include_directories(./include)
-
-# Build compile_commands.json for clang tools
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(fmt CONFIG REQUIRED)
 find_package(doctest CONFIG REQUIRED)
 find_package(OpenCV CONFIG REQUIRED)
-find_package(realsense2 CONFIG REQUIRED)
+find_package(realsense2 CONFIG)
 
 # Tests
 add_executable(tests test/tests.cpp)
 target_link_libraries(tests PRIVATE fmt::fmt)
 target_link_libraries(tests PRIVATE doctest::doctest)
 target_link_libraries(tests PRIVATE ${OpenCV_LIBS})
-
-# Comparison to RealSense encoder and reference decoder
-add_executable(comparison test/comparison.cpp)
-target_link_libraries(comparison PRIVATE fmt::fmt)
-target_link_libraries(comparison PRIVATE doctest::doctest)
-target_link_libraries(comparison PRIVATE opencv_core opencv_imgproc opencv_highgui)
-target_link_libraries(comparison PRIVATE realsense2::realsense2)
-
-# Benchmarks
-add_executable(benchmarks test/benchmarks.cpp)
-target_link_libraries(benchmarks PRIVATE fmt::fmt)
-target_link_libraries(benchmarks PRIVATE doctest::doctest)
-target_link_libraries(benchmarks PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
 
 # Interactive Visualizers
 add_executable(interactive test/interactive.cpp)
@@ -58,8 +52,22 @@ target_link_libraries(example_frame PRIVATE opencv_core opencv_imgproc opencv_hi
 add_executable(example_sequence src/example_sequence.cpp)
 target_link_libraries(example_sequence PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
 
-# Example - depth sensor
-add_executable(example_sensor src/example_sensor.cpp)
-target_link_libraries(example_sensor PRIVATE opencv_core opencv_imgproc opencv_highgui opencv_videoio)
-target_link_libraries(example_sensor PRIVATE realsense2::realsense2)
+# Benchmarks (to run all benchmarks ffmpeg, codecs, and cuda must be installed )
+add_executable(benchmarks test/benchmarks.cpp)
+target_link_libraries(benchmarks PRIVATE fmt::fmt)
+target_link_libraries(benchmarks PRIVATE doctest::doctest)
+target_link_libraries(benchmarks PRIVATE ${OpenCV_LIBS})
 
+if(RealSense2_FOUND OR realsense2_FOUND)
+	# Example - depth sensor (requires realsense2 library)
+	add_executable(example_sensor src/example_sensor.cpp)
+	target_link_libraries(example_sensor PRIVATE ${OpenCV_LIBS})
+	target_link_libraries(example_sensor PRIVATE realsense2::realsense2)
+
+	# Comparison to RealSense encoder and reference decoder (requires realsense2 library)
+	add_executable(comparison test/comparison.cpp)
+	target_link_libraries(comparison PRIVATE fmt::fmt)
+	target_link_libraries(comparison PRIVATE doctest::doctest)
+	target_link_libraries(comparison PRIVATE ${OpenCV_LIBS})
+	target_link_libraries(comparison PRIVATE realsense2::realsense2)
+endif()
