@@ -1,0 +1,1552 @@
+-------------------------------------------------------------------------------
+Comparing RealSense ("RS") and code point ("CP") RGB values...
+   match for d = 0     |  RS: 000 000 000  ==  CP: 000 000 000
+   match for d = 1     |  RS: 255 000 000  ==  CP: 255 000 000
+mismatch for d = 256   |  RS: 254 254 000  !=  CP: 255 255 000
+   match for d = 511   |  RS: 000 255 000  ==  CP: 000 255 000
+mismatch for d = 766   |  RS: 000 254 255  !=  CP: 000 255 255
+   match for d = 1021  |  RS: 000 000 255  ==  CP: 000 000 255
+mismatch for d = 1276  |  RS: 254 000 255  !=  CP: 255 000 255
+
+-------------------------------------------------------------------------------
+Comparing RealSense ("RS") and hue codec ("HC") RGB values...
+   match for d = 0     |  RS: 000 000 000  ==  HC: 000 000 000
+   match for d = 1     |  RS: 255 000 000  ==  HC: 255 000 000
+   match for d = 2     |  RS: 255 001 000  ==  HC: 255 001 000
+   match for d = 3     |  RS: 255 002 000  ==  HC: 255 002 000
+   match for d = 4     |  RS: 255 003 000  ==  HC: 255 003 000
+   match for d = 5     |  RS: 255 004 000  ==  HC: 255 004 000
+   match for d = 6     |  RS: 255 005 000  ==  HC: 255 005 000
+mismatch for d = 7     |  RS: 254 006 000  !=  HC: 255 006 000
+   match for d = 8     |  RS: 255 007 000  ==  HC: 255 007 000
+   match for d = 9     |  RS: 255 008 000  ==  HC: 255 008 000
+   match for d = 10    |  RS: 255 009 000  ==  HC: 255 009 000
+   match for d = 11    |  RS: 255 010 000  ==  HC: 255 010 000
+   match for d = 12    |  RS: 255 011 000  ==  HC: 255 011 000
+   match for d = 13    |  RS: 255 012 000  ==  HC: 255 012 000
+   match for d = 14    |  RS: 255 013 000  ==  HC: 255 013 000
+   match for d = 15    |  RS: 255 014 000  ==  HC: 255 014 000
+mismatch for d = 16    |  RS: 254 015 000  !=  HC: 255 015 000
+   match for d = 17    |  RS: 255 016 000  ==  HC: 255 016 000
+mismatch for d = 18    |  RS: 254 017 000  !=  HC: 255 017 000
+   match for d = 19    |  RS: 255 018 000  ==  HC: 255 018 000
+   match for d = 20    |  RS: 255 019 000  ==  HC: 255 019 000
+   match for d = 21    |  RS: 255 020 000  ==  HC: 255 020 000
+   match for d = 22    |  RS: 255 021 000  ==  HC: 255 021 000
+   match for d = 23    |  RS: 255 022 000  ==  HC: 255 022 000
+   match for d = 24    |  RS: 255 023 000  ==  HC: 255 023 000
+   match for d = 25    |  RS: 255 024 000  ==  HC: 255 024 000
+   match for d = 26    |  RS: 255 025 000  ==  HC: 255 025 000
+mismatch for d = 27    |  RS: 254 026 000  !=  HC: 255 026 000
+   match for d = 28    |  RS: 255 027 000  ==  HC: 255 027 000
+   match for d = 29    |  RS: 255 028 000  ==  HC: 255 028 000
+   match for d = 30    |  RS: 255 029 000  ==  HC: 255 029 000
+   match for d = 31    |  RS: 255 030 000  ==  HC: 255 030 000
+   match for d = 32    |  RS: 255 031 000  ==  HC: 255 031 000
+   match for d = 33    |  RS: 255 032 000  ==  HC: 255 032 000
+   match for d = 34    |  RS: 255 033 000  ==  HC: 255 033 000
+   match for d = 35    |  RS: 255 034 000  ==  HC: 255 034 000
+   match for d = 36    |  RS: 255 035 000  ==  HC: 255 035 000
+   match for d = 37    |  RS: 255 036 000  ==  HC: 255 036 000
+   match for d = 38    |  RS: 255 037 000  ==  HC: 255 037 000
+   match for d = 39    |  RS: 255 038 000  ==  HC: 255 038 000
+   match for d = 40    |  RS: 255 039 000  ==  HC: 255 039 000
+   match for d = 41    |  RS: 255 040 000  ==  HC: 255 040 000
+   match for d = 42    |  RS: 255 041 000  ==  HC: 255 041 000
+   match for d = 43    |  RS: 255 042 000  ==  HC: 255 042 000
+   match for d = 44    |  RS: 255 043 000  ==  HC: 255 043 000
+   match for d = 45    |  RS: 255 044 000  ==  HC: 255 044 000
+mismatch for d = 46    |  RS: 254 045 000  !=  HC: 255 045 000
+   match for d = 47    |  RS: 255 046 000  ==  HC: 255 046 000
+   match for d = 48    |  RS: 255 047 000  ==  HC: 255 047 000
+   match for d = 49    |  RS: 255 048 000  ==  HC: 255 048 000
+   match for d = 50    |  RS: 255 049 000  ==  HC: 255 049 000
+   match for d = 51    |  RS: 255 050 000  ==  HC: 255 050 000
+   match for d = 52    |  RS: 255 051 000  ==  HC: 255 051 000
+   match for d = 53    |  RS: 255 052 000  ==  HC: 255 052 000
+   match for d = 54    |  RS: 255 053 000  ==  HC: 255 053 000
+   match for d = 55    |  RS: 255 054 000  ==  HC: 255 054 000
+   match for d = 56    |  RS: 255 055 000  ==  HC: 255 055 000
+   match for d = 57    |  RS: 255 056 000  ==  HC: 255 056 000
+   match for d = 58    |  RS: 255 057 000  ==  HC: 255 057 000
+   match for d = 59    |  RS: 255 058 000  ==  HC: 255 058 000
+   match for d = 60    |  RS: 255 059 000  ==  HC: 255 059 000
+   match for d = 61    |  RS: 255 060 000  ==  HC: 255 060 000
+   match for d = 62    |  RS: 255 061 000  ==  HC: 255 061 000
+   match for d = 63    |  RS: 255 062 000  ==  HC: 255 062 000
+   match for d = 64    |  RS: 255 063 000  ==  HC: 255 063 000
+   match for d = 65    |  RS: 255 064 000  ==  HC: 255 064 000
+mismatch for d = 66    |  RS: 254 065 000  !=  HC: 255 065 000
+   match for d = 67    |  RS: 255 066 000  ==  HC: 255 066 000
+   match for d = 68    |  RS: 255 067 000  ==  HC: 255 067 000
+   match for d = 69    |  RS: 255 068 000  ==  HC: 255 068 000
+mismatch for d = 70    |  RS: 254 069 000  !=  HC: 255 069 000
+   match for d = 71    |  RS: 255 070 000  ==  HC: 255 070 000
+   match for d = 72    |  RS: 255 071 000  ==  HC: 255 071 000
+   match for d = 73    |  RS: 255 072 000  ==  HC: 255 072 000
+   match for d = 74    |  RS: 255 073 000  ==  HC: 255 073 000
+mismatch for d = 75    |  RS: 254 074 000  !=  HC: 255 074 000
+   match for d = 76    |  RS: 255 075 000  ==  HC: 255 075 000
+   match for d = 77    |  RS: 255 076 000  ==  HC: 255 076 000
+   match for d = 78    |  RS: 255 077 000  ==  HC: 255 077 000
+   match for d = 79    |  RS: 255 078 000  ==  HC: 255 078 000
+   match for d = 80    |  RS: 255 079 000  ==  HC: 255 079 000
+   match for d = 81    |  RS: 255 080 000  ==  HC: 255 080 000
+   match for d = 82    |  RS: 255 081 000  ==  HC: 255 081 000
+   match for d = 83    |  RS: 255 082 000  ==  HC: 255 082 000
+   match for d = 84    |  RS: 255 083 000  ==  HC: 255 083 000
+   match for d = 85    |  RS: 255 084 000  ==  HC: 255 084 000
+   match for d = 86    |  RS: 255 085 000  ==  HC: 255 085 000
+   match for d = 87    |  RS: 255 086 000  ==  HC: 255 086 000
+   match for d = 88    |  RS: 255 087 000  ==  HC: 255 087 000
+   match for d = 89    |  RS: 255 088 000  ==  HC: 255 088 000
+   match for d = 90    |  RS: 255 089 000  ==  HC: 255 089 000
+   match for d = 91    |  RS: 255 090 000  ==  HC: 255 090 000
+   match for d = 92    |  RS: 255 091 000  ==  HC: 255 091 000
+   match for d = 93    |  RS: 255 092 000  ==  HC: 255 092 000
+   match for d = 94    |  RS: 255 093 000  ==  HC: 255 093 000
+   match for d = 95    |  RS: 255 094 000  ==  HC: 255 094 000
+   match for d = 96    |  RS: 255 095 000  ==  HC: 255 095 000
+   match for d = 97    |  RS: 255 096 000  ==  HC: 255 096 000
+   match for d = 98    |  RS: 255 097 000  ==  HC: 255 097 000
+   match for d = 99    |  RS: 255 098 000  ==  HC: 255 098 000
+   match for d = 100   |  RS: 255 099 000  ==  HC: 255 099 000
+   match for d = 101   |  RS: 255 100 000  ==  HC: 255 100 000
+   match for d = 102   |  RS: 255 101 000  ==  HC: 255 101 000
+   match for d = 103   |  RS: 255 102 000  ==  HC: 255 102 000
+   match for d = 104   |  RS: 255 103 000  ==  HC: 255 103 000
+mismatch for d = 105   |  RS: 254 104 000  !=  HC: 255 104 000
+   match for d = 106   |  RS: 255 105 000  ==  HC: 255 105 000
+   match for d = 107   |  RS: 255 106 000  ==  HC: 255 106 000
+   match for d = 108   |  RS: 255 107 000  ==  HC: 255 107 000
+   match for d = 109   |  RS: 255 108 000  ==  HC: 255 108 000
+   match for d = 110   |  RS: 255 109 000  ==  HC: 255 109 000
+   match for d = 111   |  RS: 255 110 000  ==  HC: 255 110 000
+   match for d = 112   |  RS: 255 111 000  ==  HC: 255 111 000
+   match for d = 113   |  RS: 255 112 000  ==  HC: 255 112 000
+mismatch for d = 114   |  RS: 254 113 000  !=  HC: 255 113 000
+   match for d = 115   |  RS: 255 114 000  ==  HC: 255 114 000
+   match for d = 116   |  RS: 255 115 000  ==  HC: 255 115 000
+   match for d = 117   |  RS: 255 116 000  ==  HC: 255 116 000
+   match for d = 118   |  RS: 255 117 000  ==  HC: 255 117 000
+   match for d = 119   |  RS: 255 118 000  ==  HC: 255 118 000
+   match for d = 120   |  RS: 255 119 000  ==  HC: 255 119 000
+   match for d = 121   |  RS: 255 120 000  ==  HC: 255 120 000
+   match for d = 122   |  RS: 255 121 000  ==  HC: 255 121 000
+   match for d = 123   |  RS: 255 122 000  ==  HC: 255 122 000
+   match for d = 124   |  RS: 255 123 000  ==  HC: 255 123 000
+   match for d = 125   |  RS: 255 124 000  ==  HC: 255 124 000
+   match for d = 126   |  RS: 255 125 000  ==  HC: 255 125 000
+   match for d = 127   |  RS: 255 126 000  ==  HC: 255 126 000
+   match for d = 128   |  RS: 255 127 000  ==  HC: 255 127 000
+   match for d = 129   |  RS: 255 128 000  ==  HC: 255 128 000
+   match for d = 130   |  RS: 255 129 000  ==  HC: 255 129 000
+   match for d = 131   |  RS: 255 130 000  ==  HC: 255 130 000
+   match for d = 132   |  RS: 255 131 000  ==  HC: 255 131 000
+   match for d = 133   |  RS: 255 132 000  ==  HC: 255 132 000
+   match for d = 134   |  RS: 255 133 000  ==  HC: 255 133 000
+   match for d = 135   |  RS: 255 134 000  ==  HC: 255 134 000
+   match for d = 136   |  RS: 255 135 000  ==  HC: 255 135 000
+   match for d = 137   |  RS: 255 136 000  ==  HC: 255 136 000
+   match for d = 138   |  RS: 255 137 000  ==  HC: 255 137 000
+   match for d = 139   |  RS: 255 138 000  ==  HC: 255 138 000
+   match for d = 140   |  RS: 255 139 000  ==  HC: 255 139 000
+   match for d = 141   |  RS: 255 140 000  ==  HC: 255 140 000
+   match for d = 142   |  RS: 255 141 000  ==  HC: 255 141 000
+   match for d = 143   |  RS: 255 142 000  ==  HC: 255 142 000
+   match for d = 144   |  RS: 255 143 000  ==  HC: 255 143 000
+   match for d = 145   |  RS: 255 144 000  ==  HC: 255 144 000
+   match for d = 146   |  RS: 255 145 000  ==  HC: 255 145 000
+   match for d = 147   |  RS: 255 146 000  ==  HC: 255 146 000
+   match for d = 148   |  RS: 255 147 000  ==  HC: 255 147 000
+   match for d = 149   |  RS: 255 148 000  ==  HC: 255 148 000
+   match for d = 150   |  RS: 255 149 000  ==  HC: 255 149 000
+   match for d = 151   |  RS: 255 150 000  ==  HC: 255 150 000
+   match for d = 152   |  RS: 255 151 000  ==  HC: 255 151 000
+   match for d = 153   |  RS: 255 152 000  ==  HC: 255 152 000
+   match for d = 154   |  RS: 255 153 000  ==  HC: 255 153 000
+   match for d = 155   |  RS: 255 154 000  ==  HC: 255 154 000
+   match for d = 156   |  RS: 255 155 000  ==  HC: 255 155 000
+   match for d = 157   |  RS: 255 156 000  ==  HC: 255 156 000
+   match for d = 158   |  RS: 255 157 000  ==  HC: 255 157 000
+   match for d = 159   |  RS: 255 158 000  ==  HC: 255 158 000
+   match for d = 160   |  RS: 255 159 000  ==  HC: 255 159 000
+   match for d = 161   |  RS: 255 160 000  ==  HC: 255 160 000
+   match for d = 162   |  RS: 255 161 000  ==  HC: 255 161 000
+   match for d = 163   |  RS: 255 162 000  ==  HC: 255 162 000
+   match for d = 164   |  RS: 255 163 000  ==  HC: 255 163 000
+   match for d = 165   |  RS: 255 164 000  ==  HC: 255 164 000
+   match for d = 166   |  RS: 255 165 000  ==  HC: 255 165 000
+   match for d = 167   |  RS: 255 166 000  ==  HC: 255 166 000
+   match for d = 168   |  RS: 255 167 000  ==  HC: 255 167 000
+   match for d = 169   |  RS: 255 168 000  ==  HC: 255 168 000
+   match for d = 170   |  RS: 255 169 000  ==  HC: 255 169 000
+   match for d = 171   |  RS: 255 170 000  ==  HC: 255 170 000
+   match for d = 172   |  RS: 255 171 000  ==  HC: 255 171 000
+   match for d = 173   |  RS: 255 172 000  ==  HC: 255 172 000
+   match for d = 174   |  RS: 255 173 000  ==  HC: 255 173 000
+   match for d = 175   |  RS: 255 174 000  ==  HC: 255 174 000
+   match for d = 176   |  RS: 255 175 000  ==  HC: 255 175 000
+   match for d = 177   |  RS: 255 176 000  ==  HC: 255 176 000
+   match for d = 178   |  RS: 255 177 000  ==  HC: 255 177 000
+   match for d = 179   |  RS: 255 178 000  ==  HC: 255 178 000
+   match for d = 180   |  RS: 255 179 000  ==  HC: 255 179 000
+   match for d = 181   |  RS: 255 180 000  ==  HC: 255 180 000
+   match for d = 182   |  RS: 255 181 000  ==  HC: 255 181 000
+   match for d = 183   |  RS: 255 182 000  ==  HC: 255 182 000
+   match for d = 184   |  RS: 255 183 000  ==  HC: 255 183 000
+   match for d = 185   |  RS: 255 184 000  ==  HC: 255 184 000
+   match for d = 186   |  RS: 255 185 000  ==  HC: 255 185 000
+   match for d = 187   |  RS: 255 186 000  ==  HC: 255 186 000
+   match for d = 188   |  RS: 255 187 000  ==  HC: 255 187 000
+   match for d = 189   |  RS: 255 188 000  ==  HC: 255 188 000
+   match for d = 190   |  RS: 255 189 000  ==  HC: 255 189 000
+   match for d = 191   |  RS: 255 190 000  ==  HC: 255 190 000
+   match for d = 192   |  RS: 255 191 000  ==  HC: 255 191 000
+   match for d = 193   |  RS: 255 192 000  ==  HC: 255 192 000
+   match for d = 194   |  RS: 255 193 000  ==  HC: 255 193 000
+   match for d = 195   |  RS: 255 194 000  ==  HC: 255 194 000
+   match for d = 196   |  RS: 255 195 000  ==  HC: 255 195 000
+   match for d = 197   |  RS: 255 196 000  ==  HC: 255 196 000
+   match for d = 198   |  RS: 255 197 000  ==  HC: 255 197 000
+   match for d = 199   |  RS: 255 198 000  ==  HC: 255 198 000
+   match for d = 200   |  RS: 255 199 000  ==  HC: 255 199 000
+   match for d = 201   |  RS: 255 200 000  ==  HC: 255 200 000
+   match for d = 202   |  RS: 255 201 000  ==  HC: 255 201 000
+   match for d = 203   |  RS: 255 202 000  ==  HC: 255 202 000
+   match for d = 204   |  RS: 255 203 000  ==  HC: 255 203 000
+   match for d = 205   |  RS: 255 204 000  ==  HC: 255 204 000
+   match for d = 206   |  RS: 255 205 000  ==  HC: 255 205 000
+   match for d = 207   |  RS: 255 206 000  ==  HC: 255 206 000
+   match for d = 208   |  RS: 255 207 000  ==  HC: 255 207 000
+   match for d = 209   |  RS: 255 208 000  ==  HC: 255 208 000
+   match for d = 210   |  RS: 255 209 000  ==  HC: 255 209 000
+   match for d = 211   |  RS: 255 210 000  ==  HC: 255 210 000
+   match for d = 212   |  RS: 255 211 000  ==  HC: 255 211 000
+   match for d = 213   |  RS: 255 212 000  ==  HC: 255 212 000
+   match for d = 214   |  RS: 255 213 000  ==  HC: 255 213 000
+   match for d = 215   |  RS: 255 214 000  ==  HC: 255 214 000
+   match for d = 216   |  RS: 255 215 000  ==  HC: 255 215 000
+   match for d = 217   |  RS: 255 216 000  ==  HC: 255 216 000
+   match for d = 218   |  RS: 255 217 000  ==  HC: 255 217 000
+   match for d = 219   |  RS: 255 218 000  ==  HC: 255 218 000
+   match for d = 220   |  RS: 255 219 000  ==  HC: 255 219 000
+   match for d = 221   |  RS: 255 220 000  ==  HC: 255 220 000
+   match for d = 222   |  RS: 255 221 000  ==  HC: 255 221 000
+   match for d = 223   |  RS: 255 222 000  ==  HC: 255 222 000
+   match for d = 224   |  RS: 255 223 000  ==  HC: 255 223 000
+   match for d = 225   |  RS: 255 224 000  ==  HC: 255 224 000
+   match for d = 226   |  RS: 255 225 000  ==  HC: 255 225 000
+   match for d = 227   |  RS: 255 226 000  ==  HC: 255 226 000
+   match for d = 228   |  RS: 255 227 000  ==  HC: 255 227 000
+   match for d = 229   |  RS: 255 228 000  ==  HC: 255 228 000
+   match for d = 230   |  RS: 255 229 000  ==  HC: 255 229 000
+   match for d = 231   |  RS: 255 230 000  ==  HC: 255 230 000
+   match for d = 232   |  RS: 255 231 000  ==  HC: 255 231 000
+   match for d = 233   |  RS: 255 232 000  ==  HC: 255 232 000
+   match for d = 234   |  RS: 255 233 000  ==  HC: 255 233 000
+   match for d = 235   |  RS: 255 234 000  ==  HC: 255 234 000
+   match for d = 236   |  RS: 255 235 000  ==  HC: 255 235 000
+   match for d = 237   |  RS: 255 236 000  ==  HC: 255 236 000
+   match for d = 238   |  RS: 255 237 000  ==  HC: 255 237 000
+   match for d = 239   |  RS: 255 238 000  ==  HC: 255 238 000
+   match for d = 240   |  RS: 255 239 000  ==  HC: 255 239 000
+   match for d = 241   |  RS: 255 240 000  ==  HC: 255 240 000
+   match for d = 242   |  RS: 255 241 000  ==  HC: 255 241 000
+   match for d = 243   |  RS: 255 242 000  ==  HC: 255 242 000
+   match for d = 244   |  RS: 255 243 000  ==  HC: 255 243 000
+   match for d = 245   |  RS: 255 244 000  ==  HC: 255 244 000
+   match for d = 246   |  RS: 255 245 000  ==  HC: 255 245 000
+   match for d = 247   |  RS: 255 246 000  ==  HC: 255 246 000
+   match for d = 248   |  RS: 255 247 000  ==  HC: 255 247 000
+   match for d = 249   |  RS: 255 248 000  ==  HC: 255 248 000
+   match for d = 250   |  RS: 255 249 000  ==  HC: 255 249 000
+   match for d = 251   |  RS: 255 250 000  ==  HC: 255 250 000
+   match for d = 252   |  RS: 255 251 000  ==  HC: 255 251 000
+   match for d = 253   |  RS: 255 252 000  ==  HC: 255 252 000
+   match for d = 254   |  RS: 255 253 000  ==  HC: 255 253 000
+   match for d = 255   |  RS: 255 254 000  ==  HC: 255 254 000
+mismatch for d = 256   |  RS: 254 254 000  !=  HC: 255 255 000
+mismatch for d = 257   |  RS: 253 255 000  !=  HC: 254 255 000
+mismatch for d = 258   |  RS: 252 255 000  !=  HC: 253 255 000
+mismatch for d = 259   |  RS: 251 255 000  !=  HC: 252 255 000
+mismatch for d = 260   |  RS: 250 255 000  !=  HC: 251 255 000
+mismatch for d = 261   |  RS: 249 254 000  !=  HC: 250 255 000
+mismatch for d = 262   |  RS: 248 255 000  !=  HC: 249 255 000
+mismatch for d = 263   |  RS: 247 255 000  !=  HC: 248 255 000
+mismatch for d = 264   |  RS: 246 255 000  !=  HC: 247 255 000
+mismatch for d = 265   |  RS: 245 255 000  !=  HC: 246 255 000
+mismatch for d = 266   |  RS: 244 255 000  !=  HC: 245 255 000
+mismatch for d = 267   |  RS: 243 255 000  !=  HC: 244 255 000
+mismatch for d = 268   |  RS: 242 255 000  !=  HC: 243 255 000
+mismatch for d = 269   |  RS: 241 255 000  !=  HC: 242 255 000
+mismatch for d = 270   |  RS: 240 255 000  !=  HC: 241 255 000
+mismatch for d = 271   |  RS: 239 255 000  !=  HC: 240 255 000
+mismatch for d = 272   |  RS: 238 255 000  !=  HC: 239 255 000
+mismatch for d = 273   |  RS: 237 255 000  !=  HC: 238 255 000
+mismatch for d = 274   |  RS: 236 255 000  !=  HC: 237 255 000
+mismatch for d = 275   |  RS: 235 255 000  !=  HC: 236 255 000
+mismatch for d = 276   |  RS: 234 255 000  !=  HC: 235 255 000
+mismatch for d = 277   |  RS: 233 255 000  !=  HC: 234 255 000
+mismatch for d = 278   |  RS: 232 255 000  !=  HC: 233 255 000
+mismatch for d = 279   |  RS: 231 255 000  !=  HC: 232 255 000
+mismatch for d = 280   |  RS: 230 255 000  !=  HC: 231 255 000
+mismatch for d = 281   |  RS: 229 255 000  !=  HC: 230 255 000
+mismatch for d = 282   |  RS: 228 255 000  !=  HC: 229 255 000
+mismatch for d = 283   |  RS: 227 255 000  !=  HC: 228 255 000
+mismatch for d = 284   |  RS: 226 255 000  !=  HC: 227 255 000
+mismatch for d = 285   |  RS: 225 255 000  !=  HC: 226 255 000
+mismatch for d = 286   |  RS: 224 254 000  !=  HC: 225 255 000
+mismatch for d = 287   |  RS: 223 255 000  !=  HC: 224 255 000
+mismatch for d = 288   |  RS: 222 255 000  !=  HC: 223 255 000
+mismatch for d = 289   |  RS: 221 255 000  !=  HC: 222 255 000
+mismatch for d = 290   |  RS: 220 255 000  !=  HC: 221 255 000
+mismatch for d = 291   |  RS: 219 255 000  !=  HC: 220 255 000
+mismatch for d = 292   |  RS: 218 255 000  !=  HC: 219 255 000
+mismatch for d = 293   |  RS: 217 255 000  !=  HC: 218 255 000
+mismatch for d = 294   |  RS: 216 255 000  !=  HC: 217 255 000
+mismatch for d = 295   |  RS: 215 255 000  !=  HC: 216 255 000
+mismatch for d = 296   |  RS: 214 255 000  !=  HC: 215 255 000
+mismatch for d = 297   |  RS: 213 255 000  !=  HC: 214 255 000
+mismatch for d = 298   |  RS: 212 255 000  !=  HC: 213 255 000
+mismatch for d = 299   |  RS: 211 255 000  !=  HC: 212 255 000
+mismatch for d = 300   |  RS: 210 255 000  !=  HC: 211 255 000
+mismatch for d = 301   |  RS: 209 255 000  !=  HC: 210 255 000
+mismatch for d = 302   |  RS: 208 255 000  !=  HC: 209 255 000
+mismatch for d = 303   |  RS: 207 255 000  !=  HC: 208 255 000
+mismatch for d = 304   |  RS: 206 255 000  !=  HC: 207 255 000
+mismatch for d = 305   |  RS: 205 255 000  !=  HC: 206 255 000
+mismatch for d = 306   |  RS: 204 255 000  !=  HC: 205 255 000
+mismatch for d = 307   |  RS: 203 255 000  !=  HC: 204 255 000
+mismatch for d = 308   |  RS: 202 255 000  !=  HC: 203 255 000
+mismatch for d = 309   |  RS: 201 255 000  !=  HC: 202 255 000
+mismatch for d = 310   |  RS: 200 255 000  !=  HC: 201 255 000
+mismatch for d = 311   |  RS: 199 255 000  !=  HC: 200 255 000
+mismatch for d = 312   |  RS: 198 255 000  !=  HC: 199 255 000
+mismatch for d = 313   |  RS: 197 255 000  !=  HC: 198 255 000
+mismatch for d = 314   |  RS: 196 255 000  !=  HC: 197 255 000
+mismatch for d = 315   |  RS: 195 255 000  !=  HC: 196 255 000
+mismatch for d = 316   |  RS: 194 255 000  !=  HC: 195 255 000
+mismatch for d = 317   |  RS: 193 255 000  !=  HC: 194 255 000
+mismatch for d = 318   |  RS: 192 255 000  !=  HC: 193 255 000
+mismatch for d = 319   |  RS: 191 255 000  !=  HC: 192 255 000
+mismatch for d = 320   |  RS: 190 255 000  !=  HC: 191 255 000
+mismatch for d = 321   |  RS: 189 255 000  !=  HC: 190 255 000
+mismatch for d = 322   |  RS: 188 255 000  !=  HC: 189 255 000
+mismatch for d = 323   |  RS: 187 255 000  !=  HC: 188 255 000
+mismatch for d = 324   |  RS: 186 255 000  !=  HC: 187 255 000
+mismatch for d = 325   |  RS: 185 255 000  !=  HC: 186 255 000
+mismatch for d = 326   |  RS: 184 255 000  !=  HC: 185 255 000
+mismatch for d = 327   |  RS: 183 255 000  !=  HC: 184 255 000
+mismatch for d = 328   |  RS: 182 255 000  !=  HC: 183 255 000
+mismatch for d = 329   |  RS: 181 255 000  !=  HC: 182 255 000
+mismatch for d = 330   |  RS: 180 255 000  !=  HC: 181 255 000
+mismatch for d = 331   |  RS: 179 255 000  !=  HC: 180 255 000
+mismatch for d = 332   |  RS: 178 255 000  !=  HC: 179 255 000
+mismatch for d = 333   |  RS: 177 255 000  !=  HC: 178 255 000
+mismatch for d = 334   |  RS: 176 255 000  !=  HC: 177 255 000
+mismatch for d = 335   |  RS: 175 255 000  !=  HC: 176 255 000
+mismatch for d = 336   |  RS: 174 255 000  !=  HC: 175 255 000
+mismatch for d = 337   |  RS: 173 255 000  !=  HC: 174 255 000
+mismatch for d = 338   |  RS: 172 255 000  !=  HC: 173 255 000
+mismatch for d = 339   |  RS: 171 255 000  !=  HC: 172 255 000
+mismatch for d = 340   |  RS: 170 255 000  !=  HC: 171 255 000
+mismatch for d = 341   |  RS: 169 255 000  !=  HC: 170 255 000
+mismatch for d = 342   |  RS: 168 255 000  !=  HC: 169 255 000
+mismatch for d = 343   |  RS: 167 255 000  !=  HC: 168 255 000
+mismatch for d = 344   |  RS: 166 255 000  !=  HC: 167 255 000
+mismatch for d = 345   |  RS: 165 255 000  !=  HC: 166 255 000
+mismatch for d = 346   |  RS: 164 255 000  !=  HC: 165 255 000
+mismatch for d = 347   |  RS: 163 255 000  !=  HC: 164 255 000
+mismatch for d = 348   |  RS: 162 255 000  !=  HC: 163 255 000
+mismatch for d = 349   |  RS: 161 255 000  !=  HC: 162 255 000
+mismatch for d = 350   |  RS: 160 255 000  !=  HC: 161 255 000
+mismatch for d = 351   |  RS: 159 255 000  !=  HC: 160 255 000
+mismatch for d = 352   |  RS: 158 255 000  !=  HC: 159 255 000
+mismatch for d = 353   |  RS: 157 255 000  !=  HC: 158 255 000
+mismatch for d = 354   |  RS: 156 255 000  !=  HC: 157 255 000
+mismatch for d = 355   |  RS: 155 255 000  !=  HC: 156 255 000
+mismatch for d = 356   |  RS: 154 255 000  !=  HC: 155 255 000
+mismatch for d = 357   |  RS: 153 255 000  !=  HC: 154 255 000
+mismatch for d = 358   |  RS: 152 255 000  !=  HC: 153 255 000
+mismatch for d = 359   |  RS: 151 255 000  !=  HC: 152 255 000
+mismatch for d = 360   |  RS: 150 255 000  !=  HC: 151 255 000
+mismatch for d = 361   |  RS: 149 255 000  !=  HC: 150 255 000
+mismatch for d = 362   |  RS: 148 255 000  !=  HC: 149 255 000
+mismatch for d = 363   |  RS: 147 255 000  !=  HC: 148 255 000
+mismatch for d = 364   |  RS: 146 255 000  !=  HC: 147 255 000
+mismatch for d = 365   |  RS: 145 255 000  !=  HC: 146 255 000
+mismatch for d = 366   |  RS: 144 255 000  !=  HC: 145 255 000
+mismatch for d = 367   |  RS: 143 255 000  !=  HC: 144 255 000
+mismatch for d = 368   |  RS: 142 255 000  !=  HC: 143 255 000
+mismatch for d = 369   |  RS: 141 255 000  !=  HC: 142 255 000
+mismatch for d = 370   |  RS: 140 255 000  !=  HC: 141 255 000
+mismatch for d = 371   |  RS: 139 255 000  !=  HC: 140 255 000
+mismatch for d = 372   |  RS: 138 255 000  !=  HC: 139 255 000
+mismatch for d = 373   |  RS: 137 255 000  !=  HC: 138 255 000
+mismatch for d = 374   |  RS: 136 255 000  !=  HC: 137 255 000
+mismatch for d = 375   |  RS: 135 255 000  !=  HC: 136 255 000
+mismatch for d = 376   |  RS: 134 255 000  !=  HC: 135 255 000
+mismatch for d = 377   |  RS: 133 255 000  !=  HC: 134 255 000
+mismatch for d = 378   |  RS: 132 255 000  !=  HC: 133 255 000
+mismatch for d = 379   |  RS: 131 255 000  !=  HC: 132 255 000
+mismatch for d = 380   |  RS: 130 255 000  !=  HC: 131 255 000
+mismatch for d = 381   |  RS: 129 255 000  !=  HC: 130 255 000
+mismatch for d = 382   |  RS: 128 255 000  !=  HC: 129 255 000
+mismatch for d = 383   |  RS: 127 255 000  !=  HC: 128 255 000
+mismatch for d = 384   |  RS: 126 255 000  !=  HC: 127 255 000
+mismatch for d = 385   |  RS: 125 255 000  !=  HC: 126 255 000
+mismatch for d = 386   |  RS: 124 255 000  !=  HC: 125 255 000
+mismatch for d = 387   |  RS: 123 255 000  !=  HC: 124 255 000
+mismatch for d = 388   |  RS: 122 255 000  !=  HC: 123 255 000
+mismatch for d = 389   |  RS: 121 255 000  !=  HC: 122 255 000
+mismatch for d = 390   |  RS: 120 255 000  !=  HC: 121 255 000
+mismatch for d = 391   |  RS: 119 255 000  !=  HC: 120 255 000
+mismatch for d = 392   |  RS: 118 255 000  !=  HC: 119 255 000
+mismatch for d = 393   |  RS: 117 255 000  !=  HC: 118 255 000
+mismatch for d = 394   |  RS: 116 255 000  !=  HC: 117 255 000
+mismatch for d = 395   |  RS: 115 255 000  !=  HC: 116 255 000
+mismatch for d = 396   |  RS: 114 255 000  !=  HC: 115 255 000
+mismatch for d = 397   |  RS: 113 255 000  !=  HC: 114 255 000
+mismatch for d = 398   |  RS: 112 255 000  !=  HC: 113 255 000
+mismatch for d = 399   |  RS: 111 255 000  !=  HC: 112 255 000
+mismatch for d = 400   |  RS: 110 255 000  !=  HC: 111 255 000
+mismatch for d = 401   |  RS: 109 255 000  !=  HC: 110 255 000
+mismatch for d = 402   |  RS: 108 255 000  !=  HC: 109 255 000
+mismatch for d = 403   |  RS: 107 255 000  !=  HC: 108 255 000
+mismatch for d = 404   |  RS: 106 255 000  !=  HC: 107 255 000
+mismatch for d = 405   |  RS: 105 255 000  !=  HC: 106 255 000
+mismatch for d = 406   |  RS: 104 255 000  !=  HC: 105 255 000
+mismatch for d = 407   |  RS: 103 255 000  !=  HC: 104 255 000
+mismatch for d = 408   |  RS: 102 255 000  !=  HC: 103 255 000
+mismatch for d = 409   |  RS: 101 255 000  !=  HC: 102 255 000
+mismatch for d = 410   |  RS: 100 255 000  !=  HC: 101 255 000
+mismatch for d = 411   |  RS: 099 255 000  !=  HC: 100 255 000
+mismatch for d = 412   |  RS: 098 255 000  !=  HC: 099 255 000
+mismatch for d = 413   |  RS: 097 255 000  !=  HC: 098 255 000
+mismatch for d = 414   |  RS: 096 255 000  !=  HC: 097 255 000
+mismatch for d = 415   |  RS: 095 255 000  !=  HC: 096 255 000
+mismatch for d = 416   |  RS: 094 255 000  !=  HC: 095 255 000
+mismatch for d = 417   |  RS: 093 255 000  !=  HC: 094 255 000
+mismatch for d = 418   |  RS: 092 255 000  !=  HC: 093 255 000
+mismatch for d = 419   |  RS: 091 255 000  !=  HC: 092 255 000
+mismatch for d = 420   |  RS: 090 255 000  !=  HC: 091 255 000
+mismatch for d = 421   |  RS: 089 255 000  !=  HC: 090 255 000
+mismatch for d = 422   |  RS: 088 255 000  !=  HC: 089 255 000
+mismatch for d = 423   |  RS: 087 255 000  !=  HC: 088 255 000
+mismatch for d = 424   |  RS: 086 255 000  !=  HC: 087 255 000
+mismatch for d = 425   |  RS: 085 255 000  !=  HC: 086 255 000
+mismatch for d = 426   |  RS: 084 255 000  !=  HC: 085 255 000
+mismatch for d = 427   |  RS: 083 255 000  !=  HC: 084 255 000
+mismatch for d = 428   |  RS: 082 255 000  !=  HC: 083 255 000
+mismatch for d = 429   |  RS: 081 255 000  !=  HC: 082 255 000
+mismatch for d = 430   |  RS: 080 255 000  !=  HC: 081 255 000
+mismatch for d = 431   |  RS: 079 255 000  !=  HC: 080 255 000
+mismatch for d = 432   |  RS: 078 255 000  !=  HC: 079 255 000
+mismatch for d = 433   |  RS: 077 255 000  !=  HC: 078 255 000
+mismatch for d = 434   |  RS: 076 255 000  !=  HC: 077 255 000
+mismatch for d = 435   |  RS: 075 255 000  !=  HC: 076 255 000
+mismatch for d = 436   |  RS: 074 255 000  !=  HC: 075 255 000
+mismatch for d = 437   |  RS: 073 255 000  !=  HC: 074 255 000
+mismatch for d = 438   |  RS: 072 255 000  !=  HC: 073 255 000
+mismatch for d = 439   |  RS: 071 255 000  !=  HC: 072 255 000
+mismatch for d = 440   |  RS: 070 255 000  !=  HC: 071 255 000
+mismatch for d = 441   |  RS: 069 255 000  !=  HC: 070 255 000
+mismatch for d = 442   |  RS: 068 255 000  !=  HC: 069 255 000
+mismatch for d = 443   |  RS: 067 255 000  !=  HC: 068 255 000
+mismatch for d = 444   |  RS: 066 255 000  !=  HC: 067 255 000
+mismatch for d = 445   |  RS: 065 255 000  !=  HC: 066 255 000
+mismatch for d = 446   |  RS: 064 255 000  !=  HC: 065 255 000
+mismatch for d = 447   |  RS: 063 255 000  !=  HC: 064 255 000
+mismatch for d = 448   |  RS: 062 255 000  !=  HC: 063 255 000
+mismatch for d = 449   |  RS: 061 255 000  !=  HC: 062 255 000
+mismatch for d = 450   |  RS: 060 255 000  !=  HC: 061 255 000
+mismatch for d = 451   |  RS: 059 255 000  !=  HC: 060 255 000
+mismatch for d = 452   |  RS: 058 255 000  !=  HC: 059 255 000
+mismatch for d = 453   |  RS: 057 255 000  !=  HC: 058 255 000
+mismatch for d = 454   |  RS: 056 255 000  !=  HC: 057 255 000
+mismatch for d = 455   |  RS: 055 255 000  !=  HC: 056 255 000
+mismatch for d = 456   |  RS: 054 255 000  !=  HC: 055 255 000
+mismatch for d = 457   |  RS: 053 255 000  !=  HC: 054 255 000
+mismatch for d = 458   |  RS: 052 255 000  !=  HC: 053 255 000
+mismatch for d = 459   |  RS: 051 255 000  !=  HC: 052 255 000
+mismatch for d = 460   |  RS: 050 255 000  !=  HC: 051 255 000
+mismatch for d = 461   |  RS: 049 255 000  !=  HC: 050 255 000
+mismatch for d = 462   |  RS: 048 255 000  !=  HC: 049 255 000
+mismatch for d = 463   |  RS: 047 255 000  !=  HC: 048 255 000
+mismatch for d = 464   |  RS: 046 255 000  !=  HC: 047 255 000
+mismatch for d = 465   |  RS: 045 255 000  !=  HC: 046 255 000
+mismatch for d = 466   |  RS: 044 255 000  !=  HC: 045 255 000
+mismatch for d = 467   |  RS: 043 255 000  !=  HC: 044 255 000
+mismatch for d = 468   |  RS: 042 255 000  !=  HC: 043 255 000
+mismatch for d = 469   |  RS: 041 255 000  !=  HC: 042 255 000
+mismatch for d = 470   |  RS: 040 255 000  !=  HC: 041 255 000
+mismatch for d = 471   |  RS: 039 255 000  !=  HC: 040 255 000
+mismatch for d = 472   |  RS: 038 255 000  !=  HC: 039 255 000
+mismatch for d = 473   |  RS: 037 255 000  !=  HC: 038 255 000
+mismatch for d = 474   |  RS: 036 255 000  !=  HC: 037 255 000
+mismatch for d = 475   |  RS: 035 255 000  !=  HC: 036 255 000
+mismatch for d = 476   |  RS: 034 255 000  !=  HC: 035 255 000
+mismatch for d = 477   |  RS: 033 255 000  !=  HC: 034 255 000
+mismatch for d = 478   |  RS: 032 255 000  !=  HC: 033 255 000
+mismatch for d = 479   |  RS: 031 255 000  !=  HC: 032 255 000
+mismatch for d = 480   |  RS: 030 255 000  !=  HC: 031 255 000
+mismatch for d = 481   |  RS: 029 255 000  !=  HC: 030 255 000
+mismatch for d = 482   |  RS: 028 255 000  !=  HC: 029 255 000
+mismatch for d = 483   |  RS: 027 255 000  !=  HC: 028 255 000
+mismatch for d = 484   |  RS: 026 255 000  !=  HC: 027 255 000
+mismatch for d = 485   |  RS: 025 255 000  !=  HC: 026 255 000
+mismatch for d = 486   |  RS: 024 255 000  !=  HC: 025 255 000
+mismatch for d = 487   |  RS: 023 255 000  !=  HC: 024 255 000
+mismatch for d = 488   |  RS: 022 255 000  !=  HC: 023 255 000
+mismatch for d = 489   |  RS: 021 255 000  !=  HC: 022 255 000
+mismatch for d = 490   |  RS: 020 255 000  !=  HC: 021 255 000
+mismatch for d = 491   |  RS: 019 255 000  !=  HC: 020 255 000
+mismatch for d = 492   |  RS: 018 255 000  !=  HC: 019 255 000
+mismatch for d = 493   |  RS: 017 255 000  !=  HC: 018 255 000
+mismatch for d = 494   |  RS: 016 255 000  !=  HC: 017 255 000
+mismatch for d = 495   |  RS: 015 255 000  !=  HC: 016 255 000
+mismatch for d = 496   |  RS: 014 255 000  !=  HC: 015 255 000
+mismatch for d = 497   |  RS: 013 255 000  !=  HC: 014 255 000
+mismatch for d = 498   |  RS: 012 255 000  !=  HC: 013 255 000
+mismatch for d = 499   |  RS: 011 255 000  !=  HC: 012 255 000
+mismatch for d = 500   |  RS: 010 255 000  !=  HC: 011 255 000
+mismatch for d = 501   |  RS: 009 255 000  !=  HC: 010 255 000
+mismatch for d = 502   |  RS: 008 255 000  !=  HC: 009 255 000
+mismatch for d = 503   |  RS: 007 255 000  !=  HC: 008 255 000
+mismatch for d = 504   |  RS: 006 255 000  !=  HC: 007 255 000
+mismatch for d = 505   |  RS: 005 255 000  !=  HC: 006 255 000
+mismatch for d = 506   |  RS: 004 255 000  !=  HC: 005 255 000
+mismatch for d = 507   |  RS: 003 255 000  !=  HC: 004 255 000
+mismatch for d = 508   |  RS: 002 255 000  !=  HC: 003 255 000
+mismatch for d = 509   |  RS: 001 255 000  !=  HC: 002 255 000
+mismatch for d = 510   |  RS: 000 255 000  !=  HC: 001 255 000
+   match for d = 511   |  RS: 000 255 000  ==  HC: 000 255 000
+   match for d = 512   |  RS: 000 255 001  ==  HC: 000 255 001
+   match for d = 513   |  RS: 000 255 002  ==  HC: 000 255 002
+   match for d = 514   |  RS: 000 255 003  ==  HC: 000 255 003
+   match for d = 515   |  RS: 000 255 004  ==  HC: 000 255 004
+   match for d = 516   |  RS: 000 255 005  ==  HC: 000 255 005
+   match for d = 517   |  RS: 000 255 006  ==  HC: 000 255 006
+   match for d = 518   |  RS: 000 255 007  ==  HC: 000 255 007
+   match for d = 519   |  RS: 000 255 008  ==  HC: 000 255 008
+   match for d = 520   |  RS: 000 255 009  ==  HC: 000 255 009
+   match for d = 521   |  RS: 000 255 010  ==  HC: 000 255 010
+   match for d = 522   |  RS: 000 255 011  ==  HC: 000 255 011
+   match for d = 523   |  RS: 000 255 012  ==  HC: 000 255 012
+   match for d = 524   |  RS: 000 255 013  ==  HC: 000 255 013
+   match for d = 525   |  RS: 000 255 014  ==  HC: 000 255 014
+   match for d = 526   |  RS: 000 255 015  ==  HC: 000 255 015
+   match for d = 527   |  RS: 000 255 016  ==  HC: 000 255 016
+   match for d = 528   |  RS: 000 255 017  ==  HC: 000 255 017
+   match for d = 529   |  RS: 000 255 018  ==  HC: 000 255 018
+   match for d = 530   |  RS: 000 255 019  ==  HC: 000 255 019
+   match for d = 531   |  RS: 000 255 020  ==  HC: 000 255 020
+   match for d = 532   |  RS: 000 255 021  ==  HC: 000 255 021
+   match for d = 533   |  RS: 000 255 022  ==  HC: 000 255 022
+   match for d = 534   |  RS: 000 255 023  ==  HC: 000 255 023
+   match for d = 535   |  RS: 000 255 024  ==  HC: 000 255 024
+   match for d = 536   |  RS: 000 255 025  ==  HC: 000 255 025
+   match for d = 537   |  RS: 000 255 026  ==  HC: 000 255 026
+   match for d = 538   |  RS: 000 255 027  ==  HC: 000 255 027
+   match for d = 539   |  RS: 000 255 028  ==  HC: 000 255 028
+   match for d = 540   |  RS: 000 255 029  ==  HC: 000 255 029
+   match for d = 541   |  RS: 000 255 030  ==  HC: 000 255 030
+   match for d = 542   |  RS: 000 255 031  ==  HC: 000 255 031
+   match for d = 543   |  RS: 000 255 032  ==  HC: 000 255 032
+   match for d = 544   |  RS: 000 255 033  ==  HC: 000 255 033
+   match for d = 545   |  RS: 000 255 034  ==  HC: 000 255 034
+   match for d = 546   |  RS: 000 255 035  ==  HC: 000 255 035
+   match for d = 547   |  RS: 000 255 036  ==  HC: 000 255 036
+   match for d = 548   |  RS: 000 255 037  ==  HC: 000 255 037
+   match for d = 549   |  RS: 000 255 038  ==  HC: 000 255 038
+   match for d = 550   |  RS: 000 255 039  ==  HC: 000 255 039
+   match for d = 551   |  RS: 000 255 040  ==  HC: 000 255 040
+   match for d = 552   |  RS: 000 255 041  ==  HC: 000 255 041
+   match for d = 553   |  RS: 000 255 042  ==  HC: 000 255 042
+   match for d = 554   |  RS: 000 255 043  ==  HC: 000 255 043
+   match for d = 555   |  RS: 000 255 044  ==  HC: 000 255 044
+   match for d = 556   |  RS: 000 255 045  ==  HC: 000 255 045
+   match for d = 557   |  RS: 000 255 046  ==  HC: 000 255 046
+   match for d = 558   |  RS: 000 255 047  ==  HC: 000 255 047
+   match for d = 559   |  RS: 000 255 048  ==  HC: 000 255 048
+   match for d = 560   |  RS: 000 255 049  ==  HC: 000 255 049
+   match for d = 561   |  RS: 000 255 050  ==  HC: 000 255 050
+   match for d = 562   |  RS: 000 255 051  ==  HC: 000 255 051
+   match for d = 563   |  RS: 000 255 052  ==  HC: 000 255 052
+   match for d = 564   |  RS: 000 255 053  ==  HC: 000 255 053
+   match for d = 565   |  RS: 000 255 054  ==  HC: 000 255 054
+   match for d = 566   |  RS: 000 255 055  ==  HC: 000 255 055
+   match for d = 567   |  RS: 000 255 056  ==  HC: 000 255 056
+   match for d = 568   |  RS: 000 255 057  ==  HC: 000 255 057
+   match for d = 569   |  RS: 000 255 058  ==  HC: 000 255 058
+   match for d = 570   |  RS: 000 255 059  ==  HC: 000 255 059
+   match for d = 571   |  RS: 000 255 060  ==  HC: 000 255 060
+   match for d = 572   |  RS: 000 255 061  ==  HC: 000 255 061
+   match for d = 573   |  RS: 000 255 062  ==  HC: 000 255 062
+   match for d = 574   |  RS: 000 255 063  ==  HC: 000 255 063
+   match for d = 575   |  RS: 000 255 064  ==  HC: 000 255 064
+   match for d = 576   |  RS: 000 255 065  ==  HC: 000 255 065
+   match for d = 577   |  RS: 000 255 066  ==  HC: 000 255 066
+   match for d = 578   |  RS: 000 255 067  ==  HC: 000 255 067
+   match for d = 579   |  RS: 000 255 068  ==  HC: 000 255 068
+   match for d = 580   |  RS: 000 255 069  ==  HC: 000 255 069
+   match for d = 581   |  RS: 000 255 070  ==  HC: 000 255 070
+   match for d = 582   |  RS: 000 255 071  ==  HC: 000 255 071
+   match for d = 583   |  RS: 000 255 072  ==  HC: 000 255 072
+   match for d = 584   |  RS: 000 255 073  ==  HC: 000 255 073
+   match for d = 585   |  RS: 000 255 074  ==  HC: 000 255 074
+   match for d = 586   |  RS: 000 255 075  ==  HC: 000 255 075
+   match for d = 587   |  RS: 000 255 076  ==  HC: 000 255 076
+   match for d = 588   |  RS: 000 255 077  ==  HC: 000 255 077
+   match for d = 589   |  RS: 000 255 078  ==  HC: 000 255 078
+   match for d = 590   |  RS: 000 255 079  ==  HC: 000 255 079
+   match for d = 591   |  RS: 000 255 080  ==  HC: 000 255 080
+   match for d = 592   |  RS: 000 255 081  ==  HC: 000 255 081
+   match for d = 593   |  RS: 000 255 082  ==  HC: 000 255 082
+   match for d = 594   |  RS: 000 255 083  ==  HC: 000 255 083
+   match for d = 595   |  RS: 000 255 084  ==  HC: 000 255 084
+   match for d = 596   |  RS: 000 255 085  ==  HC: 000 255 085
+   match for d = 597   |  RS: 000 255 086  ==  HC: 000 255 086
+   match for d = 598   |  RS: 000 255 087  ==  HC: 000 255 087
+   match for d = 599   |  RS: 000 255 088  ==  HC: 000 255 088
+   match for d = 600   |  RS: 000 255 089  ==  HC: 000 255 089
+   match for d = 601   |  RS: 000 255 090  ==  HC: 000 255 090
+   match for d = 602   |  RS: 000 255 091  ==  HC: 000 255 091
+   match for d = 603   |  RS: 000 255 092  ==  HC: 000 255 092
+   match for d = 604   |  RS: 000 255 093  ==  HC: 000 255 093
+   match for d = 605   |  RS: 000 255 094  ==  HC: 000 255 094
+   match for d = 606   |  RS: 000 255 095  ==  HC: 000 255 095
+   match for d = 607   |  RS: 000 255 096  ==  HC: 000 255 096
+   match for d = 608   |  RS: 000 255 097  ==  HC: 000 255 097
+   match for d = 609   |  RS: 000 255 098  ==  HC: 000 255 098
+   match for d = 610   |  RS: 000 255 099  ==  HC: 000 255 099
+   match for d = 611   |  RS: 000 255 100  ==  HC: 000 255 100
+   match for d = 612   |  RS: 000 255 101  ==  HC: 000 255 101
+   match for d = 613   |  RS: 000 255 102  ==  HC: 000 255 102
+   match for d = 614   |  RS: 000 255 103  ==  HC: 000 255 103
+   match for d = 615   |  RS: 000 255 104  ==  HC: 000 255 104
+   match for d = 616   |  RS: 000 255 105  ==  HC: 000 255 105
+   match for d = 617   |  RS: 000 255 106  ==  HC: 000 255 106
+   match for d = 618   |  RS: 000 255 107  ==  HC: 000 255 107
+   match for d = 619   |  RS: 000 255 108  ==  HC: 000 255 108
+   match for d = 620   |  RS: 000 255 109  ==  HC: 000 255 109
+   match for d = 621   |  RS: 000 255 110  ==  HC: 000 255 110
+   match for d = 622   |  RS: 000 255 111  ==  HC: 000 255 111
+   match for d = 623   |  RS: 000 255 112  ==  HC: 000 255 112
+   match for d = 624   |  RS: 000 255 113  ==  HC: 000 255 113
+   match for d = 625   |  RS: 000 255 114  ==  HC: 000 255 114
+   match for d = 626   |  RS: 000 255 115  ==  HC: 000 255 115
+   match for d = 627   |  RS: 000 255 116  ==  HC: 000 255 116
+   match for d = 628   |  RS: 000 255 117  ==  HC: 000 255 117
+   match for d = 629   |  RS: 000 255 118  ==  HC: 000 255 118
+   match for d = 630   |  RS: 000 255 119  ==  HC: 000 255 119
+   match for d = 631   |  RS: 000 255 120  ==  HC: 000 255 120
+   match for d = 632   |  RS: 000 255 121  ==  HC: 000 255 121
+   match for d = 633   |  RS: 000 255 122  ==  HC: 000 255 122
+   match for d = 634   |  RS: 000 255 123  ==  HC: 000 255 123
+   match for d = 635   |  RS: 000 255 124  ==  HC: 000 255 124
+   match for d = 636   |  RS: 000 255 125  ==  HC: 000 255 125
+   match for d = 637   |  RS: 000 255 126  ==  HC: 000 255 126
+   match for d = 638   |  RS: 000 255 127  ==  HC: 000 255 127
+   match for d = 639   |  RS: 000 255 128  ==  HC: 000 255 128
+   match for d = 640   |  RS: 000 255 129  ==  HC: 000 255 129
+   match for d = 641   |  RS: 000 255 130  ==  HC: 000 255 130
+   match for d = 642   |  RS: 000 255 131  ==  HC: 000 255 131
+   match for d = 643   |  RS: 000 255 132  ==  HC: 000 255 132
+   match for d = 644   |  RS: 000 255 133  ==  HC: 000 255 133
+   match for d = 645   |  RS: 000 255 134  ==  HC: 000 255 134
+   match for d = 646   |  RS: 000 255 135  ==  HC: 000 255 135
+   match for d = 647   |  RS: 000 255 136  ==  HC: 000 255 136
+   match for d = 648   |  RS: 000 255 137  ==  HC: 000 255 137
+   match for d = 649   |  RS: 000 255 138  ==  HC: 000 255 138
+   match for d = 650   |  RS: 000 255 139  ==  HC: 000 255 139
+   match for d = 651   |  RS: 000 255 140  ==  HC: 000 255 140
+   match for d = 652   |  RS: 000 255 141  ==  HC: 000 255 141
+   match for d = 653   |  RS: 000 255 142  ==  HC: 000 255 142
+   match for d = 654   |  RS: 000 255 143  ==  HC: 000 255 143
+   match for d = 655   |  RS: 000 255 144  ==  HC: 000 255 144
+   match for d = 656   |  RS: 000 255 145  ==  HC: 000 255 145
+   match for d = 657   |  RS: 000 255 146  ==  HC: 000 255 146
+   match for d = 658   |  RS: 000 255 147  ==  HC: 000 255 147
+   match for d = 659   |  RS: 000 255 148  ==  HC: 000 255 148
+   match for d = 660   |  RS: 000 255 149  ==  HC: 000 255 149
+   match for d = 661   |  RS: 000 255 150  ==  HC: 000 255 150
+   match for d = 662   |  RS: 000 255 151  ==  HC: 000 255 151
+   match for d = 663   |  RS: 000 255 152  ==  HC: 000 255 152
+   match for d = 664   |  RS: 000 255 153  ==  HC: 000 255 153
+   match for d = 665   |  RS: 000 255 154  ==  HC: 000 255 154
+   match for d = 666   |  RS: 000 255 155  ==  HC: 000 255 155
+   match for d = 667   |  RS: 000 255 156  ==  HC: 000 255 156
+   match for d = 668   |  RS: 000 255 157  ==  HC: 000 255 157
+   match for d = 669   |  RS: 000 255 158  ==  HC: 000 255 158
+   match for d = 670   |  RS: 000 255 159  ==  HC: 000 255 159
+   match for d = 671   |  RS: 000 255 160  ==  HC: 000 255 160
+   match for d = 672   |  RS: 000 255 161  ==  HC: 000 255 161
+   match for d = 673   |  RS: 000 255 162  ==  HC: 000 255 162
+   match for d = 674   |  RS: 000 255 163  ==  HC: 000 255 163
+   match for d = 675   |  RS: 000 255 164  ==  HC: 000 255 164
+   match for d = 676   |  RS: 000 255 165  ==  HC: 000 255 165
+   match for d = 677   |  RS: 000 255 166  ==  HC: 000 255 166
+   match for d = 678   |  RS: 000 255 167  ==  HC: 000 255 167
+   match for d = 679   |  RS: 000 255 168  ==  HC: 000 255 168
+   match for d = 680   |  RS: 000 255 169  ==  HC: 000 255 169
+   match for d = 681   |  RS: 000 255 170  ==  HC: 000 255 170
+   match for d = 682   |  RS: 000 255 171  ==  HC: 000 255 171
+   match for d = 683   |  RS: 000 255 172  ==  HC: 000 255 172
+   match for d = 684   |  RS: 000 255 173  ==  HC: 000 255 173
+   match for d = 685   |  RS: 000 255 174  ==  HC: 000 255 174
+   match for d = 686   |  RS: 000 255 175  ==  HC: 000 255 175
+   match for d = 687   |  RS: 000 255 176  ==  HC: 000 255 176
+   match for d = 688   |  RS: 000 255 177  ==  HC: 000 255 177
+   match for d = 689   |  RS: 000 255 178  ==  HC: 000 255 178
+   match for d = 690   |  RS: 000 255 179  ==  HC: 000 255 179
+   match for d = 691   |  RS: 000 255 180  ==  HC: 000 255 180
+   match for d = 692   |  RS: 000 255 181  ==  HC: 000 255 181
+   match for d = 693   |  RS: 000 255 182  ==  HC: 000 255 182
+   match for d = 694   |  RS: 000 255 183  ==  HC: 000 255 183
+   match for d = 695   |  RS: 000 255 184  ==  HC: 000 255 184
+   match for d = 696   |  RS: 000 255 185  ==  HC: 000 255 185
+   match for d = 697   |  RS: 000 255 186  ==  HC: 000 255 186
+   match for d = 698   |  RS: 000 255 187  ==  HC: 000 255 187
+   match for d = 699   |  RS: 000 255 188  ==  HC: 000 255 188
+   match for d = 700   |  RS: 000 255 189  ==  HC: 000 255 189
+   match for d = 701   |  RS: 000 255 190  ==  HC: 000 255 190
+   match for d = 702   |  RS: 000 255 191  ==  HC: 000 255 191
+   match for d = 703   |  RS: 000 255 192  ==  HC: 000 255 192
+   match for d = 704   |  RS: 000 255 193  ==  HC: 000 255 193
+   match for d = 705   |  RS: 000 255 194  ==  HC: 000 255 194
+   match for d = 706   |  RS: 000 255 195  ==  HC: 000 255 195
+   match for d = 707   |  RS: 000 255 196  ==  HC: 000 255 196
+   match for d = 708   |  RS: 000 255 197  ==  HC: 000 255 197
+   match for d = 709   |  RS: 000 255 198  ==  HC: 000 255 198
+   match for d = 710   |  RS: 000 255 199  ==  HC: 000 255 199
+   match for d = 711   |  RS: 000 255 200  ==  HC: 000 255 200
+   match for d = 712   |  RS: 000 255 201  ==  HC: 000 255 201
+   match for d = 713   |  RS: 000 255 202  ==  HC: 000 255 202
+   match for d = 714   |  RS: 000 255 203  ==  HC: 000 255 203
+   match for d = 715   |  RS: 000 255 204  ==  HC: 000 255 204
+   match for d = 716   |  RS: 000 255 205  ==  HC: 000 255 205
+   match for d = 717   |  RS: 000 255 206  ==  HC: 000 255 206
+   match for d = 718   |  RS: 000 255 207  ==  HC: 000 255 207
+   match for d = 719   |  RS: 000 255 208  ==  HC: 000 255 208
+   match for d = 720   |  RS: 000 255 209  ==  HC: 000 255 209
+   match for d = 721   |  RS: 000 255 210  ==  HC: 000 255 210
+   match for d = 722   |  RS: 000 255 211  ==  HC: 000 255 211
+   match for d = 723   |  RS: 000 255 212  ==  HC: 000 255 212
+   match for d = 724   |  RS: 000 255 213  ==  HC: 000 255 213
+   match for d = 725   |  RS: 000 255 214  ==  HC: 000 255 214
+   match for d = 726   |  RS: 000 255 215  ==  HC: 000 255 215
+   match for d = 727   |  RS: 000 255 216  ==  HC: 000 255 216
+   match for d = 728   |  RS: 000 255 217  ==  HC: 000 255 217
+   match for d = 729   |  RS: 000 255 218  ==  HC: 000 255 218
+   match for d = 730   |  RS: 000 255 219  ==  HC: 000 255 219
+   match for d = 731   |  RS: 000 255 220  ==  HC: 000 255 220
+   match for d = 732   |  RS: 000 255 221  ==  HC: 000 255 221
+   match for d = 733   |  RS: 000 255 222  ==  HC: 000 255 222
+   match for d = 734   |  RS: 000 255 223  ==  HC: 000 255 223
+   match for d = 735   |  RS: 000 255 224  ==  HC: 000 255 224
+   match for d = 736   |  RS: 000 255 225  ==  HC: 000 255 225
+   match for d = 737   |  RS: 000 255 226  ==  HC: 000 255 226
+   match for d = 738   |  RS: 000 255 227  ==  HC: 000 255 227
+   match for d = 739   |  RS: 000 255 228  ==  HC: 000 255 228
+   match for d = 740   |  RS: 000 255 229  ==  HC: 000 255 229
+   match for d = 741   |  RS: 000 255 230  ==  HC: 000 255 230
+   match for d = 742   |  RS: 000 255 231  ==  HC: 000 255 231
+   match for d = 743   |  RS: 000 255 232  ==  HC: 000 255 232
+   match for d = 744   |  RS: 000 255 233  ==  HC: 000 255 233
+   match for d = 745   |  RS: 000 255 234  ==  HC: 000 255 234
+   match for d = 746   |  RS: 000 255 235  ==  HC: 000 255 235
+   match for d = 747   |  RS: 000 255 236  ==  HC: 000 255 236
+   match for d = 748   |  RS: 000 255 237  ==  HC: 000 255 237
+   match for d = 749   |  RS: 000 255 238  ==  HC: 000 255 238
+   match for d = 750   |  RS: 000 255 239  ==  HC: 000 255 239
+   match for d = 751   |  RS: 000 255 240  ==  HC: 000 255 240
+   match for d = 752   |  RS: 000 255 241  ==  HC: 000 255 241
+   match for d = 753   |  RS: 000 255 242  ==  HC: 000 255 242
+   match for d = 754   |  RS: 000 255 243  ==  HC: 000 255 243
+   match for d = 755   |  RS: 000 255 244  ==  HC: 000 255 244
+   match for d = 756   |  RS: 000 255 245  ==  HC: 000 255 245
+   match for d = 757   |  RS: 000 255 246  ==  HC: 000 255 246
+   match for d = 758   |  RS: 000 255 247  ==  HC: 000 255 247
+   match for d = 759   |  RS: 000 255 248  ==  HC: 000 255 248
+   match for d = 760   |  RS: 000 255 249  ==  HC: 000 255 249
+   match for d = 761   |  RS: 000 255 250  ==  HC: 000 255 250
+   match for d = 762   |  RS: 000 255 251  ==  HC: 000 255 251
+   match for d = 763   |  RS: 000 255 252  ==  HC: 000 255 252
+   match for d = 764   |  RS: 000 255 253  ==  HC: 000 255 253
+   match for d = 765   |  RS: 000 255 254  ==  HC: 000 255 254
+mismatch for d = 766   |  RS: 000 254 255  !=  HC: 000 255 254
+mismatch for d = 767   |  RS: 000 253 255  !=  HC: 000 255 255
+mismatch for d = 768   |  RS: 000 252 255  !=  HC: 000 254 255
+mismatch for d = 769   |  RS: 000 251 255  !=  HC: 000 253 255
+mismatch for d = 770   |  RS: 000 250 255  !=  HC: 000 252 255
+mismatch for d = 771   |  RS: 000 249 255  !=  HC: 000 251 255
+mismatch for d = 772   |  RS: 000 248 255  !=  HC: 000 250 255
+mismatch for d = 773   |  RS: 000 247 255  !=  HC: 000 249 255
+mismatch for d = 774   |  RS: 000 246 255  !=  HC: 000 248 255
+mismatch for d = 775   |  RS: 000 245 255  !=  HC: 000 247 255
+mismatch for d = 776   |  RS: 000 244 255  !=  HC: 000 246 255
+mismatch for d = 777   |  RS: 000 243 255  !=  HC: 000 245 255
+mismatch for d = 778   |  RS: 000 242 255  !=  HC: 000 244 255
+mismatch for d = 779   |  RS: 000 241 255  !=  HC: 000 243 255
+mismatch for d = 780   |  RS: 000 240 255  !=  HC: 000 242 255
+mismatch for d = 781   |  RS: 000 239 255  !=  HC: 000 241 255
+mismatch for d = 782   |  RS: 000 238 255  !=  HC: 000 240 255
+mismatch for d = 783   |  RS: 000 237 255  !=  HC: 000 239 255
+mismatch for d = 784   |  RS: 000 236 255  !=  HC: 000 238 255
+mismatch for d = 785   |  RS: 000 235 255  !=  HC: 000 237 255
+mismatch for d = 786   |  RS: 000 234 255  !=  HC: 000 236 255
+mismatch for d = 787   |  RS: 000 233 255  !=  HC: 000 235 255
+mismatch for d = 788   |  RS: 000 232 255  !=  HC: 000 234 255
+mismatch for d = 789   |  RS: 000 231 255  !=  HC: 000 233 255
+mismatch for d = 790   |  RS: 000 230 254  !=  HC: 000 232 255
+mismatch for d = 791   |  RS: 000 229 255  !=  HC: 000 231 255
+mismatch for d = 792   |  RS: 000 228 255  !=  HC: 000 230 255
+mismatch for d = 793   |  RS: 000 227 255  !=  HC: 000 229 255
+mismatch for d = 794   |  RS: 000 226 254  !=  HC: 000 228 255
+mismatch for d = 795   |  RS: 000 225 254  !=  HC: 000 227 255
+mismatch for d = 796   |  RS: 000 224 255  !=  HC: 000 226 255
+mismatch for d = 797   |  RS: 000 223 255  !=  HC: 000 225 255
+mismatch for d = 798   |  RS: 000 222 255  !=  HC: 000 224 255
+mismatch for d = 799   |  RS: 000 221 254  !=  HC: 000 223 255
+mismatch for d = 800   |  RS: 000 220 255  !=  HC: 000 222 255
+mismatch for d = 801   |  RS: 000 219 255  !=  HC: 000 221 255
+mismatch for d = 802   |  RS: 000 218 255  !=  HC: 000 220 255
+mismatch for d = 803   |  RS: 000 217 254  !=  HC: 000 219 255
+mismatch for d = 804   |  RS: 000 216 254  !=  HC: 000 218 255
+mismatch for d = 805   |  RS: 000 215 255  !=  HC: 000 217 255
+mismatch for d = 806   |  RS: 000 214 255  !=  HC: 000 216 255
+mismatch for d = 807   |  RS: 000 213 255  !=  HC: 000 215 255
+mismatch for d = 808   |  RS: 000 212 255  !=  HC: 000 214 255
+mismatch for d = 809   |  RS: 000 211 255  !=  HC: 000 213 255
+mismatch for d = 810   |  RS: 000 210 255  !=  HC: 000 212 255
+mismatch for d = 811   |  RS: 000 209 255  !=  HC: 000 211 255
+mismatch for d = 812   |  RS: 000 208 255  !=  HC: 000 210 255
+mismatch for d = 813   |  RS: 000 207 255  !=  HC: 000 209 255
+mismatch for d = 814   |  RS: 000 206 254  !=  HC: 000 208 255
+mismatch for d = 815   |  RS: 000 205 254  !=  HC: 000 207 255
+mismatch for d = 816   |  RS: 000 204 255  !=  HC: 000 206 255
+mismatch for d = 817   |  RS: 000 203 255  !=  HC: 000 205 255
+mismatch for d = 818   |  RS: 000 202 255  !=  HC: 000 204 255
+mismatch for d = 819   |  RS: 000 201 254  !=  HC: 000 203 255
+mismatch for d = 820   |  RS: 000 200 254  !=  HC: 000 202 255
+mismatch for d = 821   |  RS: 000 199 255  !=  HC: 000 201 255
+mismatch for d = 822   |  RS: 000 198 255  !=  HC: 000 200 255
+mismatch for d = 823   |  RS: 000 197 255  !=  HC: 000 199 255
+mismatch for d = 824   |  RS: 000 196 254  !=  HC: 000 198 255
+mismatch for d = 825   |  RS: 000 195 255  !=  HC: 000 197 255
+mismatch for d = 826   |  RS: 000 194 255  !=  HC: 000 196 255
+mismatch for d = 827   |  RS: 000 193 255  !=  HC: 000 195 255
+mismatch for d = 828   |  RS: 000 192 255  !=  HC: 000 194 255
+mismatch for d = 829   |  RS: 000 191 254  !=  HC: 000 193 255
+mismatch for d = 830   |  RS: 000 190 255  !=  HC: 000 192 255
+mismatch for d = 831   |  RS: 000 189 255  !=  HC: 000 191 255
+mismatch for d = 832   |  RS: 000 188 255  !=  HC: 000 190 255
+mismatch for d = 833   |  RS: 000 187 255  !=  HC: 000 189 255
+mismatch for d = 834   |  RS: 000 186 255  !=  HC: 000 188 255
+mismatch for d = 835   |  RS: 000 185 255  !=  HC: 000 187 255
+mismatch for d = 836   |  RS: 000 184 255  !=  HC: 000 186 255
+mismatch for d = 837   |  RS: 000 183 255  !=  HC: 000 185 255
+mismatch for d = 838   |  RS: 000 182 254  !=  HC: 000 184 255
+mismatch for d = 839   |  RS: 000 181 254  !=  HC: 000 183 255
+mismatch for d = 840   |  RS: 000 180 255  !=  HC: 000 182 255
+mismatch for d = 841   |  RS: 000 179 255  !=  HC: 000 181 255
+mismatch for d = 842   |  RS: 000 178 254  !=  HC: 000 180 255
+mismatch for d = 843   |  RS: 000 177 254  !=  HC: 000 179 255
+mismatch for d = 844   |  RS: 000 176 254  !=  HC: 000 178 255
+mismatch for d = 845   |  RS: 000 175 255  !=  HC: 000 177 255
+mismatch for d = 846   |  RS: 000 174 255  !=  HC: 000 176 255
+mismatch for d = 847   |  RS: 000 173 254  !=  HC: 000 175 255
+mismatch for d = 848   |  RS: 000 172 254  !=  HC: 000 174 255
+mismatch for d = 849   |  RS: 000 171 254  !=  HC: 000 173 255
+mismatch for d = 850   |  RS: 000 170 255  !=  HC: 000 172 255
+mismatch for d = 851   |  RS: 000 169 255  !=  HC: 000 171 255
+mismatch for d = 852   |  RS: 000 168 254  !=  HC: 000 170 255
+mismatch for d = 853   |  RS: 000 167 254  !=  HC: 000 169 255
+mismatch for d = 854   |  RS: 000 166 255  !=  HC: 000 168 255
+mismatch for d = 855   |  RS: 000 165 255  !=  HC: 000 167 255
+mismatch for d = 856   |  RS: 000 164 255  !=  HC: 000 166 255
+mismatch for d = 857   |  RS: 000 163 255  !=  HC: 000 165 255
+mismatch for d = 858   |  RS: 000 162 254  !=  HC: 000 164 255
+mismatch for d = 859   |  RS: 000 161 255  !=  HC: 000 163 255
+mismatch for d = 860   |  RS: 000 160 255  !=  HC: 000 162 255
+mismatch for d = 861   |  RS: 000 159 255  !=  HC: 000 161 255
+mismatch for d = 862   |  RS: 000 158 255  !=  HC: 000 160 255
+mismatch for d = 863   |  RS: 000 157 255  !=  HC: 000 159 255
+mismatch for d = 864   |  RS: 000 156 255  !=  HC: 000 158 255
+mismatch for d = 865   |  RS: 000 155 255  !=  HC: 000 157 255
+mismatch for d = 866   |  RS: 000 154 255  !=  HC: 000 156 255
+mismatch for d = 867   |  RS: 000 153 255  !=  HC: 000 155 255
+mismatch for d = 868   |  RS: 000 152 255  !=  HC: 000 154 255
+mismatch for d = 869   |  RS: 000 151 255  !=  HC: 000 153 255
+mismatch for d = 870   |  RS: 000 150 255  !=  HC: 000 152 255
+mismatch for d = 871   |  RS: 000 149 255  !=  HC: 000 151 255
+mismatch for d = 872   |  RS: 000 148 255  !=  HC: 000 150 255
+mismatch for d = 873   |  RS: 000 147 255  !=  HC: 000 149 255
+mismatch for d = 874   |  RS: 000 146 255  !=  HC: 000 148 255
+mismatch for d = 875   |  RS: 000 145 255  !=  HC: 000 147 255
+mismatch for d = 876   |  RS: 000 144 255  !=  HC: 000 146 255
+mismatch for d = 877   |  RS: 000 143 255  !=  HC: 000 145 255
+mismatch for d = 878   |  RS: 000 142 255  !=  HC: 000 144 255
+mismatch for d = 879   |  RS: 000 141 255  !=  HC: 000 143 255
+mismatch for d = 880   |  RS: 000 140 255  !=  HC: 000 142 255
+mismatch for d = 881   |  RS: 000 139 255  !=  HC: 000 141 255
+mismatch for d = 882   |  RS: 000 138 255  !=  HC: 000 140 255
+mismatch for d = 883   |  RS: 000 137 255  !=  HC: 000 139 255
+mismatch for d = 884   |  RS: 000 136 255  !=  HC: 000 138 255
+mismatch for d = 885   |  RS: 000 135 255  !=  HC: 000 137 255
+mismatch for d = 886   |  RS: 000 134 255  !=  HC: 000 136 255
+mismatch for d = 887   |  RS: 000 133 255  !=  HC: 000 135 255
+mismatch for d = 888   |  RS: 000 132 255  !=  HC: 000 134 255
+mismatch for d = 889   |  RS: 000 131 255  !=  HC: 000 133 255
+mismatch for d = 890   |  RS: 000 130 255  !=  HC: 000 132 255
+mismatch for d = 891   |  RS: 000 129 255  !=  HC: 000 131 255
+mismatch for d = 892   |  RS: 000 128 255  !=  HC: 000 130 255
+mismatch for d = 893   |  RS: 000 127 255  !=  HC: 000 129 255
+mismatch for d = 894   |  RS: 000 126 255  !=  HC: 000 128 255
+mismatch for d = 895   |  RS: 000 125 255  !=  HC: 000 127 255
+mismatch for d = 896   |  RS: 000 124 255  !=  HC: 000 126 255
+mismatch for d = 897   |  RS: 000 123 255  !=  HC: 000 125 255
+mismatch for d = 898   |  RS: 000 122 255  !=  HC: 000 124 255
+mismatch for d = 899   |  RS: 000 121 255  !=  HC: 000 123 255
+mismatch for d = 900   |  RS: 000 120 255  !=  HC: 000 122 255
+mismatch for d = 901   |  RS: 000 119 255  !=  HC: 000 121 255
+mismatch for d = 902   |  RS: 000 118 255  !=  HC: 000 120 255
+mismatch for d = 903   |  RS: 000 117 255  !=  HC: 000 119 255
+mismatch for d = 904   |  RS: 000 116 255  !=  HC: 000 118 255
+mismatch for d = 905   |  RS: 000 115 255  !=  HC: 000 117 255
+mismatch for d = 906   |  RS: 000 114 255  !=  HC: 000 116 255
+mismatch for d = 907   |  RS: 000 113 255  !=  HC: 000 115 255
+mismatch for d = 908   |  RS: 000 112 255  !=  HC: 000 114 255
+mismatch for d = 909   |  RS: 000 111 255  !=  HC: 000 113 255
+mismatch for d = 910   |  RS: 000 110 255  !=  HC: 000 112 255
+mismatch for d = 911   |  RS: 000 109 255  !=  HC: 000 111 255
+mismatch for d = 912   |  RS: 000 108 255  !=  HC: 000 110 255
+mismatch for d = 913   |  RS: 000 107 255  !=  HC: 000 109 255
+mismatch for d = 914   |  RS: 000 106 255  !=  HC: 000 108 255
+mismatch for d = 915   |  RS: 000 105 255  !=  HC: 000 107 255
+mismatch for d = 916   |  RS: 000 104 255  !=  HC: 000 106 255
+mismatch for d = 917   |  RS: 000 103 255  !=  HC: 000 105 255
+mismatch for d = 918   |  RS: 000 102 255  !=  HC: 000 104 255
+mismatch for d = 919   |  RS: 000 101 255  !=  HC: 000 103 255
+mismatch for d = 920   |  RS: 000 100 255  !=  HC: 000 102 255
+mismatch for d = 921   |  RS: 000 099 255  !=  HC: 000 101 255
+mismatch for d = 922   |  RS: 000 098 255  !=  HC: 000 100 255
+mismatch for d = 923   |  RS: 000 097 255  !=  HC: 000 099 255
+mismatch for d = 924   |  RS: 000 096 255  !=  HC: 000 098 255
+mismatch for d = 925   |  RS: 000 095 255  !=  HC: 000 097 255
+mismatch for d = 926   |  RS: 000 094 255  !=  HC: 000 096 255
+mismatch for d = 927   |  RS: 000 093 255  !=  HC: 000 095 255
+mismatch for d = 928   |  RS: 000 092 255  !=  HC: 000 094 255
+mismatch for d = 929   |  RS: 000 091 255  !=  HC: 000 093 255
+mismatch for d = 930   |  RS: 000 090 255  !=  HC: 000 092 255
+mismatch for d = 931   |  RS: 000 089 255  !=  HC: 000 091 255
+mismatch for d = 932   |  RS: 000 088 255  !=  HC: 000 090 255
+mismatch for d = 933   |  RS: 000 087 255  !=  HC: 000 089 255
+mismatch for d = 934   |  RS: 000 086 255  !=  HC: 000 088 255
+mismatch for d = 935   |  RS: 000 085 255  !=  HC: 000 087 255
+mismatch for d = 936   |  RS: 000 084 255  !=  HC: 000 086 255
+mismatch for d = 937   |  RS: 000 083 255  !=  HC: 000 085 255
+mismatch for d = 938   |  RS: 000 082 255  !=  HC: 000 084 255
+mismatch for d = 939   |  RS: 000 081 255  !=  HC: 000 083 255
+mismatch for d = 940   |  RS: 000 080 255  !=  HC: 000 082 255
+mismatch for d = 941   |  RS: 000 079 255  !=  HC: 000 081 255
+mismatch for d = 942   |  RS: 000 078 255  !=  HC: 000 080 255
+mismatch for d = 943   |  RS: 000 077 255  !=  HC: 000 079 255
+mismatch for d = 944   |  RS: 000 076 255  !=  HC: 000 078 255
+mismatch for d = 945   |  RS: 000 075 255  !=  HC: 000 077 255
+mismatch for d = 946   |  RS: 000 074 255  !=  HC: 000 076 255
+mismatch for d = 947   |  RS: 000 073 255  !=  HC: 000 075 255
+mismatch for d = 948   |  RS: 000 072 255  !=  HC: 000 074 255
+mismatch for d = 949   |  RS: 000 071 255  !=  HC: 000 073 255
+mismatch for d = 950   |  RS: 000 070 255  !=  HC: 000 072 255
+mismatch for d = 951   |  RS: 000 069 255  !=  HC: 000 071 255
+mismatch for d = 952   |  RS: 000 068 255  !=  HC: 000 070 255
+mismatch for d = 953   |  RS: 000 067 255  !=  HC: 000 069 255
+mismatch for d = 954   |  RS: 000 066 255  !=  HC: 000 068 255
+mismatch for d = 955   |  RS: 000 065 255  !=  HC: 000 067 255
+mismatch for d = 956   |  RS: 000 064 255  !=  HC: 000 066 255
+mismatch for d = 957   |  RS: 000 063 255  !=  HC: 000 065 255
+mismatch for d = 958   |  RS: 000 062 255  !=  HC: 000 064 255
+mismatch for d = 959   |  RS: 000 061 255  !=  HC: 000 063 255
+mismatch for d = 960   |  RS: 000 060 255  !=  HC: 000 062 255
+mismatch for d = 961   |  RS: 000 059 255  !=  HC: 000 061 255
+mismatch for d = 962   |  RS: 000 058 255  !=  HC: 000 060 255
+mismatch for d = 963   |  RS: 000 057 255  !=  HC: 000 059 255
+mismatch for d = 964   |  RS: 000 056 255  !=  HC: 000 058 255
+mismatch for d = 965   |  RS: 000 055 255  !=  HC: 000 057 255
+mismatch for d = 966   |  RS: 000 054 255  !=  HC: 000 056 255
+mismatch for d = 967   |  RS: 000 053 255  !=  HC: 000 055 255
+mismatch for d = 968   |  RS: 000 052 255  !=  HC: 000 054 255
+mismatch for d = 969   |  RS: 000 051 255  !=  HC: 000 053 255
+mismatch for d = 970   |  RS: 000 050 255  !=  HC: 000 052 255
+mismatch for d = 971   |  RS: 000 049 255  !=  HC: 000 051 255
+mismatch for d = 972   |  RS: 000 048 255  !=  HC: 000 050 255
+mismatch for d = 973   |  RS: 000 047 255  !=  HC: 000 049 255
+mismatch for d = 974   |  RS: 000 046 255  !=  HC: 000 048 255
+mismatch for d = 975   |  RS: 000 045 255  !=  HC: 000 047 255
+mismatch for d = 976   |  RS: 000 045 255  !=  HC: 000 046 255
+mismatch for d = 977   |  RS: 000 043 255  !=  HC: 000 045 255
+mismatch for d = 978   |  RS: 000 042 255  !=  HC: 000 044 255
+mismatch for d = 979   |  RS: 000 041 255  !=  HC: 000 043 255
+mismatch for d = 980   |  RS: 000 040 255  !=  HC: 000 042 255
+mismatch for d = 981   |  RS: 000 039 255  !=  HC: 000 041 255
+mismatch for d = 982   |  RS: 000 038 255  !=  HC: 000 040 255
+mismatch for d = 983   |  RS: 000 037 255  !=  HC: 000 039 255
+mismatch for d = 984   |  RS: 000 036 255  !=  HC: 000 038 255
+mismatch for d = 985   |  RS: 000 035 255  !=  HC: 000 037 255
+mismatch for d = 986   |  RS: 000 034 255  !=  HC: 000 036 255
+mismatch for d = 987   |  RS: 000 033 255  !=  HC: 000 035 255
+mismatch for d = 988   |  RS: 000 032 255  !=  HC: 000 034 255
+mismatch for d = 989   |  RS: 000 032 255  !=  HC: 000 033 255
+mismatch for d = 990   |  RS: 000 030 255  !=  HC: 000 032 255
+mismatch for d = 991   |  RS: 000 029 255  !=  HC: 000 031 255
+mismatch for d = 992   |  RS: 000 028 255  !=  HC: 000 030 255
+mismatch for d = 993   |  RS: 000 027 255  !=  HC: 000 029 255
+mismatch for d = 994   |  RS: 000 027 255  !=  HC: 000 028 255
+mismatch for d = 995   |  RS: 000 025 255  !=  HC: 000 027 255
+mismatch for d = 996   |  RS: 000 024 255  !=  HC: 000 026 255
+mismatch for d = 997   |  RS: 000 023 255  !=  HC: 000 025 255
+mismatch for d = 998   |  RS: 000 022 255  !=  HC: 000 024 255
+mismatch for d = 999   |  RS: 000 021 255  !=  HC: 000 023 255
+mismatch for d = 1000  |  RS: 000 020 255  !=  HC: 000 022 255
+mismatch for d = 1001  |  RS: 000 019 255  !=  HC: 000 021 255
+mismatch for d = 1002  |  RS: 000 018 255  !=  HC: 000 020 255
+mismatch for d = 1003  |  RS: 000 017 255  !=  HC: 000 019 255
+mismatch for d = 1004  |  RS: 000 016 255  !=  HC: 000 018 255
+mismatch for d = 1005  |  RS: 000 015 255  !=  HC: 000 017 255
+mismatch for d = 1006  |  RS: 000 014 255  !=  HC: 000 016 255
+mismatch for d = 1007  |  RS: 000 014 255  !=  HC: 000 015 255
+mismatch for d = 1008  |  RS: 000 012 255  !=  HC: 000 014 255
+mismatch for d = 1009  |  RS: 000 011 255  !=  HC: 000 013 255
+mismatch for d = 1010  |  RS: 000 010 255  !=  HC: 000 012 255
+mismatch for d = 1011  |  RS: 000 009 255  !=  HC: 000 011 255
+mismatch for d = 1012  |  RS: 000 008 255  !=  HC: 000 010 255
+mismatch for d = 1013  |  RS: 000 007 255  !=  HC: 000 009 255
+mismatch for d = 1014  |  RS: 000 006 255  !=  HC: 000 008 255
+mismatch for d = 1015  |  RS: 000 005 255  !=  HC: 000 007 255
+mismatch for d = 1016  |  RS: 000 004 255  !=  HC: 000 006 255
+mismatch for d = 1017  |  RS: 000 003 255  !=  HC: 000 005 255
+mismatch for d = 1018  |  RS: 000 002 255  !=  HC: 000 004 255
+mismatch for d = 1019  |  RS: 000 001 255  !=  HC: 000 003 255
+mismatch for d = 1020  |  RS: 000 001 255  !=  HC: 000 002 255
+mismatch for d = 1021  |  RS: 000 000 255  !=  HC: 000 001 255
+mismatch for d = 1022  |  RS: 001 000 255  !=  HC: 000 000 255
+mismatch for d = 1023  |  RS: 002 000 255  !=  HC: 001 000 255
+mismatch for d = 1024  |  RS: 003 000 255  !=  HC: 002 000 255
+   match for d = 1025  |  RS: 003 000 255  ==  HC: 003 000 255
+mismatch for d = 1026  |  RS: 005 000 255  !=  HC: 004 000 255
+mismatch for d = 1027  |  RS: 006 000 255  !=  HC: 005 000 255
+mismatch for d = 1028  |  RS: 007 000 255  !=  HC: 006 000 255
+mismatch for d = 1029  |  RS: 008 000 255  !=  HC: 007 000 255
+mismatch for d = 1030  |  RS: 009 000 255  !=  HC: 008 000 255
+mismatch for d = 1031  |  RS: 010 000 255  !=  HC: 009 000 255
+mismatch for d = 1032  |  RS: 011 000 255  !=  HC: 010 000 255
+   match for d = 1033  |  RS: 011 000 255  ==  HC: 011 000 255
+mismatch for d = 1034  |  RS: 013 000 255  !=  HC: 012 000 255
+mismatch for d = 1035  |  RS: 014 000 255  !=  HC: 013 000 255
+mismatch for d = 1036  |  RS: 015 000 255  !=  HC: 014 000 255
+mismatch for d = 1037  |  RS: 016 000 255  !=  HC: 015 000 255
+   match for d = 1038  |  RS: 016 000 255  ==  HC: 016 000 255
+mismatch for d = 1039  |  RS: 018 000 255  !=  HC: 017 000 255
+mismatch for d = 1040  |  RS: 019 000 255  !=  HC: 018 000 255
+mismatch for d = 1041  |  RS: 020 000 255  !=  HC: 019 000 255
+mismatch for d = 1042  |  RS: 021 000 255  !=  HC: 020 000 255
+mismatch for d = 1043  |  RS: 022 000 255  !=  HC: 021 000 255
+mismatch for d = 1044  |  RS: 023 000 255  !=  HC: 022 000 255
+mismatch for d = 1045  |  RS: 024 000 255  !=  HC: 023 000 255
+   match for d = 1046  |  RS: 024 000 255  ==  HC: 024 000 255
+mismatch for d = 1047  |  RS: 026 000 255  !=  HC: 025 000 255
+mismatch for d = 1048  |  RS: 027 000 255  !=  HC: 026 000 255
+mismatch for d = 1049  |  RS: 028 000 255  !=  HC: 027 000 255
+mismatch for d = 1050  |  RS: 029 000 255  !=  HC: 028 000 255
+   match for d = 1051  |  RS: 029 000 255  ==  HC: 029 000 255
+mismatch for d = 1052  |  RS: 031 000 255  !=  HC: 030 000 255
+mismatch for d = 1053  |  RS: 032 000 255  !=  HC: 031 000 255
+mismatch for d = 1054  |  RS: 033 000 255  !=  HC: 032 000 255
+mismatch for d = 1055  |  RS: 034 000 255  !=  HC: 033 000 255
+   match for d = 1056  |  RS: 034 000 255  ==  HC: 034 000 255
+mismatch for d = 1057  |  RS: 036 000 255  !=  HC: 035 000 255
+mismatch for d = 1058  |  RS: 037 000 255  !=  HC: 036 000 255
+   match for d = 1059  |  RS: 037 000 255  ==  HC: 037 000 255
+mismatch for d = 1060  |  RS: 039 000 255  !=  HC: 038 000 255
+mismatch for d = 1061  |  RS: 040 000 255  !=  HC: 039 000 255
+mismatch for d = 1062  |  RS: 041 000 255  !=  HC: 040 000 255
+mismatch for d = 1063  |  RS: 042 000 255  !=  HC: 041 000 255
+   match for d = 1064  |  RS: 042 000 255  ==  HC: 042 000 255
+mismatch for d = 1065  |  RS: 044 000 255  !=  HC: 043 000 255
+mismatch for d = 1066  |  RS: 045 000 255  !=  HC: 044 000 255
+mismatch for d = 1067  |  RS: 046 000 255  !=  HC: 045 000 255
+mismatch for d = 1068  |  RS: 047 000 255  !=  HC: 046 000 255
+   match for d = 1069  |  RS: 047 000 255  ==  HC: 047 000 255
+mismatch for d = 1070  |  RS: 049 000 255  !=  HC: 048 000 255
+mismatch for d = 1071  |  RS: 050 000 255  !=  HC: 049 000 255
+   match for d = 1072  |  RS: 050 000 255  ==  HC: 050 000 255
+mismatch for d = 1073  |  RS: 052 000 255  !=  HC: 051 000 255
+mismatch for d = 1074  |  RS: 053 000 255  !=  HC: 052 000 255
+mismatch for d = 1075  |  RS: 054 000 255  !=  HC: 053 000 255
+mismatch for d = 1076  |  RS: 055 000 255  !=  HC: 054 000 255
+   match for d = 1077  |  RS: 055 000 255  ==  HC: 055 000 255
+mismatch for d = 1078  |  RS: 057 000 255  !=  HC: 056 000 255
+mismatch for d = 1079  |  RS: 058 000 255  !=  HC: 057 000 255
+mismatch for d = 1080  |  RS: 059 000 255  !=  HC: 058 000 255
+mismatch for d = 1081  |  RS: 060 000 255  !=  HC: 059 000 255
+   match for d = 1082  |  RS: 060 000 255  ==  HC: 060 000 255
+mismatch for d = 1083  |  RS: 062 000 255  !=  HC: 061 000 255
+mismatch for d = 1084  |  RS: 063 000 255  !=  HC: 062 000 255
+mismatch for d = 1085  |  RS: 064 000 255  !=  HC: 063 000 255
+mismatch for d = 1086  |  RS: 065 000 255  !=  HC: 064 000 255
+   match for d = 1087  |  RS: 065 000 255  ==  HC: 065 000 255
+mismatch for d = 1088  |  RS: 067 000 255  !=  HC: 066 000 255
+mismatch for d = 1089  |  RS: 068 000 255  !=  HC: 067 000 255
+   match for d = 1090  |  RS: 068 000 255  ==  HC: 068 000 255
+mismatch for d = 1091  |  RS: 070 000 255  !=  HC: 069 000 255
+mismatch for d = 1092  |  RS: 071 000 255  !=  HC: 070 000 255
+mismatch for d = 1093  |  RS: 072 000 255  !=  HC: 071 000 255
+mismatch for d = 1094  |  RS: 073 000 255  !=  HC: 072 000 255
+   match for d = 1095  |  RS: 073 000 255  ==  HC: 073 000 255
+mismatch for d = 1096  |  RS: 075 000 255  !=  HC: 074 000 255
+mismatch for d = 1097  |  RS: 076 000 255  !=  HC: 075 000 255
+mismatch for d = 1098  |  RS: 077 000 255  !=  HC: 076 000 255
+mismatch for d = 1099  |  RS: 078 000 255  !=  HC: 077 000 255
+   match for d = 1100  |  RS: 078 000 255  ==  HC: 078 000 255
+mismatch for d = 1101  |  RS: 080 000 254  !=  HC: 079 000 255
+mismatch for d = 1102  |  RS: 081 000 255  !=  HC: 080 000 255
+   match for d = 1103  |  RS: 081 000 255  ==  HC: 081 000 255
+mismatch for d = 1104  |  RS: 083 000 255  !=  HC: 082 000 255
+mismatch for d = 1105  |  RS: 084 000 255  !=  HC: 083 000 255
+mismatch for d = 1106  |  RS: 085 000 255  !=  HC: 084 000 255
+mismatch for d = 1107  |  RS: 086 000 255  !=  HC: 085 000 255
+   match for d = 1108  |  RS: 086 000 255  ==  HC: 086 000 255
+mismatch for d = 1109  |  RS: 088 000 255  !=  HC: 087 000 255
+mismatch for d = 1110  |  RS: 089 000 255  !=  HC: 088 000 255
+mismatch for d = 1111  |  RS: 090 000 255  !=  HC: 089 000 255
+mismatch for d = 1112  |  RS: 091 000 255  !=  HC: 090 000 255
+   match for d = 1113  |  RS: 091 000 255  ==  HC: 091 000 255
+mismatch for d = 1114  |  RS: 093 000 255  !=  HC: 092 000 255
+mismatch for d = 1115  |  RS: 094 000 255  !=  HC: 093 000 255
+   match for d = 1116  |  RS: 094 000 255  ==  HC: 094 000 255
+mismatch for d = 1117  |  RS: 096 000 255  !=  HC: 095 000 255
+   match for d = 1118  |  RS: 096 000 255  ==  HC: 096 000 255
+mismatch for d = 1119  |  RS: 098 000 255  !=  HC: 097 000 255
+mismatch for d = 1120  |  RS: 099 000 255  !=  HC: 098 000 255
+   match for d = 1121  |  RS: 099 000 255  ==  HC: 099 000 255
+mismatch for d = 1122  |  RS: 101 000 255  !=  HC: 100 000 255
+mismatch for d = 1123  |  RS: 102 000 255  !=  HC: 101 000 255
+mismatch for d = 1124  |  RS: 103 000 255  !=  HC: 102 000 255
+mismatch for d = 1125  |  RS: 104 000 254  !=  HC: 103 000 255
+   match for d = 1126  |  RS: 104 000 255  ==  HC: 104 000 255
+mismatch for d = 1127  |  RS: 106 000 255  !=  HC: 105 000 255
+mismatch for d = 1128  |  RS: 107 000 255  !=  HC: 106 000 255
+mismatch for d = 1129  |  RS: 107 000 254  !=  HC: 107 000 255
+mismatch for d = 1130  |  RS: 109 000 254  !=  HC: 108 000 255
+   match for d = 1131  |  RS: 109 000 255  ==  HC: 109 000 255
+mismatch for d = 1132  |  RS: 111 000 255  !=  HC: 110 000 255
+mismatch for d = 1133  |  RS: 112 000 255  !=  HC: 111 000 255
+   match for d = 1134  |  RS: 112 000 255  ==  HC: 112 000 255
+mismatch for d = 1135  |  RS: 114 000 255  !=  HC: 113 000 255
+   match for d = 1136  |  RS: 114 000 255  ==  HC: 114 000 255
+mismatch for d = 1137  |  RS: 116 000 255  !=  HC: 115 000 255
+mismatch for d = 1138  |  RS: 117 000 255  !=  HC: 116 000 255
+   match for d = 1139  |  RS: 117 000 255  ==  HC: 117 000 255
+mismatch for d = 1140  |  RS: 119 000 255  !=  HC: 118 000 255
+mismatch for d = 1141  |  RS: 120 000 255  !=  HC: 119 000 255
+   match for d = 1142  |  RS: 120 000 255  ==  HC: 120 000 255
+mismatch for d = 1143  |  RS: 122 000 255  !=  HC: 121 000 255
+   match for d = 1144  |  RS: 122 000 255  ==  HC: 122 000 255
+mismatch for d = 1145  |  RS: 124 000 255  !=  HC: 123 000 255
+mismatch for d = 1146  |  RS: 125 000 255  !=  HC: 124 000 255
+   match for d = 1147  |  RS: 125 000 255  ==  HC: 125 000 255
+mismatch for d = 1148  |  RS: 127 000 255  !=  HC: 126 000 255
+   match for d = 1149  |  RS: 127 000 255  ==  HC: 127 000 255
+mismatch for d = 1150  |  RS: 129 000 255  !=  HC: 128 000 255
+mismatch for d = 1151  |  RS: 130 000 255  !=  HC: 129 000 255
+   match for d = 1152  |  RS: 130 000 255  ==  HC: 130 000 255
+mismatch for d = 1153  |  RS: 132 000 255  !=  HC: 131 000 255
+mismatch for d = 1154  |  RS: 133 000 255  !=  HC: 132 000 255
+mismatch for d = 1155  |  RS: 134 000 255  !=  HC: 133 000 255
+mismatch for d = 1156  |  RS: 135 000 255  !=  HC: 134 000 255
+   match for d = 1157  |  RS: 135 000 255  ==  HC: 135 000 255
+mismatch for d = 1158  |  RS: 137 000 255  !=  HC: 136 000 255
+mismatch for d = 1159  |  RS: 138 000 255  !=  HC: 137 000 255
+   match for d = 1160  |  RS: 138 000 255  ==  HC: 138 000 255
+mismatch for d = 1161  |  RS: 140 000 255  !=  HC: 139 000 255
+   match for d = 1162  |  RS: 140 000 255  ==  HC: 140 000 255
+mismatch for d = 1163  |  RS: 142 000 255  !=  HC: 141 000 255
+mismatch for d = 1164  |  RS: 143 000 255  !=  HC: 142 000 255
+   match for d = 1165  |  RS: 143 000 255  ==  HC: 143 000 255
+mismatch for d = 1166  |  RS: 145 000 255  !=  HC: 144 000 255
+   match for d = 1167  |  RS: 145 000 255  ==  HC: 145 000 255
+mismatch for d = 1168  |  RS: 147 000 255  !=  HC: 146 000 255
+mismatch for d = 1169  |  RS: 148 000 255  !=  HC: 147 000 255
+   match for d = 1170  |  RS: 148 000 255  ==  HC: 148 000 255
+mismatch for d = 1171  |  RS: 150 000 255  !=  HC: 149 000 255
+mismatch for d = 1172  |  RS: 151 000 255  !=  HC: 150 000 255
+   match for d = 1173  |  RS: 151 000 255  ==  HC: 151 000 255
+mismatch for d = 1174  |  RS: 153 000 255  !=  HC: 152 000 255
+   match for d = 1175  |  RS: 153 000 255  ==  HC: 153 000 255
+mismatch for d = 1176  |  RS: 155 000 255  !=  HC: 154 000 255
+mismatch for d = 1177  |  RS: 156 000 255  !=  HC: 155 000 255
+   match for d = 1178  |  RS: 156 000 255  ==  HC: 156 000 255
+mismatch for d = 1179  |  RS: 158 000 255  !=  HC: 157 000 255
+   match for d = 1180  |  RS: 158 000 255  ==  HC: 158 000 255
+mismatch for d = 1181  |  RS: 160 000 255  !=  HC: 159 000 255
+mismatch for d = 1182  |  RS: 161 000 255  !=  HC: 160 000 255
+   match for d = 1183  |  RS: 161 000 255  ==  HC: 161 000 255
+mismatch for d = 1184  |  RS: 163 000 255  !=  HC: 162 000 255
+mismatch for d = 1185  |  RS: 164 000 255  !=  HC: 163 000 255
+   match for d = 1186  |  RS: 164 000 255  ==  HC: 164 000 255
+mismatch for d = 1187  |  RS: 166 000 255  !=  HC: 165 000 255
+   match for d = 1188  |  RS: 166 000 255  ==  HC: 166 000 255
+mismatch for d = 1189  |  RS: 168 000 255  !=  HC: 167 000 255
+mismatch for d = 1190  |  RS: 169 000 255  !=  HC: 168 000 255
+   match for d = 1191  |  RS: 169 000 255  ==  HC: 169 000 255
+mismatch for d = 1192  |  RS: 171 000 255  !=  HC: 170 000 255
+   match for d = 1193  |  RS: 171 000 255  ==  HC: 171 000 255
+mismatch for d = 1194  |  RS: 173 000 255  !=  HC: 172 000 255
+mismatch for d = 1195  |  RS: 174 000 255  !=  HC: 173 000 255
+   match for d = 1196  |  RS: 174 000 255  ==  HC: 174 000 255
+mismatch for d = 1197  |  RS: 176 000 255  !=  HC: 175 000 255
+   match for d = 1198  |  RS: 176 000 255  ==  HC: 176 000 255
+   match for d = 1199  |  RS: 177 000 255  ==  HC: 177 000 255
+mismatch for d = 1200  |  RS: 179 000 255  !=  HC: 178 000 255
+   match for d = 1201  |  RS: 179 000 255  ==  HC: 179 000 255
+mismatch for d = 1202  |  RS: 181 000 255  !=  HC: 180 000 255
+mismatch for d = 1203  |  RS: 182 000 255  !=  HC: 181 000 255
+   match for d = 1204  |  RS: 182 000 255  ==  HC: 182 000 255
+mismatch for d = 1205  |  RS: 184 000 255  !=  HC: 183 000 255
+   match for d = 1206  |  RS: 184 000 255  ==  HC: 184 000 255
+mismatch for d = 1207  |  RS: 186 000 255  !=  HC: 185 000 255
+mismatch for d = 1208  |  RS: 187 000 255  !=  HC: 186 000 255
+   match for d = 1209  |  RS: 187 000 255  ==  HC: 187 000 255
+mismatch for d = 1210  |  RS: 189 000 255  !=  HC: 188 000 255
+   match for d = 1211  |  RS: 189 000 255  ==  HC: 189 000 255
+   match for d = 1212  |  RS: 190 000 255  ==  HC: 190 000 255
+mismatch for d = 1213  |  RS: 192 000 255  !=  HC: 191 000 255
+   match for d = 1214  |  RS: 192 000 255  ==  HC: 192 000 255
+mismatch for d = 1215  |  RS: 194 000 255  !=  HC: 193 000 255
+mismatch for d = 1216  |  RS: 195 000 255  !=  HC: 194 000 255
+   match for d = 1217  |  RS: 195 000 255  ==  HC: 195 000 255
+mismatch for d = 1218  |  RS: 197 000 255  !=  HC: 196 000 255
+   match for d = 1219  |  RS: 197 000 255  ==  HC: 197 000 255
+mismatch for d = 1220  |  RS: 199 000 255  !=  HC: 198 000 255
+mismatch for d = 1221  |  RS: 200 000 255  !=  HC: 199 000 255
+   match for d = 1222  |  RS: 200 000 255  ==  HC: 200 000 255
+mismatch for d = 1223  |  RS: 202 000 255  !=  HC: 201 000 255
+   match for d = 1224  |  RS: 202 000 255  ==  HC: 202 000 255
+mismatch for d = 1225  |  RS: 204 000 255  !=  HC: 203 000 255
+mismatch for d = 1226  |  RS: 205 000 255  !=  HC: 204 000 255
+   match for d = 1227  |  RS: 205 000 255  ==  HC: 205 000 255
+mismatch for d = 1228  |  RS: 207 000 255  !=  HC: 206 000 255
+   match for d = 1229  |  RS: 207 000 255  ==  HC: 207 000 255
+   match for d = 1230  |  RS: 208 000 255  ==  HC: 208 000 255
+mismatch for d = 1231  |  RS: 210 000 255  !=  HC: 209 000 255
+   match for d = 1232  |  RS: 210 000 255  ==  HC: 210 000 255
+mismatch for d = 1233  |  RS: 212 000 255  !=  HC: 211 000 255
+mismatch for d = 1234  |  RS: 213 000 255  !=  HC: 212 000 255
+   match for d = 1235  |  RS: 213 000 255  ==  HC: 213 000 255
+mismatch for d = 1236  |  RS: 215 000 255  !=  HC: 214 000 255
+   match for d = 1237  |  RS: 215 000 255  ==  HC: 215 000 255
+mismatch for d = 1238  |  RS: 217 000 255  !=  HC: 216 000 255
+mismatch for d = 1239  |  RS: 218 000 255  !=  HC: 217 000 255
+   match for d = 1240  |  RS: 218 000 255  ==  HC: 218 000 255
+mismatch for d = 1241  |  RS: 220 000 255  !=  HC: 219 000 255
+   match for d = 1242  |  RS: 220 000 255  ==  HC: 220 000 255
+   match for d = 1243  |  RS: 221 000 255  ==  HC: 221 000 255
+mismatch for d = 1244  |  RS: 223 000 255  !=  HC: 222 000 255
+   match for d = 1245  |  RS: 223 000 255  ==  HC: 223 000 255
+mismatch for d = 1246  |  RS: 225 000 255  !=  HC: 224 000 255
+mismatch for d = 1247  |  RS: 226 000 255  !=  HC: 225 000 255
+   match for d = 1248  |  RS: 226 000 255  ==  HC: 226 000 255
+mismatch for d = 1249  |  RS: 228 000 255  !=  HC: 227 000 255
+   match for d = 1250  |  RS: 228 000 255  ==  HC: 228 000 255
+mismatch for d = 1251  |  RS: 230 000 255  !=  HC: 229 000 255
+mismatch for d = 1252  |  RS: 231 000 255  !=  HC: 230 000 255
+   match for d = 1253  |  RS: 231 000 255  ==  HC: 231 000 255
+mismatch for d = 1254  |  RS: 233 000 255  !=  HC: 232 000 255
+   match for d = 1255  |  RS: 233 000 255  ==  HC: 233 000 255
+   match for d = 1256  |  RS: 234 000 255  ==  HC: 234 000 255
+mismatch for d = 1257  |  RS: 236 000 255  !=  HC: 235 000 255
+   match for d = 1258  |  RS: 236 000 255  ==  HC: 236 000 255
+mismatch for d = 1259  |  RS: 238 000 255  !=  HC: 237 000 255
+   match for d = 1260  |  RS: 238 000 255  ==  HC: 238 000 255
+   match for d = 1261  |  RS: 239 000 255  ==  HC: 239 000 255
+mismatch for d = 1262  |  RS: 241 000 255  !=  HC: 240 000 255
+   match for d = 1263  |  RS: 241 000 255  ==  HC: 241 000 255
+mismatch for d = 1264  |  RS: 243 000 255  !=  HC: 242 000 255
+mismatch for d = 1265  |  RS: 244 000 255  !=  HC: 243 000 255
+   match for d = 1266  |  RS: 244 000 255  ==  HC: 244 000 255
+mismatch for d = 1267  |  RS: 246 000 255  !=  HC: 245 000 255
+   match for d = 1268  |  RS: 246 000 255  ==  HC: 246 000 255
+   match for d = 1269  |  RS: 247 000 255  ==  HC: 247 000 255
+mismatch for d = 1270  |  RS: 249 000 255  !=  HC: 248 000 255
+   match for d = 1271  |  RS: 249 000 255  ==  HC: 249 000 255
+mismatch for d = 1272  |  RS: 251 000 255  !=  HC: 250 000 255
+   match for d = 1273  |  RS: 251 000 255  ==  HC: 251 000 255
+   match for d = 1274  |  RS: 252 000 255  ==  HC: 252 000 255
+mismatch for d = 1275  |  RS: 254 000 255  !=  HC: 253 000 255
+   match for d = 1276  |  RS: 254 000 255  ==  HC: 254 000 255
+mismatch for d = 1277  |  RS: 255 000 253  !=  HC: 255 000 255
+mismatch for d = 1278  |  RS: 255 000 253  !=  HC: 255 000 254
+mismatch for d = 1279  |  RS: 255 000 252  !=  HC: 255 000 253
+mismatch for d = 1280  |  RS: 255 000 250  !=  HC: 255 000 252
+mismatch for d = 1281  |  RS: 255 000 250  !=  HC: 255 000 251
+mismatch for d = 1282  |  RS: 255 000 249  !=  HC: 255 000 250
+mismatch for d = 1283  |  RS: 255 000 247  !=  HC: 255 000 249
+mismatch for d = 1284  |  RS: 255 000 247  !=  HC: 255 000 248
+mismatch for d = 1285  |  RS: 255 000 245  !=  HC: 255 000 247
+mismatch for d = 1286  |  RS: 255 000 245  !=  HC: 255 000 246
+mismatch for d = 1287  |  RS: 255 000 244  !=  HC: 255 000 245
+mismatch for d = 1288  |  RS: 255 000 242  !=  HC: 255 000 244
+mismatch for d = 1289  |  RS: 255 000 242  !=  HC: 255 000 243
+mismatch for d = 1290  |  RS: 254 000 240  !=  HC: 255 000 242
+mismatch for d = 1291  |  RS: 255 000 240  !=  HC: 255 000 241
+mismatch for d = 1292  |  RS: 255 000 239  !=  HC: 255 000 240
+mismatch for d = 1293  |  RS: 255 000 237  !=  HC: 255 000 239
+mismatch for d = 1294  |  RS: 255 000 237  !=  HC: 255 000 238
+mismatch for d = 1295  |  RS: 255 000 236  !=  HC: 255 000 237
+mismatch for d = 1296  |  RS: 255 000 234  !=  HC: 255 000 236
+mismatch for d = 1297  |  RS: 255 000 234  !=  HC: 255 000 235
+mismatch for d = 1298  |  RS: 255 000 232  !=  HC: 255 000 234
+mismatch for d = 1299  |  RS: 254 000 232  !=  HC: 255 000 233
+mismatch for d = 1300  |  RS: 254 000 231  !=  HC: 255 000 232
+mismatch for d = 1301  |  RS: 255 000 229  !=  HC: 255 000 231
+mismatch for d = 1302  |  RS: 255 000 229  !=  HC: 255 000 230
+mismatch for d = 1303  |  RS: 255 000 227  !=  HC: 255 000 229
+mismatch for d = 1304  |  RS: 254 000 227  !=  HC: 255 000 228
+mismatch for d = 1305  |  RS: 254 000 226  !=  HC: 255 000 227
+mismatch for d = 1306  |  RS: 255 000 224  !=  HC: 255 000 226
+mismatch for d = 1307  |  RS: 255 000 224  !=  HC: 255 000 225
+mismatch for d = 1308  |  RS: 255 000 222  !=  HC: 255 000 224
+mismatch for d = 1309  |  RS: 255 000 222  !=  HC: 255 000 223
+mismatch for d = 1310  |  RS: 255 000 221  !=  HC: 255 000 222
+mismatch for d = 1311  |  RS: 255 000 219  !=  HC: 255 000 221
+mismatch for d = 1312  |  RS: 255 000 219  !=  HC: 255 000 220
+mismatch for d = 1313  |  RS: 255 000 218  !=  HC: 255 000 219
+mismatch for d = 1314  |  RS: 255 000 216  !=  HC: 255 000 218
+mismatch for d = 1315  |  RS: 255 000 216  !=  HC: 255 000 217
+mismatch for d = 1316  |  RS: 255 000 214  !=  HC: 255 000 216
+mismatch for d = 1317  |  RS: 255 000 214  !=  HC: 255 000 215
+mismatch for d = 1318  |  RS: 255 000 213  !=  HC: 255 000 214
+mismatch for d = 1319  |  RS: 255 000 211  !=  HC: 255 000 213
+mismatch for d = 1320  |  RS: 255 000 211  !=  HC: 255 000 212
+mismatch for d = 1321  |  RS: 255 000 209  !=  HC: 255 000 211
+mismatch for d = 1322  |  RS: 255 000 209  !=  HC: 255 000 210
+mismatch for d = 1323  |  RS: 255 000 208  !=  HC: 255 000 209
+mismatch for d = 1324  |  RS: 255 000 206  !=  HC: 255 000 208
+mismatch for d = 1325  |  RS: 254 000 206  !=  HC: 255 000 207
+mismatch for d = 1326  |  RS: 255 000 205  !=  HC: 255 000 206
+mismatch for d = 1327  |  RS: 255 000 203  !=  HC: 255 000 205
+mismatch for d = 1328  |  RS: 255 000 203  !=  HC: 255 000 204
+mismatch for d = 1329  |  RS: 254 000 201  !=  HC: 255 000 203
+mismatch for d = 1330  |  RS: 255 000 201  !=  HC: 255 000 202
+mismatch for d = 1331  |  RS: 255 000 200  !=  HC: 255 000 201
+mismatch for d = 1332  |  RS: 255 000 198  !=  HC: 255 000 200
+mismatch for d = 1333  |  RS: 255 000 198  !=  HC: 255 000 199
+mismatch for d = 1334  |  RS: 254 000 196  !=  HC: 255 000 198
+mismatch for d = 1335  |  RS: 255 000 196  !=  HC: 255 000 197
+mismatch for d = 1336  |  RS: 255 000 195  !=  HC: 255 000 196
+mismatch for d = 1337  |  RS: 255 000 193  !=  HC: 255 000 195
+mismatch for d = 1338  |  RS: 254 000 193  !=  HC: 255 000 194
+mismatch for d = 1339  |  RS: 254 000 192  !=  HC: 255 000 193
+mismatch for d = 1340  |  RS: 255 000 191  !=  HC: 255 000 192
+mismatch for d = 1341  |  RS: 255 000 190  !=  HC: 255 000 191
+mismatch for d = 1342  |  RS: 255 000 188  !=  HC: 255 000 190
+mismatch for d = 1343  |  RS: 254 000 188  !=  HC: 255 000 189
+mismatch for d = 1344  |  RS: 254 000 187  !=  HC: 255 000 188
+mismatch for d = 1345  |  RS: 254 000 185  !=  HC: 255 000 187
+mismatch for d = 1346  |  RS: 255 000 185  !=  HC: 255 000 186
+mismatch for d = 1347  |  RS: 255 000 183  !=  HC: 255 000 185
+mismatch for d = 1348  |  RS: 254 000 183  !=  HC: 255 000 184
+mismatch for d = 1349  |  RS: 254 000 182  !=  HC: 255 000 183
+mismatch for d = 1350  |  RS: 255 000 180  !=  HC: 255 000 182
+mismatch for d = 1351  |  RS: 255 000 180  !=  HC: 255 000 181
+mismatch for d = 1352  |  RS: 255 000 179  !=  HC: 255 000 180
+mismatch for d = 1353  |  RS: 254 000 178  !=  HC: 255 000 179
+mismatch for d = 1354  |  RS: 255 000 177  !=  HC: 255 000 178
+mismatch for d = 1355  |  RS: 255 000 175  !=  HC: 255 000 177
+mismatch for d = 1356  |  RS: 255 000 175  !=  HC: 255 000 176
+mismatch for d = 1357  |  RS: 255 000 174  !=  HC: 255 000 175
+mismatch for d = 1358  |  RS: 255 000 172  !=  HC: 255 000 174
+mismatch for d = 1359  |  RS: 255 000 172  !=  HC: 255 000 173
+mismatch for d = 1360  |  RS: 255 000 170  !=  HC: 255 000 172
+mismatch for d = 1361  |  RS: 255 000 170  !=  HC: 255 000 171
+mismatch for d = 1362  |  RS: 255 000 169  !=  HC: 255 000 170
+mismatch for d = 1363  |  RS: 255 000 167  !=  HC: 255 000 169
+mismatch for d = 1364  |  RS: 255 000 167  !=  HC: 255 000 168
+mismatch for d = 1365  |  RS: 255 000 166  !=  HC: 255 000 167
+mismatch for d = 1366  |  RS: 255 000 165  !=  HC: 255 000 166
+mismatch for d = 1367  |  RS: 255 000 164  !=  HC: 255 000 165
+mismatch for d = 1368  |  RS: 254 000 162  !=  HC: 255 000 164
+mismatch for d = 1369  |  RS: 255 000 162  !=  HC: 255 000 163
+mismatch for d = 1370  |  RS: 255 000 161  !=  HC: 255 000 162
+mismatch for d = 1371  |  RS: 255 000 160  !=  HC: 255 000 161
+mismatch for d = 1372  |  RS: 255 000 159  !=  HC: 255 000 160
+mismatch for d = 1373  |  RS: 255 000 157  !=  HC: 255 000 159
+mismatch for d = 1374  |  RS: 255 000 157  !=  HC: 255 000 158
+mismatch for d = 1375  |  RS: 255 000 156  !=  HC: 255 000 157
+mismatch for d = 1376  |  RS: 255 000 154  !=  HC: 255 000 156
+mismatch for d = 1377  |  RS: 255 000 154  !=  HC: 255 000 155
+mismatch for d = 1378  |  RS: 255 000 153  !=  HC: 255 000 154
+mismatch for d = 1379  |  RS: 255 000 152  !=  HC: 255 000 153
+mismatch for d = 1380  |  RS: 255 000 151  !=  HC: 255 000 152
+mismatch for d = 1381  |  RS: 255 000 149  !=  HC: 255 000 151
+mismatch for d = 1382  |  RS: 255 000 149  !=  HC: 255 000 150
+mismatch for d = 1383  |  RS: 255 000 148  !=  HC: 255 000 149
+mismatch for d = 1384  |  RS: 255 000 147  !=  HC: 255 000 148
+mismatch for d = 1385  |  RS: 255 000 146  !=  HC: 255 000 147
+mismatch for d = 1386  |  RS: 255 000 144  !=  HC: 255 000 146
+mismatch for d = 1387  |  RS: 255 000 144  !=  HC: 255 000 145
+mismatch for d = 1388  |  RS: 255 000 143  !=  HC: 255 000 144
+mismatch for d = 1389  |  RS: 255 000 141  !=  HC: 255 000 143
+mismatch for d = 1390  |  RS: 255 000 141  !=  HC: 255 000 142
+mismatch for d = 1391  |  RS: 255 000 139  !=  HC: 255 000 141
+mismatch for d = 1392  |  RS: 255 000 139  !=  HC: 255 000 140
+mismatch for d = 1393  |  RS: 255 000 138  !=  HC: 255 000 139
+mismatch for d = 1394  |  RS: 255 000 136  !=  HC: 255 000 138
+mismatch for d = 1395  |  RS: 255 000 136  !=  HC: 255 000 137
+mismatch for d = 1396  |  RS: 255 000 135  !=  HC: 255 000 136
+mismatch for d = 1397  |  RS: 255 000 134  !=  HC: 255 000 135
+mismatch for d = 1398  |  RS: 255 000 133  !=  HC: 255 000 134
+mismatch for d = 1399  |  RS: 255 000 131  !=  HC: 255 000 133
+mismatch for d = 1400  |  RS: 255 000 131  !=  HC: 255 000 132
+mismatch for d = 1401  |  RS: 255 000 130  !=  HC: 255 000 131
+mismatch for d = 1402  |  RS: 255 000 129  !=  HC: 255 000 130
+mismatch for d = 1403  |  RS: 255 000 128  !=  HC: 255 000 129
+mismatch for d = 1404  |  RS: 255 000 126  !=  HC: 255 000 128
+mismatch for d = 1405  |  RS: 255 000 126  !=  HC: 255 000 127
+mismatch for d = 1406  |  RS: 255 000 125  !=  HC: 255 000 126
+mismatch for d = 1407  |  RS: 255 000 123  !=  HC: 255 000 125
+mismatch for d = 1408  |  RS: 255 000 123  !=  HC: 255 000 124
+mismatch for d = 1409  |  RS: 255 000 122  !=  HC: 255 000 123
+mismatch for d = 1410  |  RS: 255 000 121  !=  HC: 255 000 122
+mismatch for d = 1411  |  RS: 255 000 120  !=  HC: 255 000 121
+mismatch for d = 1412  |  RS: 255 000 118  !=  HC: 255 000 120
+mismatch for d = 1413  |  RS: 255 000 118  !=  HC: 255 000 119
+mismatch for d = 1414  |  RS: 255 000 117  !=  HC: 255 000 118
+mismatch for d = 1415  |  RS: 255 000 116  !=  HC: 255 000 117
+mismatch for d = 1416  |  RS: 255 000 115  !=  HC: 255 000 116
+mismatch for d = 1417  |  RS: 255 000 113  !=  HC: 255 000 115
+mismatch for d = 1418  |  RS: 255 000 113  !=  HC: 255 000 114
+mismatch for d = 1419  |  RS: 255 000 112  !=  HC: 255 000 113
+mismatch for d = 1420  |  RS: 255 000 111  !=  HC: 255 000 112
+mismatch for d = 1421  |  RS: 255 000 110  !=  HC: 255 000 111
+mismatch for d = 1422  |  RS: 255 000 109  !=  HC: 255 000 110
+mismatch for d = 1423  |  RS: 255 000 108  !=  HC: 255 000 109
+mismatch for d = 1424  |  RS: 255 000 107  !=  HC: 255 000 108
+mismatch for d = 1425  |  RS: 255 000 105  !=  HC: 255 000 107
+mismatch for d = 1426  |  RS: 255 000 105  !=  HC: 255 000 106
+mismatch for d = 1427  |  RS: 255 000 104  !=  HC: 255 000 105
+mismatch for d = 1428  |  RS: 255 000 103  !=  HC: 255 000 104
+mismatch for d = 1429  |  RS: 255 000 102  !=  HC: 255 000 103
+mismatch for d = 1430  |  RS: 255 000 100  !=  HC: 255 000 102
+mismatch for d = 1431  |  RS: 255 000 100  !=  HC: 255 000 101
+mismatch for d = 1432  |  RS: 255 000 099  !=  HC: 255 000 100
+mismatch for d = 1433  |  RS: 255 000 098  !=  HC: 255 000 099
+mismatch for d = 1434  |  RS: 255 000 097  !=  HC: 255 000 098
+mismatch for d = 1435  |  RS: 255 000 096  !=  HC: 255 000 097
+mismatch for d = 1436  |  RS: 255 000 095  !=  HC: 255 000 096
+mismatch for d = 1437  |  RS: 255 000 094  !=  HC: 255 000 095
+mismatch for d = 1438  |  RS: 255 000 092  !=  HC: 255 000 094
+mismatch for d = 1439  |  RS: 255 000 092  !=  HC: 255 000 093
+mismatch for d = 1440  |  RS: 255 000 091  !=  HC: 255 000 092
+mismatch for d = 1441  |  RS: 255 000 090  !=  HC: 255 000 091
+mismatch for d = 1442  |  RS: 255 000 089  !=  HC: 255 000 090
+mismatch for d = 1443  |  RS: 255 000 087  !=  HC: 255 000 089
+mismatch for d = 1444  |  RS: 255 000 087  !=  HC: 255 000 088
+mismatch for d = 1445  |  RS: 255 000 086  !=  HC: 255 000 087
+mismatch for d = 1446  |  RS: 255 000 085  !=  HC: 255 000 086
+mismatch for d = 1447  |  RS: 255 000 084  !=  HC: 255 000 085
+mismatch for d = 1448  |  RS: 255 000 083  !=  HC: 255 000 084
+mismatch for d = 1449  |  RS: 255 000 082  !=  HC: 255 000 083
+mismatch for d = 1450  |  RS: 255 000 081  !=  HC: 255 000 082
+mismatch for d = 1451  |  RS: 255 000 080  !=  HC: 255 000 081
+mismatch for d = 1452  |  RS: 255 000 079  !=  HC: 255 000 080
+mismatch for d = 1453  |  RS: 255 000 078  !=  HC: 255 000 079
+mismatch for d = 1454  |  RS: 255 000 077  !=  HC: 255 000 078
+mismatch for d = 1455  |  RS: 255 000 076  !=  HC: 255 000 077
+mismatch for d = 1456  |  RS: 255 000 074  !=  HC: 255 000 076
+mismatch for d = 1457  |  RS: 255 000 074  !=  HC: 255 000 075
+mismatch for d = 1458  |  RS: 255 000 073  !=  HC: 255 000 074
+mismatch for d = 1459  |  RS: 255 000 072  !=  HC: 255 000 073
+mismatch for d = 1460  |  RS: 255 000 071  !=  HC: 255 000 072
+mismatch for d = 1461  |  RS: 255 000 069  !=  HC: 255 000 071
+mismatch for d = 1462  |  RS: 255 000 069  !=  HC: 255 000 070
+mismatch for d = 1463  |  RS: 255 000 068  !=  HC: 255 000 069
+mismatch for d = 1464  |  RS: 255 000 067  !=  HC: 255 000 068
+mismatch for d = 1465  |  RS: 255 000 066  !=  HC: 255 000 067
+mismatch for d = 1466  |  RS: 255 000 065  !=  HC: 255 000 066
+mismatch for d = 1467  |  RS: 255 000 064  !=  HC: 255 000 065
+mismatch for d = 1468  |  RS: 255 000 063  !=  HC: 255 000 064
+mismatch for d = 1469  |  RS: 255 000 061  !=  HC: 255 000 063
+mismatch for d = 1470  |  RS: 255 000 061  !=  HC: 255 000 062
+mismatch for d = 1471  |  RS: 255 000 060  !=  HC: 255 000 061
+mismatch for d = 1472  |  RS: 255 000 059  !=  HC: 255 000 060
+mismatch for d = 1473  |  RS: 255 000 058  !=  HC: 255 000 059
+mismatch for d = 1474  |  RS: 255 000 056  !=  HC: 255 000 058
+mismatch for d = 1475  |  RS: 255 000 056  !=  HC: 255 000 057
+mismatch for d = 1476  |  RS: 255 000 055  !=  HC: 255 000 056
+mismatch for d = 1477  |  RS: 255 000 054  !=  HC: 255 000 055
+mismatch for d = 1478  |  RS: 255 000 053  !=  HC: 255 000 054
+mismatch for d = 1479  |  RS: 255 000 052  !=  HC: 255 000 053
+mismatch for d = 1480  |  RS: 255 000 051  !=  HC: 255 000 052
+mismatch for d = 1481  |  RS: 255 000 050  !=  HC: 255 000 051
+mismatch for d = 1482  |  RS: 255 000 049  !=  HC: 255 000 050
+mismatch for d = 1483  |  RS: 255 000 048  !=  HC: 255 000 049
+mismatch for d = 1484  |  RS: 255 000 047  !=  HC: 255 000 048
+mismatch for d = 1485  |  RS: 255 000 046  !=  HC: 255 000 047
+mismatch for d = 1486  |  RS: 255 000 045  !=  HC: 255 000 046
+mismatch for d = 1487  |  RS: 255 000 043  !=  HC: 255 000 045
+mismatch for d = 1488  |  RS: 255 000 043  !=  HC: 255 000 044
+mismatch for d = 1489  |  RS: 255 000 042  !=  HC: 255 000 043
+mismatch for d = 1490  |  RS: 255 000 041  !=  HC: 255 000 042
+mismatch for d = 1491  |  RS: 255 000 040  !=  HC: 255 000 041
+mismatch for d = 1492  |  RS: 255 000 039  !=  HC: 255 000 040
+mismatch for d = 1493  |  RS: 255 000 038  !=  HC: 255 000 039
+mismatch for d = 1494  |  RS: 255 000 037  !=  HC: 255 000 038
+mismatch for d = 1495  |  RS: 255 000 036  !=  HC: 255 000 037
+mismatch for d = 1496  |  RS: 255 000 035  !=  HC: 255 000 036
+mismatch for d = 1497  |  RS: 255 000 034  !=  HC: 255 000 035
+mismatch for d = 1498  |  RS: 255 000 033  !=  HC: 255 000 034
+mismatch for d = 1499  |  RS: 255 000 032  !=  HC: 255 000 033
+mismatch for d = 1500  |  RS: 255 000 030  !=  HC: 255 000 032
+mismatch for d = 1501  |  RS: 255 000 030  !=  HC: 255 000 031
+mismatch for d = 1502  |  RS: 255 000 029  !=  HC: 255 000 030
+mismatch for d = 1503  |  RS: 255 000 028  !=  HC: 255 000 029
+mismatch for d = 1504  |  RS: 255 000 027  !=  HC: 255 000 028
+mismatch for d = 1505  |  RS: 255 000 026  !=  HC: 255 000 027
+mismatch for d = 1506  |  RS: 255 000 025  !=  HC: 255 000 026
+mismatch for d = 1507  |  RS: 255 000 024  !=  HC: 255 000 025
+mismatch for d = 1508  |  RS: 255 000 023  !=  HC: 255 000 024
+mismatch for d = 1509  |  RS: 255 000 022  !=  HC: 255 000 023
+mismatch for d = 1510  |  RS: 255 000 021  !=  HC: 255 000 022
+mismatch for d = 1511  |  RS: 255 000 020  !=  HC: 255 000 021
+mismatch for d = 1512  |  RS: 255 000 019  !=  HC: 255 000 020
+mismatch for d = 1513  |  RS: 255 000 018  !=  HC: 255 000 019
+mismatch for d = 1514  |  RS: 255 000 017  !=  HC: 255 000 018
+mismatch for d = 1515  |  RS: 255 000 016  !=  HC: 255 000 017
+mismatch for d = 1516  |  RS: 255 000 015  !=  HC: 255 000 016
+mismatch for d = 1517  |  RS: 255 000 014  !=  HC: 255 000 015
+mismatch for d = 1518  |  RS: 255 000 013  !=  HC: 255 000 014
+mismatch for d = 1519  |  RS: 255 000 012  !=  HC: 255 000 013
+mismatch for d = 1520  |  RS: 255 000 011  !=  HC: 255 000 012
+mismatch for d = 1521  |  RS: 255 000 010  !=  HC: 255 000 011
+mismatch for d = 1522  |  RS: 255 000 009  !=  HC: 255 000 010
+mismatch for d = 1523  |  RS: 255 000 008  !=  HC: 255 000 009
+mismatch for d = 1524  |  RS: 255 000 007  !=  HC: 255 000 008
+mismatch for d = 1525  |  RS: 255 000 006  !=  HC: 255 000 007
+mismatch for d = 1526  |  RS: 255 000 005  !=  HC: 255 000 006
+mismatch for d = 1527  |  RS: 255 000 004  !=  HC: 255 000 005
+mismatch for d = 1528  |  RS: 255 000 003  !=  HC: 255 000 004
+mismatch for d = 1529  |  RS: 255 000 002  !=  HC: 255 000 003
+mismatch for d = 1530  |  RS: 255 000 001  !=  HC: 255 000 002
+mismatch for d = 1531  |  RS: 255 000 000  !=  HC: 255 000 001
+
+-------------------------------------------------------------------------------
+Encoder performance comparison on the reference sequence:
+
+RealSense   hue encoding and decoding mean PSNR:   64.9
+Hue Encoder hue encoding and decoding mean PSNR:   75.4
+
+Hue Encoder mean PSNR improvement over RealSense:  10.5

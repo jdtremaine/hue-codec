@@ -171,7 +171,7 @@ This implementation's encoding scheme matches the 1531-point encoding scheme des
 
 The errors in the RealSense SDK encoder cause a mean 10.5dB drop in [peak signal-to-noise ratio (PSNR)](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio) on the included reference sequence relative to this encoder.
 
-For further examination of the errors in the Intel RealSense SDK encoder and reference decoder, see the comparison test.
+For further examination of the errors in the Intel RealSense SDK encoder and reference decoder, see the comparison test. A copy of the output of the comparison test is included in [docs/comparison\_output.txt](/docs/comparison_output.txt).
 
 # What is included in this repository?
 
