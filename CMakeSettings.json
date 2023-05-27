@@ -1,0 +1,35 @@
+{
+  // These environment variables apply to all configurations.
+  "environments": [
+    {
+      // "Disable OpenCV logging"
+      "OPENCV_LOG_LEVEL": "OFF",
+
+      // Set CMake executable output directory to bin
+      "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${workspaceRoot}\\bin"
+    }
+  ],
+
+  "configurations": [
+    {
+      // These environment variables apply only to the debug configuration.
+      // Global variables can be overridden and new ones can be defined.
+      "name": "Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${workspaceRoot}\\build\\${name}"
+    },
+
+    {
+      // Configurations do not need to override environment variables.
+      // If none are defined, they will inherit the global ones.
+
+      "name": "Release",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${workspaceRoot}\\build\\${name}"
+    }
+  ]
+}
