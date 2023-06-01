@@ -245,6 +245,7 @@ The errors in the RealSense SDK encoder cause a mean 10.5dB drop in [peak signal
 
 For further examination of the errors in the Intel RealSense SDK encoder and reference decoder, see the comparison test. A copy of the output of the comparison test is included in [docs/comparison\_output.txt](/docs/comparison_output.txt).
 
+
 # What is included in this repository?
 
 | directory | description                      |
@@ -276,3 +277,8 @@ Ubuntu installation instructions for examples and tests:
 | 7. Run make                        |   `make -j8` |
 | 8. Navigate to the bin directory   |   `cd ../bin` |
 | 9. Run a test                      |   `./interactive` |
+
+
+# Licence
+
+This project is distributed under the [Apache Licence 2.0](/LICENCE).
