@@ -2,6 +2,7 @@
 - [What is this?](#what-is-this)
 - [Why would I use this?](#why-would-i-use-this)
 - [How does it work?](#how-does-it-work)
+- [What performance can I expect?](#what-performance-can-i-expect)
 - [How do I use this?](#how-do-i-use-this)
 - [Flying pixels and median filtering](#flying-pixels-and-median-filtering)
 - [Inverted colourization](#inverted-colourization)
@@ -12,9 +13,9 @@
 
 
 # What is this?
-Hue Codec is a header-only C++ library that efficiently encodes and decodes 16-bit, single-channel bitmaps (i.e. depth maps, disparity maps, infrared images, or high bit depth grayscale images) to and from 8-bit, 3-channel bitmaps (i.e. RGB images).
+Hue Codec is a header-only C++ library that efficiently encodes and decodes 16-bit, single-channel bitmaps (i.e. depth maps, disparity maps, infrared images, or high bit-depth grayscale images) to and from 8-bit, 3-channel bitmaps (i.e. RGB images).
 
-Once in RGB format, conventional lossy RGB image and video codecs can achieve high compression ratios and relatively low signal loss on the encoded data. This approach has the advantage of being simple, fast, and portable, and it allows data inspection and previewing using commonly available image and video viewers. This library uses OpenCV for basic image manipulation but also includes a library-independent encoder and decoder for those that want to use other libraries. 
+Once in RGB format, conventional lossy RGB image and video codecs can achieve high compression ratios and relatively low signal loss on the encoded data. This approach has the advantage of being simple, fast, and portable, and it allows data inspection and previewing using commonly available image and video viewers. This library uses OpenCV for basic image manipulation but also includes a library-independent encoder and decoder for those that want to use other libraries.
 
 This work builds on a [whitepaper](https://dev.intelrealsense.com/docs/depth-image-compression-by-colorization-for-intel-realsense-depth-cameras) and [reference code](https://github.com/TetsuriSonoda/rs-colorize) published by Intel. Note that the whitepaper has several errors, and neither the encoder included in the RealSense SDK nor the reference decoder provided along with the whitepaper is correct. The publication of this codec allows it to be used with other sensors not supported by the Intel RealSense SDK.
 
@@ -51,12 +52,83 @@ The hue-encoded webp file (quality=50%) is 9kb in size - a compression ratio of 
 
 A series of depth frames is called a depth stream. Depth streams can be saved using standard video codecs like H.264 and H.265.
 
-Use the benchmarks to get compression rates and frame encoding/decoding times for your data and hardware. For example, on 
-[--EXAMPLE HARDWARE NAME ---]
-JPEG compression has CPU save and load times of 2ms per frame, and WEBP compression can achieve high compression ratios (>50x) with relatively low loss.
+# What performance can I expect?
+
+Use the benchmarks to get compression rates and frame encoding/decoding times for your data and hardware. Note that these benchmarks only include hue encoding and decoding, image compression and decompression, and do not include saving the data to disk.
+
+The output of the benchmarks test for an Ubuntu system with an AMD Ryzen 7 2700X CPU and an Nvidia GeForce RTX 3080 is below. For single frames, the JPEG format offers the fastest combined save and load times, while WebP offers the fastest load times and best compression ratios while maintaining fidelity. A compression ratio of 60X can be achieved using WebP image compression without significant compression artifacts.
+
+## Image encoding benchmarks
+| Encoding                 | PSNR  | CR    | save (ms) | load (ms) | save (kB/s) | load (kB/s) |
+| ------------------------ | ----- | ----- | --------- | --------- | ----------- | ----------- |
+| Hue-encoded only (Q=100) |  77.4 |   1.0 |       4.5 |       3.0 |        68.3 |       100.7 |
+| Hue-encoded PNG  (Q= 10) |  77.4 |   4.8 |     548.2 |       4.7 |         0.6 |        65.8 |
+| Hue-encoded PNG  (Q=  9) |  77.4 |   4.8 |     533.7 |       4.6 |         0.6 |        66.3 |
+| Hue-encoded PNG  (Q=  8) |  77.4 |   4.7 |     234.4 |       4.9 |         1.3 |        63.3 |
+| Hue-encoded PNG  (Q=  7) |  77.4 |   4.6 |      76.5 |       4.8 |         4.0 |        63.7 |
+| Hue-encoded PNG  (Q=  6) |  77.4 |   4.5 |      47.1 |       4.8 |         6.5 |        63.4 |
+| Hue-encoded PNG  (Q=  5) |  77.4 |   4.3 |      27.6 |       5.1 |        11.1 |        59.8 |
+| Hue-encoded PNG  (Q=  4) |  77.4 |   4.1 |      20.0 |       5.3 |        15.4 |        58.2 |
+| Hue-encoded PNG  (Q=  3) |  77.4 |   3.8 |      22.5 |       6.8 |        13.7 |        45.0 |
+| Hue-encoded PNG  (Q=  2) |  77.4 |   3.5 |      16.9 |       5.4 |        18.2 |        57.3 |
+| Hue-encoded PNG  (Q=  1) |  77.4 |   3.3 |      16.2 |       5.5 |        19.0 |        55.8 |
+| Hue-encoded JPEG (Q=  0) |  27.5 |  97.7 |       3.3 |       2.8 |        91.8 |       111.4 |
+| Hue-encoded JPEG (Q= 10) |  31.3 |  66.8 |       3.5 |       2.9 |        88.7 |       106.1 |
+| Hue-encoded JPEG (Q= 20) |  35.1 |  47.7 |       3.7 |       2.9 |        82.3 |       105.5 |
+| Hue-encoded JPEG (Q= 30) |  37.8 |  38.5 |       3.5 |       2.9 |        88.3 |       107.2 |
+| Hue-encoded JPEG (Q= 40) |  39.7 |  33.1 |       3.5 |       3.0 |        87.5 |       100.9 |
+| Hue-encoded JPEG (Q= 50) |  43.3 |  29.1 |       3.6 |       2.9 |        86.4 |       105.7 |
+| Hue-encoded JPEG (Q= 60) |  43.3 |  25.7 |       3.6 |       3.6 |        86.1 |        85.8 |
+| Hue-encoded JPEG (Q= 70) |  44.8 |  21.9 |       3.6 |       3.0 |        85.0 |       102.9 |
+| Hue-encoded JPEG (Q= 80) |  47.7 |  17.5 |       3.6 |       3.0 |        85.8 |       102.5 |
+| Hue-encoded JPEG (Q= 90) |  52.8 |  12.0 |       3.7 |       3.5 |        83.4 |        88.8 |
+| Hue-encoded JPEG (Q=100) |  56.5 |   3.5 |       4.3 |       4.7 |        72.1 |        66.0 |
+| Hue-encoded WebP (Q=  0) |  36.4 | 121.2 |      17.7 |       3.0 |        17.3 |       103.4 |
+| Hue-encoded WebP (Q= 10) |  39.5 |  82.1 |      19.7 |       2.9 |        15.6 |       104.3 |
+| Hue-encoded WebP (Q= 20) |  40.2 |  66.0 |      20.0 |       3.1 |        15.4 |        97.8 |
+| Hue-encoded WebP (Q= 30) |  42.2 |  56.2 |      21.4 |       3.2 |        14.3 |        95.9 |
+| Hue-encoded WebP (Q= 40) |  44.7 |  49.5 |      20.5 |       3.3 |        15.0 |        94.5 |
+| Hue-encoded WebP (Q= 50) |  44.7 |  44.4 |      21.6 |       3.3 |        14.2 |        92.0 |
+| Hue-encoded WebP (Q= 60) |  45.0 |  39.9 |      21.8 |       3.4 |        14.1 |        89.5 |
+| Hue-encoded WebP (Q= 70) |  47.0 |  35.9 |      23.0 |       3.8 |        13.3 |        81.4 |
+| Hue-encoded WebP (Q= 80) |  50.8 |  29.1 |      27.6 |       3.8 |        11.1 |        81.8 |
+| Hue-encoded WebP (Q= 90) |  54.0 |  19.3 |      30.7 |       4.2 |        10.0 |        74.0 |
+| Hue-encoded WebP (Q=100) |  55.4 |   8.3 |      37.7 |       6.5 |         8.1 |        46.9 |
 
 
-# How do i use this?
+
+## Video encoding benchmarks
+
+On the reference system, hue encoding of depth streams adds an overhead of 0.5s per frame, and hue decoding adds a negligible overhead. Codecs are shown below in the format [fourcc code/container format]. All codecs achieved roughly the same PSNR when the default settings were used. The x264 (a.k.a. avc1) codec represents the best speed and compression ratio combination.
+
+Here are the video benchmarks when ffmpeg is built with vpx, x264, and x265 codecs with CUDA support:
+
+| Encoding             | mean PSNR | CR    | save (ms) | load (ms) | save (kB/s) | load (kB/s) |
+| -------------------- | --------- | ----- | --------- | --------- | ----------- | ----------- |
+| Hue-encoded only/    |       0.0 |   1.0 |       0.5 |       0.0 |       247.6 |   9950831.0 |
+| Hue-encoded MJPG/avi |      28.7 |   6.8 |       1.4 |       0.6 |        83.2 |       180.7 |
+| Hue-encoded XVID/avi |      29.1 |   6.3 |       1.0 |       0.6 |       116.2 |       202.3 |
+| Hue-encoded x264/avi |      28.0 |  20.9 |       0.6 |       0.9 |       180.8 |       126.9 |
+| Hue-encoded VP80/avi |      29.6 |   7.4 |      19.4 |       0.8 |         5.9 |       138.8 |
+| Hue-encoded VP90/avi |      29.1 |  13.2 |       5.3 |       0.9 |        21.8 |       128.6 |
+| Hue-encoded mp4v/mp4 |      29.1 |   6.3 |       0.9 |       0.5 |       128.6 |       232.1 |
+| Hue-encoded avc1/mp4 |      28.0 |  21.7 |       0.9 |       0.9 |       134.7 |       130.9 |
+| Hue-encoded vp09/mp4 |      29.1 |  13.6 |       6.1 |       1.1 |        18.8 |       107.5 |
+| Hue-encoded hvc1/mp4 |      29.8 |   5.7 |       0.6 |       1.8 |       190.5 |        62.5 |
+
+
+Here are the video benchmarks when ffmpeg is built with nvcodec:
+
+| Encoding             | mean PSNR | CR    | save (ms) | load (ms) | save (kB/s) | load (kB/s) |
+| -------------------- | --------- | ----- | --------- | --------- | ----------- | ----------- |
+| Hue-encoded x264/avi |      28.0 |  14.6 |       0.6 |       0.6 |       202.4 |       178.7 |
+| Hue-encoded avc1/mp4 |      28.0 |  15.0 |       0.7 |       0.7 |       162.8 |       169.1 |
+| Hue-encoded hvc1/mp4 |      29.1 |   9.6 |       0.5 |       1.0 |       220.2 |       112.5 |
+
+While the nvcodec codecs offer marginally higher save and load rates, they have lower compression ratios.
+
+
+# How do I use this?
 The hue\_codec.h file is a header-only library with an external dependency on OpenCV.
 
 You must add the include/hue\_codec.h file to your project.
@@ -75,16 +147,16 @@ This code expects you to use 16-bit depth maps, meaning your depth data will be 
 Initialize the codec as so:
 
     const int min_sensor_depth_m =  0.3f;    // Minimum sensor depth in metres
-    const int max_sensor_depth_m = 10.0f;    // Maximum sensor depth in metres    
+    const int max_sensor_depth_m = 10.0f;    // Maximum sensor depth in metres
     const float depth_scale      = 0.001f;   // Depth map 16-bit integer values to metres)
     bool inverted = false;                   // Use standard colourization (explained later)
     HueCodec codec(min_sensor_depth_m, max_sensor_depth_m, scaling_factor, inverted);
 
-During hue encoding, the entire depth field is reduced to 1530 values in a lossy way. To preserve as much fidelity as possible, initialize HueCodec objects using depth\_min and depth\_max values that accurately represent the depth range of all your data. 
+During hue encoding, the entire depth field is reduced to 1530 values in a lossy way. To preserve as much fidelity as possible, initialize HueCodec objects using depth\_min and depth\_max values that accurately represent the depth range of all your data.
 
 You would then retrieve a 16-bit depth frame from your sensor.
 To encode that depth frame, you would use the following:
-    
+
     cv::Mat encoded_frame = codec.encode(depth_frame);
 
 The OpenCV Mat encoded\_frame is a standard 3-channel, 8-bit BGR image (OpenCV uses BGR instead of RGB).
@@ -163,7 +235,7 @@ The hue encoding scheme is as follows:
 |        1276 | 255    | 0      | 255    | blue + red = purple        |
 | 1277 - 1530 | 255    | 0      | 1531-v | red with blue descending   |
 
-A full mapping of values to RGB values is included in [docs/full\_mapping.csv](/docs/full_mapping.csv).
+A complete mapping of values to RGB values is included in [docs/full\_mapping.csv](/docs/full_mapping.csv).
 
 
 # Comparison to the RealSense encoder and decoder
@@ -186,7 +258,9 @@ For further examination of the errors in the Intel RealSense SDK encoder and ref
 
 
 # How do I get the tests and examples working?
-Note: if you don't want to run the tests and examples and only want to use this library in your project, see the usage instructions above under "How do I use this?".
+If you don't want to run the tests and examples and only want to use this library in your project, see the usage instructions above under [How do I use this?](#how-do-i-use-this).
+
+The examples and tests use hard-coded paths to simplify cross-platform asset handling.
 
 ## Ubuntu
 Ubuntu installation instructions for examples and tests:
@@ -198,7 +272,7 @@ Ubuntu installation instructions for examples and tests:
 | 3. Source environment variables    |   `source ./set_env.sh` |
 | 4. Install vcpkg libraries         |   `./vcpkg_install.sh` |
 | 5. Navigate to the build directory |   `cd ../../build/` |
-| 6. Run cmake (and wait for vcpkg)  |   `cmake ..` |
+| 6. Run cmake (and wait for vcpkg)  |   `cmake -DCMAKE_BUILD_TYPE=Release ..` |
 | 7. Run make                        |   `make -j8` |
 | 8. Navigate to the bin directory   |   `cd ../bin` |
 | 9. Run a test                      |   `./interactive` |
