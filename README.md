@@ -278,6 +278,16 @@ Ubuntu installation instructions for examples and tests:
 | 8. Navigate to the bin directory   |   `cd ../bin` |
 | 9. Run a test                      |   `./interactive` |
 
+## Windows
+Windows installation instructions for examples and tests:
+
+| Action                             | command |
+| ---------------------------------- | ------- |
+| 1. Open PowerShell                 |    |
+| 2. Navigate to the env directory   |   `cd env/windows_10` |
+| 3. Run the dependency installer    |   `install_deps.ps1` |
+| 4. Open the hue-codec folder in Visual Studio or Visual Studio Code |    |
+
 
 # Licence
 
