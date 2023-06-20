@@ -288,6 +288,10 @@ Windows installation instructions for examples and tests:
 | 3. Run the dependency installer    |   `install_deps.ps1` |
 | 4. Open the hue-codec folder in Visual Studio or Visual Studio Code |    |
 
+## Docker (Ubuntu )
+A Dockerfile that can be used to build an Ubuntu instance with CUDA support is included in env/ubuntu\_22.04. Read the comments in the Dockerfile for more information.
+
+
 
 # Licence
 
