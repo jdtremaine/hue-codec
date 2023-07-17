@@ -268,6 +268,7 @@ Ubuntu installation instructions for examples and tests:
 
 | Action                             | command |
 | ---------------------------------- | ------- |
+| 0. Clone the git repo              |   `git clone https://github.com/jdtremaine/hue-codec.git` |
 | 1. Navigate to the env directory   |   `cd env/ubuntu_22.04` |
 | 2. Install platform dependencies   |   `sudo ./install_deps.sh` |
 | 3. Source environment variables    |   `source ./set_env.sh` |
@@ -283,14 +284,43 @@ Windows installation instructions for examples and tests:
 
 | Action                             | command |
 | ---------------------------------- | ------- |
-| 1. Open PowerShell                 |    |
+| 0. Open PowerShell                 |    |
+| 1. Clone the git repo              |   `git clone https://github.com/jdtremaine/hue-codec.git` |
 | 2. Navigate to the env directory   |   `cd env/windows_10` |
 | 3. Run the dependency installer    |   `install_deps.ps1` |
 | 4. Open the hue-codec folder in Visual Studio or Visual Studio Code |    |
+| 5. Follow the GUI prompts to setup a CMake build |    |
 
 ## Docker (Ubuntu )
-A Dockerfile that can be used to build an Ubuntu instance with CUDA support is included in env/ubuntu\_22.04. Read the comments in the Dockerfile for more information.
 
+### Dockerfile
+A Dockerfile that can be used to build an Ubuntu 22.04 instance with CUDA 12.0.1 support is included in env/ubuntu\_22.04. Read the comments in the Dockerfile for more information.
+
+
+### Docker images
+A docker development image as well as docker binary images for benchmarking are available a on Dockerhub at [jdtremaine/hue-codec](https://hub.docker.com/r/jdtremaine/hue-codec/tags).
+Note that each of these images has hue-codec installed in /root/hue-codec with pre-built libraries and binaries. To run a docker benchmark, make sure that the docker host has CUDA support.
+
+To run the benchmarks built with standard codecs (vpx, x264, and x265 codecs with CUDA support), run:
+
+	docker run \ 
+	-e NVIDIA_DRIVER_CAPABILITIES=all \
+	-it jdtremaine/hue-codec:bin-vidcodecs 
+	/bin/bash -c 'cd /root/hue-codec/bin/;./benchmarks' 
+
+To run the benchmarks built with nvcodec by Nvidia, run:
+
+	docker run \ 
+	-e NVIDIA_DRIVER_CAPABILITIES=all \
+	-it jdtremaine/hue-codec:bin-nvicodecs 
+	/bin/bash -c 'cd /root/hue-codec/bin/;./benchmarks' 
+
+To run a development environment that includes pre-built libraries and build files, run: 
+
+	docker run \ 
+	-e NVIDIA_DRIVER_CAPABILITIES=all \
+	-it jdtremaine/hue-codec:dev-vidcodecs \
+	/bin/bash
 
 
 # Licence
