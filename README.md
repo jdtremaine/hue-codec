@@ -269,7 +269,7 @@ Ubuntu installation instructions for examples and tests:
 | Action                             | command |
 | ---------------------------------- | ------- |
 | 0. Clone the git repo              |   `git clone https://github.com/jdtremaine/hue-codec.git` |
-| 1. Navigate to the env directory   |   `cd env/ubuntu_22.04` |
+| 1. Navigate to the env directory   |   `cd hue-codec/env/ubuntu_22.04` |
 | 2. Install platform dependencies   |   `sudo ./install_deps.sh` |
 | 3. Source environment variables    |   `source ./set_env.sh` |
 | 4. Install vcpkg libraries         |   `./vcpkg_install.sh` |
@@ -286,7 +286,7 @@ Windows installation instructions for examples and tests:
 | ---------------------------------- | ------- |
 | 0. Open PowerShell                 |    |
 | 1. Clone the git repo              |   `git clone https://github.com/jdtremaine/hue-codec.git` |
-| 2. Navigate to the env directory   |   `cd env/windows_10` |
+| 2. Navigate to the env directory   |   `cd hue-codec/env/windows_10` |
 | 3. Run the dependency installer    |   `install_deps.ps1` |
 | 4. Open the hue-codec folder in Visual Studio or Visual Studio Code |    |
 | 5. Follow the GUI prompts to setup a CMake build |    |
